@@ -10,6 +10,9 @@
 		D9F3BB35166F4B8A00F0DEAE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F3BB34166F4B8A00F0DEAE /* Foundation.framework */; };
 		D9F3BB3A166F4B8A00F0DEAE /* EKKeyboardAvoidingScrollView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9F3BB39166F4B8A00F0DEAE /* EKKeyboardAvoidingScrollView.h */; };
 		D9F3BB3C166F4B8A00F0DEAE /* EKKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F3BB3B166F4B8A00F0DEAE /* EKKeyboardAvoidingScrollView.m */; };
+		D9F3BB8C166F63D400F0DEAE /* EKKeyboardAvoidingScrollViewManger.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F3BB8B166F63D400F0DEAE /* EKKeyboardAvoidingScrollViewManger.m */; };
+		D9F3BB95166F6A9200F0DEAE /* EKKeyboardAvoidingScrollViewManger.h in Headers */ = {isa = PBXBuildFile; fileRef = D9F3BB8A166F63D400F0DEAE /* EKKeyboardAvoidingScrollViewManger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D9F3BB98166F6DA500F0DEAE /* EKKeyboardAvoidingScrollViewManger.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9F3BB8A166F63D400F0DEAE /* EKKeyboardAvoidingScrollViewManger.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -19,6 +22,7 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
+				D9F3BB98166F6DA500F0DEAE /* EKKeyboardAvoidingScrollViewManger.h in CopyFiles */,
 				D9F3BB3A166F4B8A00F0DEAE /* EKKeyboardAvoidingScrollView.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -31,6 +35,8 @@
 		D9F3BB38166F4B8A00F0DEAE /* EKKeyboardAvoidingScrollView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EKKeyboardAvoidingScrollView-Prefix.pch"; sourceTree = "<group>"; };
 		D9F3BB39166F4B8A00F0DEAE /* EKKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EKKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
 		D9F3BB3B166F4B8A00F0DEAE /* EKKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EKKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		D9F3BB8A166F63D400F0DEAE /* EKKeyboardAvoidingScrollViewManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKKeyboardAvoidingScrollViewManger.h; sourceTree = "<group>"; };
+		D9F3BB8B166F63D400F0DEAE /* EKKeyboardAvoidingScrollViewManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKKeyboardAvoidingScrollViewManger.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,8 @@
 		D9F3BB36166F4B8A00F0DEAE /* EKKeyboardAvoidingScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				D9F3BB8A166F63D400F0DEAE /* EKKeyboardAvoidingScrollViewManger.h */,
+				D9F3BB8B166F63D400F0DEAE /* EKKeyboardAvoidingScrollViewManger.m */,
 				D9F3BB39166F4B8A00F0DEAE /* EKKeyboardAvoidingScrollView.h */,
 				D9F3BB3B166F4B8A00F0DEAE /* EKKeyboardAvoidingScrollView.m */,
 				D9F3BB37166F4B8A00F0DEAE /* Supporting Files */,
@@ -90,6 +98,17 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		D9F3BB94166F6A7D00F0DEAE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9F3BB95166F6A9200F0DEAE /* EKKeyboardAvoidingScrollViewManger.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		D9F3BB30166F4B8A00F0DEAE /* EKKeyboardAvoidingScrollView */ = {
 			isa = PBXNativeTarget;
@@ -98,6 +117,7 @@
 				D9F3BB2D166F4B8A00F0DEAE /* Sources */,
 				D9F3BB2E166F4B8A00F0DEAE /* Frameworks */,
 				D9F3BB2F166F4B8A00F0DEAE /* CopyFiles */,
+				D9F3BB94166F6A7D00F0DEAE /* Headers */,
 			);
 			buildRules = (
 			);
@@ -140,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9F3BB3C166F4B8A00F0DEAE /* EKKeyboardAvoidingScrollView.m in Sources */,
+				D9F3BB8C166F63D400F0DEAE /* EKKeyboardAvoidingScrollViewManger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +255,7 @@
 				D9F3BB41166F4B8B00F0DEAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

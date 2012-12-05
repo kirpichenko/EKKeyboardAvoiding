@@ -1,0 +1,6 @@
+syntax:glob
+build
+DerivedData
+.DS*
+*.xcworkspace
+xcuserdata

@@ -22,6 +22,7 @@
 		D9F3BB88166F522700F0DEAE /* SingleScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F3BB86166F522700F0DEAE /* SingleScrollViewController.m */; };
 		D9F3BB89166F522700F0DEAE /* SingleScrollViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9F3BB87166F522700F0DEAE /* SingleScrollViewController.xib */; };
 		D9F3BB8E166F692300F0DEAE /* libEKKeyboardAvoidingScrollView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F3BB7A166F4E4C00F0DEAE /* libEKKeyboardAvoidingScrollView.a */; };
+		D9F3BBA3166F9D9C00F0DEAE /* UIViewController+LoadWithXib.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F3BBA2166F9D9C00F0DEAE /* UIViewController+LoadWithXib.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		D9F3BB85166F522700F0DEAE /* SingleScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleScrollViewController.h; sourceTree = "<group>"; };
 		D9F3BB86166F522700F0DEAE /* SingleScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleScrollViewController.m; sourceTree = "<group>"; };
 		D9F3BB87166F522700F0DEAE /* SingleScrollViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SingleScrollViewController.xib; sourceTree = "<group>"; };
+		D9F3BBA1166F9D9C00F0DEAE /* UIViewController+LoadWithXib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LoadWithXib.h"; sourceTree = "<group>"; };
+		D9F3BBA2166F9D9C00F0DEAE /* UIViewController+LoadWithXib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LoadWithXib.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +116,7 @@
 			children = (
 				D9F3BB7C166F4E9300F0DEAE /* Application */,
 				D9F3BB7D166F4EA400F0DEAE /* Controllers */,
+				D9F3BBA0166F9D6100F0DEAE /* Extensions */,
 				D9F3BB58166F4E2F00F0DEAE /* Supporting Files */,
 			);
 			path = EKKeyboardAvoidingScrollViewExample;
@@ -161,6 +165,15 @@
 				D9F3BB87166F522700F0DEAE /* SingleScrollViewController.xib */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		D9F3BBA0166F9D6100F0DEAE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D9F3BBA1166F9D9C00F0DEAE /* UIViewController+LoadWithXib.h */,
+				D9F3BBA2166F9D9C00F0DEAE /* UIViewController+LoadWithXib.m */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +265,7 @@
 				D9F3BB62166F4E2F00F0DEAE /* AppDelegate.m in Sources */,
 				D9F3BB81166F4EFC00F0DEAE /* MultipleScrollsViewController.m in Sources */,
 				D9F3BB88166F522700F0DEAE /* SingleScrollViewController.m in Sources */,
+				D9F3BBA3166F9D9C00F0DEAE /* UIViewController+LoadWithXib.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

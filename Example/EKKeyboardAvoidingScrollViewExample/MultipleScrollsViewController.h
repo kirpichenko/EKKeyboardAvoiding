@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MultipleScrollsViewController : UIViewController
+@interface MultipleScrollsViewController : UIViewController {
+    IBOutlet UITextView *textView;
+    IBOutlet UITableView *tableView;
+    IBOutlet UIScrollView *scrollView;
+}
 
 @end

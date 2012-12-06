@@ -21,7 +21,7 @@
 - (id) initWithUniversalNibName:(NSString *) nibNameOrNil
 {
     NSMutableString *universalNibName = [NSMutableString stringWithString:nibNameOrNil];
-    [universalNibName appendString:UIDeviceIsiPad() ? @"_iPad" : nil];
+    [universalNibName appendString:UIDeviceIsiPad() ? @"_iPad" : @""];
     
     if([[NSBundle mainBundle] pathForResource:universalNibName ofType:@"nib"]) {
         return [self initWithNibName:universalNibName bundle:nil];

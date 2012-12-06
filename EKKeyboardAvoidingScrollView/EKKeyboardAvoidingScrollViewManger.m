@@ -46,8 +46,8 @@ static EKKeyboardAvoidingScrollViewManger *kUIScrollViewDisplayManager;
     if (self = [super init]) {
         registeredScrolls = [[NSMutableArray alloc] init];
         [[NSNotificationCenter defaultCenter] addObserver:self
-                                               selector:@selector(keyboardFrameWillChange:)
-                                                     name:UIKeyboardDidChangeFrameNotification//UIKeyboardWillChangeFrameNotification
+                                               selector:@selector(keyboardFrameDidChange:)
+                                                     name:UIKeyboardDidChangeFrameNotification
                                                    object:nil];
     }
     return self;
@@ -99,14 +99,11 @@ static EKKeyboardAvoidingScrollViewManger *kUIScrollViewDisplayManager;
 #pragma mark -
 #pragma mark notifications
 
-- (void) keyboardFrameWillChange:(NSNotification *) notification
+- (void) keyboardFrameDidChange:(NSNotification *) notification
 {
     NSValue *keyboardFrameValue = [[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey];
     [self setKeyboardFrame:[keyboardFrameValue CGRectValue]];
     [self updateRegisteredScrolls];
-    
-    NSLog(@"keyboard in view:%@",NSStringFromCGRect([keyboardFrameValue CGRectValue]));
-    NSLog(@"keyboard in view:%@",NSStringFromCGRect([[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue]));
 }
 
 #pragma mark -
@@ -147,45 +144,15 @@ static EKKeyboardAvoidingScrollViewManger *kUIScrollViewDisplayManager;
 
 - (UIEdgeInsets) scrollViewContentInsets:(RegisteredScrollPack *) scrollPack
 {
-//    UIScrollView *scrollView = [scrollPack scrollView];    
-//    CGRect frameInWindow = [[scrollView superview] convertRect:[scrollView frame] toView:nil];
-//    if (!CGRectIntersectsRect(frameInWindow, [self keyboardFrame])) {
-//        return [scrollPack scrollDefaultInsets];
-//    }
-    
-    
-    
     UIEdgeInsets insets = [scrollPack scrollDefaultInsets];
-//    CGRect keyboardFrame = [self keyboardFrame];
-//    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
-//    
-//    if (orientation == UIInterfaceOrientationPortrait) {
-//        NSLog(@"maxy = %f, miny = %f",CGRectGetMaxY(frameInWindow),CGRectGetMinY(keyboardFrame));
-//        insets.bottom += MAX(CGRectGetMaxY(frameInWindow) - CGRectGetMinY(keyboardFrame), 0);
-//    }
-//    else if (orientation == UIInterfaceOrientationLandscapeLeft) {
-//        insets.bottom += MAX(CGRectGetMaxX(frameInWindow) - CGRectGetMinX(keyboardFrame),0);
-//    }
-//    else if (orientation == UIInterfaceOrientationLandscapeRight) {
-//        insets.bottom += MAX(CGRectGetMaxX(keyboardFrame) - CGRectGetMinX(frameInWindow),0);
-//    }
-    
-    NSLog(@"insets = %@",NSStringFromUIEdgeInsets(insets));
-    
-//    [[UIApplication sharedApplication] windows]
-//    UIScrollView *scrollView = [scrollPack scrollView];
-    
+
     CGRect scrollViewFrame = [[scrollPack scrollView] frame];
     CGRect keyboardRect = [[[scrollPack scrollView] superview] convertRect:[self keyboardFrame]
                                                                   fromView:nil];
-    NSLog(@"keyboard in view:%@",NSStringFromCGRect(keyboardRect));
-    
-    if (!CGRectIntersectsRect(keyboardRect, scrollViewFrame) ||
-        CGRectEqualToRect(keyboardRect, CGRectZero))
+    if (CGRectIntersectsRect(keyboardRect, scrollViewFrame) &&
+        !CGRectEqualToRect(keyboardRect, CGRectZero) &&
+        !CGRectContainsRect(keyboardRect, scrollViewFrame))
     {
-        return insets;
-    }
-    else {
         if (keyboardRect.origin.y <= scrollViewFrame.origin.y) {
             insets.top += CGRectGetMaxY(keyboardRect) - CGRectGetMinY(scrollViewFrame);
         }
@@ -193,13 +160,8 @@ static EKKeyboardAvoidingScrollViewManger *kUIScrollViewDisplayManager;
                  CGRectGetMaxY(keyboardRect) >= CGRectGetMaxY(scrollViewFrame)) {
             insets.bottom += CGRectGetMaxY(scrollViewFrame) - CGRectGetMinY(keyboardRect);
         }
-        NSLog(@"keyboard in view:%@",NSStringFromCGRect(keyboardRect));
-        NSLog(@"scrollframe %@",NSStringFromCGRect(scrollViewFrame));
-        
-        
-        
-        return insets;
     }
+    return insets;
 }
 
 @end

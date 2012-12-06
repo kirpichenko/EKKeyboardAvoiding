@@ -7,32 +7,91 @@
 //
 
 #import "MultipleScrollsViewController.h"
+#import <EKKeyboardAvoidingScrollView/EKKeyboardAvoidingScrollViewManger.h>
 
-@interface MultipleScrollsViewController ()
+@interface MultipleScrollsViewController () <UITextFieldDelegate>
 
 @end
 
 @implementation MultipleScrollsViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+#pragma mark -
+#pragma mark life cycle
 
-- (void)viewDidLoad
+- (void) viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    [scrollView setContentSize:[scrollView frame].size];
+    
+    [[EKKeyboardAvoidingScrollViewManger sharedInstance] registerScrollViewForKeyboardAvoiding:textView];
+    [[EKKeyboardAvoidingScrollViewManger sharedInstance] registerScrollViewForKeyboardAvoiding:tableView];
+    [[EKKeyboardAvoidingScrollViewManger sharedInstance] registerScrollViewForKeyboardAvoiding:scrollView];
+    
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                action:@selector(viewTapped:)];
+    [[self view] addGestureRecognizer:[singleTap autorelease]];
 }
 
-- (void)didReceiveMemoryWarning
+- (void) viewDidUnload
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [textView release]; textView = nil;
+    [tableView release]; tableView = nil;
+    [scrollView release]; scrollView = nil;
+    
+    [super viewDidUnload];
+}
+
+- (void) dealloc
+{
+    [[EKKeyboardAvoidingScrollViewManger sharedInstance] unregisterScrollViewFromKeyboardAvoiding:textView];
+    [[EKKeyboardAvoidingScrollViewManger sharedInstance] unregisterScrollViewFromKeyboardAvoiding:tableView];
+    [[EKKeyboardAvoidingScrollViewManger sharedInstance] unregisterScrollViewFromKeyboardAvoiding:scrollView];
+    
+    [textView release];
+    [tableView release];
+    [scrollView release];
+    
+    [super dealloc];
+}
+
+#pragma mark -
+#pragma mark UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 50;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *cellIdentifier = @"cellIdentifier";
+    UITableViewCell *cell = (UITableViewCell *)[aTableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                      reuseIdentifier:cellIdentifier];
+        [cell autorelease];
+    }
+    [[cell textLabel] setText:[NSString stringWithFormat:@"Cell #%d",indexPath.row]];
+    
+    return cell;
+}
+
+#pragma mark -
+#pragma mark UITextFieldDelegate methods
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [[self view] endEditing:YES];
+    return YES;
+}
+
+#pragma mark -
+#pragma mark touches
+
+- (void) viewTapped:(UITapGestureRecognizer *) singleTap
+{
+    [[self view] endEditing:YES];
 }
 
 @end

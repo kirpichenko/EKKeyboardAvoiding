@@ -9,8 +9,7 @@
 #import "SingleScrollViewController.h"
 #import <EKKeyboardAvoidingScrollView/EKKeyboardAvoidingScrollViewManger.h>
 
-@interface SingleScrollViewController ()
-
+@interface SingleScrollViewController () <UITextFieldDelegate>
 @end
 
 @implementation SingleScrollViewController
@@ -39,6 +38,15 @@
     [[EKKeyboardAvoidingScrollViewManger sharedInstance] unregisterScrollViewFromKeyboardAvoiding:scrollView];
     [scrollView release];
     [super dealloc];
+}
+
+#pragma mark -
+#pragma mark UITextFieldDelegate methods
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [[self view] endEditing:YES];
+    return YES;
 }
 
 #pragma mark -

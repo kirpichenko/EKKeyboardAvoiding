@@ -11,6 +11,10 @@
 #import "SingleScrollViewController.h"
 #import "UIViewController+LoadWithXib.h"
 
+@interface AppDelegate ()
+@property (nonatomic, retain) UITabBarController *tabBarController;
+@end
+
 @implementation AppDelegate
 
 - (void)dealloc
@@ -23,13 +27,26 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     
-//    MultipleScrollsViewController *controller = [[MultipleScrollsViewController new] autorelease];
-    SingleScrollViewController *controller = [[SingleScrollViewController alloc] initWithUniversalNib];
-    [self.window setRootViewController:[controller autorelease]];
-
+    self.tabBarController = [[[UITabBarController alloc] init] autorelease];
+    [self.tabBarController setViewControllers:@[
+        [[[SingleScrollViewController alloc] initWithUniversalNib] autorelease],
+        [[[MultipleScrollsViewController alloc] initWithUniversalNib] autorelease]
+     ]];
+    
+    [self setTabBarItemWithText:@"Single Scroll" forControllerAtIndex:0];
+    [self setTabBarItemWithText:@"Multiple Scrolls" forControllerAtIndex:1];
+    
+    [self.window setRootViewController:self.tabBarController];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void) setTabBarItemWithText:(NSString *) text forControllerAtIndex:(NSInteger) index
+{
+    UITabBarItem *item = [[UITabBarItem alloc] initWithTitle:text image:nil tag:NSNotFound];
+    [[[self.tabBarController viewControllers] objectAtIndex:index] setTabBarItem:item];
+    [item release];
 }
 
 @end

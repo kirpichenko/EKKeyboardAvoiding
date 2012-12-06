@@ -85,6 +85,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D96C11861670DDFF005FEE63 /* MultipleScrolsViewcontroller */ = {
+			isa = PBXGroup;
+			children = (
+				D9F3BB7E166F4EFC00F0DEAE /* MultipleScrollsViewController.h */,
+				D9F3BB7F166F4EFC00F0DEAE /* MultipleScrollsViewController.m */,
+				D9F3BB80166F4EFC00F0DEAE /* MultipleScrollsViewController.xib */,
+				D9F3BB83166F4F2300F0DEAE /* MultipleScrollsViewController_iPad.xib */,
+			);
+			name = MultipleScrolsViewcontroller;
+			sourceTree = "<group>";
+		};
+		D96C11871670DE0E005FEE63 /* SingleScrollViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D9F3BB85166F522700F0DEAE /* SingleScrollViewController.h */,
+				D9F3BB86166F522700F0DEAE /* SingleScrollViewController.m */,
+				D9F3BB87166F522700F0DEAE /* SingleScrollViewController.xib */,
+				D96C117816709DE3005FEE63 /* SingleScrollViewController_iPad.xib */,
+			);
+			name = SingleScrollViewController;
+			sourceTree = "<group>";
+		};
 		D9F3BB42166F4E2F00F0DEAE = {
 			isa = PBXGroup;
 			children = (
@@ -158,14 +180,8 @@
 		D9F3BB7D166F4EA400F0DEAE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D9F3BB7E166F4EFC00F0DEAE /* MultipleScrollsViewController.h */,
-				D9F3BB7F166F4EFC00F0DEAE /* MultipleScrollsViewController.m */,
-				D9F3BB80166F4EFC00F0DEAE /* MultipleScrollsViewController.xib */,
-				D9F3BB83166F4F2300F0DEAE /* MultipleScrollsViewController_iPad.xib */,
-				D9F3BB85166F522700F0DEAE /* SingleScrollViewController.h */,
-				D9F3BB86166F522700F0DEAE /* SingleScrollViewController.m */,
-				D9F3BB87166F522700F0DEAE /* SingleScrollViewController.xib */,
-				D96C117816709DE3005FEE63 /* SingleScrollViewController_iPad.xib */,
+				D96C11871670DE0E005FEE63 /* SingleScrollViewController */,
+				D96C11861670DDFF005FEE63 /* MultipleScrolsViewcontroller */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";

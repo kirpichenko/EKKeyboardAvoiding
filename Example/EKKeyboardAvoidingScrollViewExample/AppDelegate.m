@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "MultipleScrollsViewController.h"
 #import "SingleScrollViewController.h"
+#import "UIViewController+LoadWithXib.h"
 
 @implementation AppDelegate
 
@@ -23,8 +24,8 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     
 //    MultipleScrollsViewController *controller = [[MultipleScrollsViewController new] autorelease];
-    SingleScrollViewController *controller = [[SingleScrollViewController new] autorelease];
-    [self.window setRootViewController:controller];
+    SingleScrollViewController *controller = [[SingleScrollViewController alloc] initWithUniversalNib];
+    [self.window setRootViewController:[controller autorelease]];
 
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

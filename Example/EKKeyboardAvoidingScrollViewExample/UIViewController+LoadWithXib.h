@@ -10,4 +10,7 @@
 
 @interface UIViewController (LoadWithXib)
 
+- (id) initWithUniversalNib;
+- (id) initWithUniversalNibName:(NSString *) nibNameOrNil;
+
 @end

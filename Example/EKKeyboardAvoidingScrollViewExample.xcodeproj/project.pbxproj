@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D96C117916709DE3005FEE63 /* SingleScrollViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D96C117816709DE3005FEE63 /* SingleScrollViewController_iPad.xib */; };
 		D9F3BB52166F4E2F00F0DEAE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F3BB51166F4E2F00F0DEAE /* UIKit.framework */; };
 		D9F3BB54166F4E2F00F0DEAE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F3BB53166F4E2F00F0DEAE /* Foundation.framework */; };
 		D9F3BB56166F4E2F00F0DEAE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F3BB55166F4E2F00F0DEAE /* CoreGraphics.framework */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D96C117816709DE3005FEE63 /* SingleScrollViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SingleScrollViewController_iPad.xib; sourceTree = "<group>"; };
 		D9F3BB4D166F4E2F00F0DEAE /* EKKeyboardAvoidingScrollViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EKKeyboardAvoidingScrollViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F3BB51166F4E2F00F0DEAE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D9F3BB53166F4E2F00F0DEAE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -163,6 +165,7 @@
 				D9F3BB85166F522700F0DEAE /* SingleScrollViewController.h */,
 				D9F3BB86166F522700F0DEAE /* SingleScrollViewController.m */,
 				D9F3BB87166F522700F0DEAE /* SingleScrollViewController.xib */,
+				D96C117816709DE3005FEE63 /* SingleScrollViewController_iPad.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				D9F3BB82166F4EFC00F0DEAE /* MultipleScrollsViewController.xib in Resources */,
 				D9F3BB84166F4F2300F0DEAE /* MultipleScrollsViewController_iPad.xib in Resources */,
 				D9F3BB89166F522700F0DEAE /* SingleScrollViewController.xib in Resources */,
+				D96C117916709DE3005FEE63 /* SingleScrollViewController_iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 #import "SingleScrollViewController.h"
+#import "UIViewController+LoadWithXib.h"
 #import <EKKeyboardAvoidingScrollView/EKKeyboardAvoidingScrollViewManger.h>
 
 @interface SingleScrollViewController () <UITextFieldDelegate>
@@ -17,10 +18,15 @@
 #pragma mark -
 #pragma mark life cycle
 
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [[EKKeyboardAvoidingScrollViewManger sharedInstance] updateRegisteredScrolls];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];    
-    [[EKKeyboardAvoidingScrollViewManger sharedInstance] registerScrollViewForKeyboardAvoiding:scrollView];
     [scrollView setContentSize:[scrollView frame].size];
     
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
@@ -28,14 +34,7 @@
     [[self view] addGestureRecognizer:[singleTap autorelease]];
 }
 
-- (void) viewDidUnload
-{
-    [super viewDidUnload];
-    [[EKKeyboardAvoidingScrollViewManger sharedInstance] unregisterScrollViewFromKeyboardAvoiding:scrollView];
-}
-
 - (void)dealloc {
-    [[EKKeyboardAvoidingScrollViewManger sharedInstance] unregisterScrollViewFromKeyboardAvoiding:scrollView];
     [scrollView release];
     [super dealloc];
 }
@@ -55,6 +54,15 @@
 - (void) viewTapped:(UITapGestureRecognizer *) singleTap
 {
     [[self view] endEditing:YES];
+}
+
+#pragma mark -
+#pragma mark actions
+
+- (IBAction)showNext
+{
+    SingleScrollViewController *controller = [[SingleScrollViewController alloc] initWithUniversalNib];
+    [[self navigationController] pushViewController:[controller autorelease] animated:YES];
 }
 
 @end

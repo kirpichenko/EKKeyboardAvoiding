@@ -1,6 +1,6 @@
 //
 //  UIScrollViewDisplayManger.m
-//  MyQuiz
+//  EKKeyboardAvoidingScrollView
 //
 //  Created by Evgeniy Kirpichenko on 11/22/12.
 //
@@ -9,7 +9,7 @@
 #import "EKKeyboardAvoidingScrollViewManger.h"
 
 @interface RegisteredScrollPack : NSObject
-@property (nonatomic, retain) UIScrollView *scrollView;
+@property (nonatomic, assign) UIScrollView *scrollView;
 @property (nonatomic, assign) UIEdgeInsets scrollDefaultInsets;
 @end
 
@@ -26,7 +26,7 @@
 static EKKeyboardAvoidingScrollViewManger *kUIScrollViewDisplayManager;
 
 @interface EKKeyboardAvoidingScrollViewManger ()
-@property (atomic, assign) CGRect keyboardFrame;
+@property (atomic, assign, readwrite) CGRect keyboardFrame;
 @end
 
 @implementation EKKeyboardAvoidingScrollViewManger
@@ -104,6 +104,8 @@ static EKKeyboardAvoidingScrollViewManger *kUIScrollViewDisplayManager;
     NSValue *keyboardFrameValue = [[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey];
     [self setKeyboardFrame:[keyboardFrameValue CGRectValue]];
     [self updateRegisteredScrolls];
+    
+    NSLog(@"scrolls count = %d",[registeredScrolls count]);
 }
 
 #pragma mark -

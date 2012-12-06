@@ -1,6 +1,6 @@
 //
 //  UIScrollViewDisplayManger.h
-//  MyQuiz
+//  EKKeyboardAvoidingScrollView
 //
 //  Created by Evgeniy Kirpichenko on 11/22/12.
 //
@@ -12,6 +12,8 @@
 {
     NSMutableArray *registeredScrolls;
 }
+
+@property (atomic, assign, readonly) CGRect keyboardFrame;
 
 + (id) sharedInstance;
 

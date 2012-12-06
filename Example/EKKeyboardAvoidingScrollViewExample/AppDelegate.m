@@ -27,9 +27,11 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     
+    SingleScrollViewController *controller = [[[SingleScrollViewController alloc] initWithUniversalNib] autorelease];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
     self.tabBarController = [[[UITabBarController alloc] init] autorelease];
     [self.tabBarController setViewControllers:@[
-        [[[SingleScrollViewController alloc] initWithUniversalNib] autorelease],
+        [navigationController autorelease],
         [[[MultipleScrollsViewController alloc] initWithUniversalNib] autorelease]
      ]];
     

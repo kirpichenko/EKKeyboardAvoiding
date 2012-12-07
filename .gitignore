@@ -4,3 +4,5 @@ DerivedData
 .DS*
 *.xcworkspace
 xcuserdata
+Pods
+Podfile.lock

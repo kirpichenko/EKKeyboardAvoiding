@@ -18,11 +18,11 @@
 #pragma mark -
 #pragma mark life cycle
 
-- (void) viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    [[EKKeyboardAvoidingScrollViewManger sharedInstance] updateRegisteredScrolls];
-}
+//- (void) viewDidAppear:(BOOL)animated
+//{
+//    [super viewDidAppear:animated];
+//    [[EKKeyboardAvoidingScrollViewManger sharedInstance] updateRegisteredScrolls];
+//}
 
 - (void)viewDidLoad
 {

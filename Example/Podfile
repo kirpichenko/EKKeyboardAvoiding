@@ -1,0 +1,5 @@
+platform :ios, '5.0'
+
+target :'EKKeyboardAvoidingScrollViewExample-unit_tests' do
+  pod 'Cedar'
+end

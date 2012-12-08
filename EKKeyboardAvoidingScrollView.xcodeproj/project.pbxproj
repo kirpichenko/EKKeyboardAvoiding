@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D921D05016721EF500AF97A7 /* CGRectTransform.h in Headers */ = {isa = PBXBuildFile; fileRef = D921D04F16721EF500AF97A7 /* CGRectTransform.h */; settings = {ATTRIBUTES = (); }; };
 		D9F3BB35166F4B8A00F0DEAE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F3BB34166F4B8A00F0DEAE /* Foundation.framework */; };
 		D9F3BB3A166F4B8A00F0DEAE /* EKKeyboardAvoidingScrollView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9F3BB39166F4B8A00F0DEAE /* EKKeyboardAvoidingScrollView.h */; };
 		D9F3BB3C166F4B8A00F0DEAE /* EKKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F3BB3B166F4B8A00F0DEAE /* EKKeyboardAvoidingScrollView.m */; };
@@ -31,7 +30,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D921D04F16721EF500AF97A7 /* CGRectTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRectTransform.h; sourceTree = "<group>"; };
 		D9F3BB31166F4B8A00F0DEAE /* libEKKeyboardAvoidingScrollView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEKKeyboardAvoidingScrollView.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F3BB34166F4B8A00F0DEAE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D9F3BB38166F4B8A00F0DEAE /* EKKeyboardAvoidingScrollView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EKKeyboardAvoidingScrollView-Prefix.pch"; sourceTree = "<group>"; };
@@ -53,14 +51,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D921D054167222D200AF97A7 /* CGRectTransform */ = {
-			isa = PBXGroup;
-			children = (
-				D921D04F16721EF500AF97A7 /* CGRectTransform.h */,
-			);
-			name = CGRectTransform;
-			sourceTree = "<group>";
-		};
 		D9F3BB26166F4B8A00F0DEAE = {
 			isa = PBXGroup;
 			children = (
@@ -94,7 +84,6 @@
 				D9F3BB39166F4B8A00F0DEAE /* EKKeyboardAvoidingScrollView.h */,
 				D9F3BB3B166F4B8A00F0DEAE /* EKKeyboardAvoidingScrollView.m */,
 				D9F3BB37166F4B8A00F0DEAE /* Supporting Files */,
-				D921D054167222D200AF97A7 /* CGRectTransform */,
 			);
 			path = EKKeyboardAvoidingScrollView;
 			sourceTree = "<group>";
@@ -115,7 +104,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9F3BB95166F6A9200F0DEAE /* EKKeyboardAvoidingScrollViewManger.h in Headers */,
-				D921D05016721EF500AF97A7 /* CGRectTransform.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

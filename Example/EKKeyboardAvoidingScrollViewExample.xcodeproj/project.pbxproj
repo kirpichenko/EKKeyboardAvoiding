@@ -7,17 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E50240F0F854F4FA3075C4E /* libPods-EKKeyboardAvoidingScrollViewExample-unit_tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A735D05168431AB87498E5 /* libPods-EKKeyboardAvoidingScrollViewExample-unit_tests.a */; };
-		D91626F0167216C200BC4B9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F3BB51166F4E2F00F0DEAE /* UIKit.framework */; };
-		D91626F1167216C200BC4B9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F3BB53166F4E2F00F0DEAE /* Foundation.framework */; };
-		D91626F2167216C200BC4B9B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F3BB55166F4E2F00F0DEAE /* CoreGraphics.framework */; };
-		D91626F8167216C200BC4B9B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D91626F6167216C200BC4B9B /* InfoPlist.strings */; };
-		D91626FA167216C200BC4B9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D91626F9167216C200BC4B9B /* main.m */; };
-		D9162700167216C200BC4B9B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D91626FF167216C200BC4B9B /* Default.png */; };
-		D9162702167216C200BC4B9B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9162701167216C200BC4B9B /* Default@2x.png */; };
-		D9162704167216C200BC4B9B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9162703167216C200BC4B9B /* Default-568h@2x.png */; };
-		D916272816721A5400BC4B9B /* EKKeyboardAvoidingScrollmanagerSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = D916272716721A5400BC4B9B /* EKKeyboardAvoidingScrollmanagerSpec.mm */; };
-		D916273316721B5600BC4B9B /* libEKKeyboardAvoidingScrollView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F3BB7A166F4E4C00F0DEAE /* libEKKeyboardAvoidingScrollView.a */; };
 		D96C117916709DE3005FEE63 /* SingleScrollViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D96C117816709DE3005FEE63 /* SingleScrollViewController_iPad.xib */; };
 		D9F3BB52166F4E2F00F0DEAE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F3BB51166F4E2F00F0DEAE /* UIKit.framework */; };
 		D9F3BB54166F4E2F00F0DEAE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F3BB53166F4E2F00F0DEAE /* Foundation.framework */; };
@@ -38,13 +27,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D916272D16721B1600BC4B9B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D9F3BB72166F4E4C00F0DEAE /* EKKeyboardAvoidingScrollView.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D9F3BB30166F4B8A00F0DEAE;
-			remoteInfo = EKKeyboardAvoidingScrollView;
-		};
 		D9F3BB79166F4E4C00F0DEAE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D9F3BB72166F4E4C00F0DEAE /* EKKeyboardAvoidingScrollView.xcodeproj */;
@@ -63,17 +45,6 @@
 
 /* Begin PBXFileReference section */
 		11A735D05168431AB87498E5 /* libPods-EKKeyboardAvoidingScrollViewExample-unit_tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EKKeyboardAvoidingScrollViewExample-unit_tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		476A269706304903A6DBD96F /* Pods-EKKeyboardAvoidingScrollViewExample-unit_tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EKKeyboardAvoidingScrollViewExample-unit_tests.xcconfig"; path = "Pods/Pods-EKKeyboardAvoidingScrollViewExample-unit_tests.xcconfig"; sourceTree = SOURCE_ROOT; };
-		D5D533A4F654436892EA2778 /* Pods-EKKeyboardAvoidingScrollViewExample.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EKKeyboardAvoidingScrollViewExample.xcconfig"; path = "Pods/Pods-EKKeyboardAvoidingScrollViewExample.xcconfig"; sourceTree = SOURCE_ROOT; };
-		D91626EE167216C200BC4B9B /* EKKeyboardAvoidingScrollViewExample-unit_tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EKKeyboardAvoidingScrollViewExample-unit_tests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D91626F5167216C200BC4B9B /* EKKeyboardAvoidingScrollViewExample-unit_tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EKKeyboardAvoidingScrollViewExample-unit_tests-Info.plist"; sourceTree = "<group>"; };
-		D91626F7167216C200BC4B9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D91626F9167216C200BC4B9B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D91626FB167216C200BC4B9B /* EKKeyboardAvoidingScrollViewExample-unit_tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EKKeyboardAvoidingScrollViewExample-unit_tests-Prefix.pch"; sourceTree = "<group>"; };
-		D91626FF167216C200BC4B9B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		D9162701167216C200BC4B9B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		D9162703167216C200BC4B9B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		D916272716721A5400BC4B9B /* EKKeyboardAvoidingScrollmanagerSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EKKeyboardAvoidingScrollmanagerSpec.mm; sourceTree = "<group>"; };
 		D96C117816709DE3005FEE63 /* SingleScrollViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SingleScrollViewController_iPad.xib; sourceTree = "<group>"; };
 		D9F3BB4D166F4E2F00F0DEAE /* EKKeyboardAvoidingScrollViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EKKeyboardAvoidingScrollViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F3BB51166F4E2F00F0DEAE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -102,18 +73,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D91626EB167216C200BC4B9B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D916273316721B5600BC4B9B /* libEKKeyboardAvoidingScrollView.a in Frameworks */,
-				D91626F0167216C200BC4B9B /* UIKit.framework in Frameworks */,
-				D91626F1167216C200BC4B9B /* Foundation.framework in Frameworks */,
-				D91626F2167216C200BC4B9B /* CoreGraphics.framework in Frameworks */,
-				5E50240F0F854F4FA3075C4E /* libPods-EKKeyboardAvoidingScrollViewExample-unit_tests.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D9F3BB4A166F4E2F00F0DEAE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -128,37 +87,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D91626F3167216C200BC4B9B /* EKKeyboardAvoidingScrollViewExample-unit_tests */ = {
-			isa = PBXGroup;
-			children = (
-				D916272616721A0F00BC4B9B /* Specs */,
-				D91626F4167216C200BC4B9B /* Supporting Files */,
-			);
-			path = "EKKeyboardAvoidingScrollViewExample-unit_tests";
-			sourceTree = "<group>";
-		};
-		D91626F4167216C200BC4B9B /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				D91626F5167216C200BC4B9B /* EKKeyboardAvoidingScrollViewExample-unit_tests-Info.plist */,
-				D91626F6167216C200BC4B9B /* InfoPlist.strings */,
-				D91626F9167216C200BC4B9B /* main.m */,
-				D91626FB167216C200BC4B9B /* EKKeyboardAvoidingScrollViewExample-unit_tests-Prefix.pch */,
-				D91626FF167216C200BC4B9B /* Default.png */,
-				D9162701167216C200BC4B9B /* Default@2x.png */,
-				D9162703167216C200BC4B9B /* Default-568h@2x.png */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		D916272616721A0F00BC4B9B /* Specs */ = {
-			isa = PBXGroup;
-			children = (
-				D916272716721A5400BC4B9B /* EKKeyboardAvoidingScrollmanagerSpec.mm */,
-			);
-			name = Specs;
-			sourceTree = "<group>";
-		};
 		D96C11861670DDFF005FEE63 /* MultipleScrolsViewcontroller */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,11 +114,8 @@
 			children = (
 				D9F3BB72166F4E4C00F0DEAE /* EKKeyboardAvoidingScrollView.xcodeproj */,
 				D9F3BB57166F4E2F00F0DEAE /* EKKeyboardAvoidingScrollViewExample */,
-				D91626F3167216C200BC4B9B /* EKKeyboardAvoidingScrollViewExample-unit_tests */,
 				D9F3BB50166F4E2F00F0DEAE /* Frameworks */,
 				D9F3BB4E166F4E2F00F0DEAE /* Products */,
-				D5D533A4F654436892EA2778 /* Pods-EKKeyboardAvoidingScrollViewExample.xcconfig */,
-				476A269706304903A6DBD96F /* Pods-EKKeyboardAvoidingScrollViewExample-unit_tests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -198,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				D9F3BB4D166F4E2F00F0DEAE /* EKKeyboardAvoidingScrollViewExample.app */,
-				D91626EE167216C200BC4B9B /* EKKeyboardAvoidingScrollViewExample-unit_tests.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -278,25 +202,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D91626ED167216C200BC4B9B /* EKKeyboardAvoidingScrollViewExample-unit_tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D9162705167216C200BC4B9B /* Build configuration list for PBXNativeTarget "EKKeyboardAvoidingScrollViewExample-unit_tests" */;
-			buildPhases = (
-				D91626EA167216C200BC4B9B /* Sources */,
-				D91626EB167216C200BC4B9B /* Frameworks */,
-				D91626EC167216C200BC4B9B /* Resources */,
-				0485AAC723364B44BF7A507C /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D916272E16721B1600BC4B9B /* PBXTargetDependency */,
-			);
-			name = "EKKeyboardAvoidingScrollViewExample-unit_tests";
-			productName = "EKKeyboardAvoidingScrollViewExample-unit_tests";
-			productReference = D91626EE167216C200BC4B9B /* EKKeyboardAvoidingScrollViewExample-unit_tests.app */;
-			productType = "com.apple.product-type.application";
-		};
 		D9F3BB4C166F4E2F00F0DEAE /* EKKeyboardAvoidingScrollViewExample */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D9F3BB6B166F4E2F00F0DEAE /* Build configuration list for PBXNativeTarget "EKKeyboardAvoidingScrollViewExample" */;
@@ -304,7 +209,6 @@
 				D9F3BB49166F4E2F00F0DEAE /* Sources */,
 				D9F3BB4A166F4E2F00F0DEAE /* Frameworks */,
 				D9F3BB4B166F4E2F00F0DEAE /* Resources */,
-				C4D0B2BB422245BDA7B213FC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -344,7 +248,6 @@
 			projectRoot = "";
 			targets = (
 				D9F3BB4C166F4E2F00F0DEAE /* EKKeyboardAvoidingScrollViewExample */,
-				D91626ED167216C200BC4B9B /* EKKeyboardAvoidingScrollViewExample-unit_tests */,
 			);
 		};
 /* End PBXProject section */
@@ -360,17 +263,6 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D91626EC167216C200BC4B9B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D91626F8167216C200BC4B9B /* InfoPlist.strings in Resources */,
-				D9162700167216C200BC4B9B /* Default.png in Resources */,
-				D9162702167216C200BC4B9B /* Default@2x.png in Resources */,
-				D9162704167216C200BC4B9B /* Default-568h@2x.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D9F3BB4B166F4E2F00F0DEAE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -388,47 +280,7 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		0485AAC723364B44BF7A507C /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-EKKeyboardAvoidingScrollViewExample-unit_tests-resources.sh\"\n";
-		};
-		C4D0B2BB422245BDA7B213FC /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-EKKeyboardAvoidingScrollViewExample-resources.sh\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		D91626EA167216C200BC4B9B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D91626FA167216C200BC4B9B /* main.m in Sources */,
-				D916272816721A5400BC4B9B /* EKKeyboardAvoidingScrollmanagerSpec.mm in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D9F3BB49166F4E2F00F0DEAE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -444,11 +296,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D916272E16721B1600BC4B9B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = EKKeyboardAvoidingScrollView;
-			targetProxy = D916272D16721B1600BC4B9B /* PBXContainerItemProxy */;
-		};
 		D9F3BB90166F692D00F0DEAE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = EKKeyboardAvoidingScrollView;
@@ -457,14 +304,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D91626F6167216C200BC4B9B /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D91626F7167216C200BC4B9B /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		D9F3BB5A166F4E2F00F0DEAE /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -476,32 +315,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		D9162706167216C200BC4B9B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 476A269706304903A6DBD96F /* Pods-EKKeyboardAvoidingScrollViewExample-unit_tests.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "EKKeyboardAvoidingScrollViewExample-unit_tests/EKKeyboardAvoidingScrollViewExample-unit_tests-Prefix.pch";
-				INFOPLIST_FILE = "EKKeyboardAvoidingScrollViewExample-unit_tests/EKKeyboardAvoidingScrollViewExample-unit_tests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		D9162707167216C200BC4B9B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 476A269706304903A6DBD96F /* Pods-EKKeyboardAvoidingScrollViewExample-unit_tests.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "EKKeyboardAvoidingScrollViewExample-unit_tests/EKKeyboardAvoidingScrollViewExample-unit_tests-Prefix.pch";
-				INFOPLIST_FILE = "EKKeyboardAvoidingScrollViewExample-unit_tests/EKKeyboardAvoidingScrollViewExample-unit_tests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
 		D9F3BB69166F4E2F00F0DEAE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -554,20 +367,20 @@
 		};
 		D9F3BB6C166F4E2F00F0DEAE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5D533A4F654436892EA2778 /* Pods-EKKeyboardAvoidingScrollViewExample.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EKKeyboardAvoidingScrollViewExample/EKKeyboardAvoidingScrollViewExample-Prefix.pch";
 				INFOPLIST_FILE = "EKKeyboardAvoidingScrollViewExample/EKKeyboardAvoidingScrollViewExample-Info.plist";
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		D9F3BB6D166F4E2F00F0DEAE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5D533A4F654436892EA2778 /* Pods-EKKeyboardAvoidingScrollViewExample.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EKKeyboardAvoidingScrollViewExample/EKKeyboardAvoidingScrollViewExample-Prefix.pch";
@@ -581,15 +394,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D9162705167216C200BC4B9B /* Build configuration list for PBXNativeTarget "EKKeyboardAvoidingScrollViewExample-unit_tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D9162706167216C200BC4B9B /* Debug */,
-				D9162707167216C200BC4B9B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		D9F3BB47166F4E2F00F0DEAE /* Build configuration list for PBXProject "EKKeyboardAvoidingScrollViewExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

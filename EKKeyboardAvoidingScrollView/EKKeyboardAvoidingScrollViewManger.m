@@ -7,9 +7,7 @@
 //
 
 #import "EKKeyboardAvoidingScrollViewManger.h"
-#import "CGRectTransform.h"
-
-#import <objc/objc-runtime.h>
+#import <objc/runtime.h>
 
 @interface RegisteredScrollPack : NSObject
 @property (nonatomic, assign) UIScrollView *scrollView;
@@ -19,9 +17,7 @@
 @implementation RegisteredScrollPack
 @end
 
-
-//NSString *const kFrameKeyPath = @"frame";
-
+static NSString *const kMoveToWindowNotification = @"MoveToWindowNotification";
 static EKKeyboardAvoidingScrollViewManger *kUIScrollViewDisplayManager;
 
 @interface EKKeyboardAvoidingScrollViewManger ()
@@ -35,6 +31,7 @@ static EKKeyboardAvoidingScrollViewManger *kUIScrollViewDisplayManager;
     @synchronized (self) {
         if (kUIScrollViewDisplayManager == nil) {
             kUIScrollViewDisplayManager = [[self alloc] init];
+            [kUIScrollViewDisplayManager installDidMoveToWindowNotifications];
         }
     }
     return kUIScrollViewDisplayManager;
@@ -48,12 +45,17 @@ static EKKeyboardAvoidingScrollViewManger *kUIScrollViewDisplayManager;
                                                selector:@selector(keyboardFrameDidChange:)
                                                      name:UIKeyboardDidChangeFrameNotification
                                                    object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(subviewAdded:)
+                                                     name:kMoveToWindowNotification
+                                                   object:nil];
     }
     return self;
 }
 
 - (void) dealloc
 {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     [registeredScrolls release];
     [super dealloc];
 }
@@ -69,11 +71,6 @@ static EKKeyboardAvoidingScrollViewManger *kUIScrollViewDisplayManager;
            scrollPack = [self prepareScrollPackWithScrollView:scrollView];
            [registeredScrolls addObject:scrollPack];
            [self updateRegisteredScroll:scrollPack];
-           
-//           [scrollView addObserver:self
-//                        forKeyPath:kFrameKeyPath
-//                           options:NSKeyValueObservingOptionNew
-//                           context:nil];
        }
     }
 }
@@ -86,7 +83,6 @@ static EKKeyboardAvoidingScrollViewManger *kUIScrollViewDisplayManager;
             if (scrollPack != nil) {
                 [scrollView window];
                 [scrollView setContentInset:[scrollPack scrollDefaultInsets]];
-//                [scrollView removeObserver:self forKeyPath:kFrameKeyPath context:nil];
                 [registeredScrolls removeObject:scrollPack];
             }
         }
@@ -110,8 +106,6 @@ static EKKeyboardAvoidingScrollViewManger *kUIScrollViewDisplayManager;
     NSValue *keyboardFrameValue = [[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey];
     [self setKeyboardFrame:[keyboardFrameValue CGRectValue]];
     [self updateRegisteredScrolls];
-    
-    NSLog(@"keyboardframe = %@",NSStringFromCGRect([self keyboardFrame]));
 }
 
 #pragma mark -
@@ -153,29 +147,11 @@ static EKKeyboardAvoidingScrollViewManger *kUIScrollViewDisplayManager;
 - (UIEdgeInsets) scrollViewContentInsets:(RegisteredScrollPack *) scrollPack
 {
     UIScrollView *scrollView = [scrollPack scrollView];
-    
-    CGRect scrollViewFrame = [[scrollView superview] convertRect:[scrollView frame] toView:nil];
-    NSLog(@"wind scrollviewframe = %@",NSStringFromCGRect(scrollViewFrame));
-                           //                                                                  fromView:nil];
-    
-    CGRect transformedScrollFrame = [self transformCGRectToDefaultCoordinates:scrollViewFrame];
-    CGRect transformedKeyboardFrame = [self transformCGRectToDefaultCoordinates:[self keyboardFrame]];
-
-    
-    
-    
-    UIEdgeInsets inset = [self contentInsetWithDefaultInset:[scrollPack scrollDefaultInsets]
-                                                  viewFrame:transformedScrollFrame
-                                              keyboardFrame:transformedKeyboardFrame];
-    NSLog(@"inset = %@",NSStringFromUIEdgeInsets(inset));
-    NSLog(@"transf keyb = %@",NSStringFromCGRect(transformedKeyboardFrame));
-    NSLog(@"transformedScrollFrame = %@",NSStringFromCGRect(transformedScrollFrame));
-    
+    CGRect transformedKeyboardFrame = [[scrollView superview] convertRect:[self keyboardFrame]
+                                                                 fromView:nil];
     return [self contentInsetWithDefaultInset:[scrollPack scrollDefaultInsets]
-                                    viewFrame:transformedScrollFrame
+                                    viewFrame:[scrollView frame]
                                 keyboardFrame:transformedKeyboardFrame];
-    
-//    return insets;
 }
 
 #pragma mark -
@@ -201,68 +177,35 @@ static EKKeyboardAvoidingScrollViewManger *kUIScrollViewDisplayManager;
     return contentInset;
 }
 
-- (CGRect) transformCGRectToDefaultCoordinates:(CGRect) rect
-{
-    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
-    CGSize windowSize = [[[[UIApplication sharedApplication] windows] objectAtIndex:0] frame].size;
-    return [self transformCGRect:rect inViewWithSize:windowSize withOrientation:orientation];
-}
+#pragma mark -
+#pragma mark scroll adding to window observing
 
-- (CGRect) transformCGRect:(CGRect) rect
-            inViewWithSize:(CGSize) size
-           withOrientation:(UIInterfaceOrientation) orientation
+- (void) subviewAdded:(NSNotification *) notification
 {
-    switch (orientation) {
-        case UIInterfaceOrientationLandscapeRight:
-            return CGRectTransformed(rect, size, CGRectTransformRotateLeft);
-        case UIInterfaceOrientationLandscapeLeft:
-            return CGRectTransformed(rect, size, CGRectTransformRotateRight);
-        case UIInterfaceOrientationPortraitUpsideDown:
-            return CGRectTransformed(rect, size, CGRectTransformExpand);
-        default:
-            return rect;
+    if ([[notification object] isKindOfClass:[UIScrollView class]]) {
+        RegisteredScrollPack *scroll = [self registeredScrollForView:[notification object]];
+        if (scroll) {
+            [self updateRegisteredScroll:scroll];
+        }
     }
 }
 
 #pragma mark -
-#pragma mark scroll frame changes observing
+#pragma mark install move ot window observing
 
-- (void) observeValueForKeyPath:(NSString *)keyPath
-                       ofObject:(id)object
-                         change:(NSDictionary *)change
-                        context:(void *)context
+- (void) installDidMoveToWindowNotifications
 {
-    NSLog(@"data = %@",change);
-    NSLog(@"scroll frame = %@",NSStringFromCGRect([object frame]));
-    RegisteredScrollPack *scrollPack = [self registeredScrollForView:object];
-    [self updateRegisteredScroll:scrollPack];
-}
-
-
-#pragma mark -
-#pragma mark window observing
-
-- (void) registerForWindowObserving:(void (^)(id _self, UIView* subview)) listener
-{
-    if (listener == NULL ) {
-        NSLog(@"listener cannot be NULL.");
-        return;
-    }
+    Method didMoveMethod = class_getInstanceMethod([UIScrollView class], @selector(didMoveToWindow));
+    IMP originalImplementation = method_getImplementation(didMoveMethod);
     
-    Method setWindowMethod = class_getInstanceMethod([UIView class], @selector(setWindow:));
-    IMP originalImplementation = method_getImplementation(setWindowMethod);
-    
-    void (^block)(id, UIWindow*) = ^(id _self, UIWindow* window) {
-        originalImplementation(_self, @selector(setWindow:), window);
-        listener(_self, window);
+    void (^block)(id) = ^(id _self) {
+        originalImplementation(_self, @selector(didMoveToWindow));
+        [[NSNotificationCenter defaultCenter] postNotificationName:kMoveToWindowNotification
+                                                            object:_self];
     };
     
     IMP newImplementation = imp_implementationWithBlock((void*)block);
-    method_setImplementation(setWindowMethod, newImplementation);
-}
-
-- (void) unregisterForWindowObserving {
-    
+    method_setImplementation(didMoveMethod, newImplementation);
 }
 
 @end

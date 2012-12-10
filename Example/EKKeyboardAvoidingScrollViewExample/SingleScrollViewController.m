@@ -54,7 +54,7 @@
 #pragma mark -
 #pragma mark actions
 
-- (IBAction)showNext
+- (IBAction) showNext
 {
     SingleScrollViewController *controller = [[SingleScrollViewController alloc] initWithUniversalNib];
     [[self navigationController] pushViewController:[controller autorelease] animated:YES];

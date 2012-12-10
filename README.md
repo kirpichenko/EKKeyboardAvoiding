@@ -21,3 +21,5 @@ You can also use `EKKeyboardAvoidingScrollView` class instead of `UIScrollView` 
 ##Example
 ![screenshot#1](https://github.com/kirpichenko/EKKeyboardAvoidingScrollView/raw/develop/README/screenshot_1.PNG)![screenshot#2](https://github.com/kirpichenko/EKKeyboardAvoidingScrollView/raw/develop/README/screenshot_2.PNG)
 
+##Notes
+Works on iPhone/iPad iOS 5.0+

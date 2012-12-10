@@ -133,6 +133,11 @@ static EKKeyboardAvoidingScrollViewManger *kUIScrollViewDisplayManager;
 
 - (void) updateRegisteredScroll:(RegisteredScrollPack *) scrollPack
 {
+    UIScrollView *scrollView = [scrollPack scrollView];
+    if ([scrollView window] == nil) {
+        return;
+    }
+    
     [UIView animateWithDuration:0.3
                      animations:^{
                          UIEdgeInsets insets = [self scrollViewContentInsets:scrollPack];

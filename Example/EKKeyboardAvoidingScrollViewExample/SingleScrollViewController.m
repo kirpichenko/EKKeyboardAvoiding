@@ -25,6 +25,7 @@
     
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                 action:@selector(viewTapped:)];
+    [singleTap setCancelsTouchesInView:NO];
     [[self view] addGestureRecognizer:[singleTap autorelease]];
 }
 
@@ -57,6 +58,14 @@
 {
     SingleScrollViewController *controller = [[SingleScrollViewController alloc] initWithUniversalNib];
     [[self navigationController] pushViewController:[controller autorelease] animated:YES];
+}
+
+#pragma mark -
+#pragma mark rotation
+
+- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    return YES;
 }
 
 @end

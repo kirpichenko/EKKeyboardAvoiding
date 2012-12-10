@@ -94,4 +94,13 @@
     [[self view] endEditing:YES];
 }
 
+#pragma mark -
+#pragma mark rotation
+
+- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    return YES;
+}
+
+
 @end

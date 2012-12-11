@@ -7,7 +7,7 @@
 //
 
 #import "MultipleScrollsViewController.h"
-#import <EKKeyboardAvoidingScrollView/EKKeyboardAvoidingScrollViewManger.h>
+#import <EKKeyboardAvoidingScrollView/EKKeyboardAvoidingScrollViewManager.h>
 
 @interface MultipleScrollsViewController () <UITextFieldDelegate>
 
@@ -24,9 +24,9 @@
     
     [scrollView setContentSize:[scrollView frame].size];
     
-    [[EKKeyboardAvoidingScrollViewManger sharedInstance] registerScrollViewForKeyboardAvoiding:textView];
-    [[EKKeyboardAvoidingScrollViewManger sharedInstance] registerScrollViewForKeyboardAvoiding:tableView];
-    [[EKKeyboardAvoidingScrollViewManger sharedInstance] registerScrollViewForKeyboardAvoiding:scrollView];
+    [[EKKeyboardAvoidingScrollViewManager sharedInstance] registerScrollViewForKeyboardAvoiding:textView];
+    [[EKKeyboardAvoidingScrollViewManager sharedInstance] registerScrollViewForKeyboardAvoiding:tableView];
+    [[EKKeyboardAvoidingScrollViewManager sharedInstance] registerScrollViewForKeyboardAvoiding:scrollView];
     
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                 action:@selector(viewTapped:)];
@@ -44,9 +44,9 @@
 
 - (void) dealloc
 {
-    [[EKKeyboardAvoidingScrollViewManger sharedInstance] unregisterScrollViewFromKeyboardAvoiding:textView];
-    [[EKKeyboardAvoidingScrollViewManger sharedInstance] unregisterScrollViewFromKeyboardAvoiding:tableView];
-    [[EKKeyboardAvoidingScrollViewManger sharedInstance] unregisterScrollViewFromKeyboardAvoiding:scrollView];
+    [[EKKeyboardAvoidingScrollViewManager sharedInstance] unregisterScrollViewFromKeyboardAvoiding:textView];
+    [[EKKeyboardAvoidingScrollViewManager sharedInstance] unregisterScrollViewFromKeyboardAvoiding:tableView];
+    [[EKKeyboardAvoidingScrollViewManager sharedInstance] unregisterScrollViewFromKeyboardAvoiding:scrollView];
     
     [textView release];
     [tableView release];

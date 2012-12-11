@@ -6,7 +6,7 @@
 //
 //
 
-#import "EKKeyboardAvoidingScrollViewManger.h"
+#import "EKKeyboardAvoidingScrollViewManager.h"
 #import <objc/runtime.h>
 
 @interface RegisteredScrollPack : NSObject
@@ -18,13 +18,13 @@
 @end
 
 static NSString *const kMoveToWindowNotification = @"MoveToWindowNotification";
-static EKKeyboardAvoidingScrollViewManger *kUIScrollViewDisplayManager;
+static EKKeyboardAvoidingScrollViewManager *kUIScrollViewDisplayManager;
 
-@interface EKKeyboardAvoidingScrollViewManger ()
+@interface EKKeyboardAvoidingScrollViewManager ()
 @property (atomic, assign, readwrite) CGRect keyboardFrame;
 @end
 
-@implementation EKKeyboardAvoidingScrollViewManger
+@implementation EKKeyboardAvoidingScrollViewManager
 
 + (id) sharedInstance
 {

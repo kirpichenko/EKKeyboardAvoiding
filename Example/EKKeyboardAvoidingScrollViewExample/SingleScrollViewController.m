@@ -8,7 +8,7 @@
 
 #import "SingleScrollViewController.h"
 #import "UIViewController+LoadWithXib.h"
-#import <EKKeyboardAvoidingScrollView/EKKeyboardAvoidingScrollViewManger.h>
+#import <EKKeyboardAvoidingScrollView/EKKeyboardAvoidingScrollViewManager.h>
 
 @interface SingleScrollViewController () <UITextFieldDelegate>
 @end

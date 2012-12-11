@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EKKeyboardAvoidingScrollViewManger : NSObject
+@interface EKKeyboardAvoidingScrollViewManager : NSObject
 {
     NSMutableArray *registeredScrolls;
 }

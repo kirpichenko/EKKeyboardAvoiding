@@ -1,5 +1,5 @@
 //
-//  UIScrollViewDisplayManger.h
+//  UIScrollViewDisplayManager.h
 //  EKKeyboardAvoidingScrollView
 //
 //  Created by Evgeniy Kirpichenko on 11/22/12.

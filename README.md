@@ -1,6 +1,6 @@
 ## EKKeyboardAvoidingScrollView
 
-It's an universal solution that allows automatically change content inset of UIScrollView and it's subclasses. When keyboard is presented you will be able to see all content of your scroll views.
+It's an universal solution for keyboard avoiding that allows automatically change content inset of UIScrollView and it's subclasses. When keyboard is presented you will be able to see all content of your scroll views.
 
 
 

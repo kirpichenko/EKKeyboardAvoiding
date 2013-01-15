@@ -2,7 +2,11 @@
 
 It's an universal solution for keyboard avoiding that allows automatically change content inset of UIScrollView and it's subclasses. When keyboard is presented you will be able to see all content of your scroll views.
 
+## How to install
+If you use `CocoaPods` in your project just add it into your `Podfile`
+<pre><code>pod 'EKKeyboardAvoidingScrollView'</code></pre>
 
+If you don't use `CocoaPods` you can compile static lib and add it to your project
 
 ## Usage
 To enable keyboard avoiding for `UIScrollView` subclasses use `EKKeyboardAvoidingScrollViewManager` class and `registerScrollViewForKeyboardAvoiding:` method to register your scroll views. 

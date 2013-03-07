@@ -143,7 +143,39 @@ static EKKeyboardAvoidingScrollViewManager *kUIScrollViewDisplayManager;
                          UIEdgeInsets insets = [self scrollViewContentInsets:scrollPack];
                          [[scrollPack scrollView] setContentInset:insets];
                          [[scrollPack scrollView] setScrollIndicatorInsets:insets];
+                     }
+                     completion:^(BOOL finished) {
+                         [self scrollToFirstResponder:scrollView];
                      }];
+}
+
+- (void) scrollToFirstResponder:(UIScrollView *)scrollView
+{
+    UIView *firstResponder = [self findFirstResponderInView:scrollView];
+    if (firstResponder != nil)
+    {
+        CGRect firstResponderFrame = [firstResponder convertRect:[firstResponder bounds]
+                                                          toView:scrollView];
+        [scrollView scrollRectToVisible:firstResponderFrame animated:YES];
+    }
+}
+
+- (UIView *) findFirstResponderInView:(UIView *) view
+{
+    for (UIView *subview in [view subviews])
+    {
+        if ([subview isFirstResponder])
+        {
+            return subview;
+        }
+        
+        UIView *firstResponderInSubview = [self findFirstResponderInView:subview];
+        if ([firstResponderInSubview isFirstResponder])
+        {
+            return firstResponderInSubview;
+        }
+    }
+    return nil;
 }
 
 #pragma mark -

@@ -6,7 +6,7 @@ It's an universal solution for keyboard avoiding that allows automatically chang
 If you use `CocoaPods` in your project just add it into your `Podfile`
 <pre><code>pod 'EKKeyboardAvoidingScrollView'</code></pre>
 
-If you don't use `CocoaPods` you can compile static lib and add it to your project
+If you don't use `CocoaPods` you can compile static lib and add it to your project or just add `EKKeyboardAvoidingScrollView` and `EKKeyboardAvoidingScrollViewManager` files into your project
 
 ## Usage
 To enable keyboard avoiding for `UIScrollView` subclasses use `EKKeyboardAvoidingScrollViewManager` class and `registerScrollViewForKeyboardAvoiding:` method to register your scroll views. 

@@ -10,9 +10,9 @@
 		D9F3BB35166F4B8A00F0DEAE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F3BB34166F4B8A00F0DEAE /* Foundation.framework */; };
 		D9F3BB3A166F4B8A00F0DEAE /* EKKeyboardAvoidingScrollView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9F3BB39166F4B8A00F0DEAE /* EKKeyboardAvoidingScrollView.h */; };
 		D9F3BB3C166F4B8A00F0DEAE /* EKKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F3BB3B166F4B8A00F0DEAE /* EKKeyboardAvoidingScrollView.m */; };
-		D9F3BB8C166F63D400F0DEAE /* EKKeyboardAvoidingScrollViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F3BB8B166F63D400F0DEAE /* EKKeyboardAvoidingScrollViewManager.m */; };
-		D9F3BB95166F6A9200F0DEAE /* EKKeyboardAvoidingScrollViewManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D9F3BB8A166F63D400F0DEAE /* EKKeyboardAvoidingScrollViewManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D9F3BB98166F6DA500F0DEAE /* EKKeyboardAvoidingScrollViewManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9F3BB8A166F63D400F0DEAE /* EKKeyboardAvoidingScrollViewManager.h */; };
+		D9F3BB8C166F63D400F0DEAE /* EKKeyboardAvoidingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F3BB8B166F63D400F0DEAE /* EKKeyboardAvoidingManager.m */; };
+		D9F3BB95166F6A9200F0DEAE /* EKKeyboardAvoidingManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D9F3BB8A166F63D400F0DEAE /* EKKeyboardAvoidingManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D9F3BB98166F6DA500F0DEAE /* EKKeyboardAvoidingManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9F3BB8A166F63D400F0DEAE /* EKKeyboardAvoidingManager.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -22,7 +22,7 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
-				D9F3BB98166F6DA500F0DEAE /* EKKeyboardAvoidingScrollViewManager.h in CopyFiles */,
+				D9F3BB98166F6DA500F0DEAE /* EKKeyboardAvoidingManager.h in CopyFiles */,
 				D9F3BB3A166F4B8A00F0DEAE /* EKKeyboardAvoidingScrollView.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -30,13 +30,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D9F3BB31166F4B8A00F0DEAE /* libEKKeyboardAvoidingScrollView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEKKeyboardAvoidingScrollView.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9F3BB31166F4B8A00F0DEAE /* libEKKeyboardAvoiding.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEKKeyboardAvoiding.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F3BB34166F4B8A00F0DEAE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D9F3BB38166F4B8A00F0DEAE /* EKKeyboardAvoidingScrollView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EKKeyboardAvoidingScrollView-Prefix.pch"; sourceTree = "<group>"; };
 		D9F3BB39166F4B8A00F0DEAE /* EKKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EKKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
 		D9F3BB3B166F4B8A00F0DEAE /* EKKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EKKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
-		D9F3BB8A166F63D400F0DEAE /* EKKeyboardAvoidingScrollViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKKeyboardAvoidingScrollViewManager.h; sourceTree = "<group>"; };
-		D9F3BB8B166F63D400F0DEAE /* EKKeyboardAvoidingScrollViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKKeyboardAvoidingScrollViewManager.m; sourceTree = "<group>"; };
+		D9F3BB8A166F63D400F0DEAE /* EKKeyboardAvoidingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKKeyboardAvoidingManager.h; sourceTree = "<group>"; };
+		D9F3BB8B166F63D400F0DEAE /* EKKeyboardAvoidingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKKeyboardAvoidingManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +63,7 @@
 		D9F3BB32166F4B8A00F0DEAE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D9F3BB31166F4B8A00F0DEAE /* libEKKeyboardAvoidingScrollView.a */,
+				D9F3BB31166F4B8A00F0DEAE /* libEKKeyboardAvoiding.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -79,8 +79,8 @@
 		D9F3BB36166F4B8A00F0DEAE /* EKKeyboardAvoidingScrollView */ = {
 			isa = PBXGroup;
 			children = (
-				D9F3BB8A166F63D400F0DEAE /* EKKeyboardAvoidingScrollViewManager.h */,
-				D9F3BB8B166F63D400F0DEAE /* EKKeyboardAvoidingScrollViewManager.m */,
+				D9F3BB8A166F63D400F0DEAE /* EKKeyboardAvoidingManager.h */,
+				D9F3BB8B166F63D400F0DEAE /* EKKeyboardAvoidingManager.m */,
 				D9F3BB39166F4B8A00F0DEAE /* EKKeyboardAvoidingScrollView.h */,
 				D9F3BB3B166F4B8A00F0DEAE /* EKKeyboardAvoidingScrollView.m */,
 				D9F3BB37166F4B8A00F0DEAE /* Supporting Files */,
@@ -103,7 +103,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9F3BB95166F6A9200F0DEAE /* EKKeyboardAvoidingScrollViewManager.h in Headers */,
+				D9F3BB95166F6A9200F0DEAE /* EKKeyboardAvoidingManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,7 +125,7 @@
 			);
 			name = EKKeyboardAvoidingScrollView;
 			productName = EKKeyboardAvoidingScrollView;
-			productReference = D9F3BB31166F4B8A00F0DEAE /* libEKKeyboardAvoidingScrollView.a */;
+			productReference = D9F3BB31166F4B8A00F0DEAE /* libEKKeyboardAvoiding.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -160,7 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9F3BB3C166F4B8A00F0DEAE /* EKKeyboardAvoidingScrollView.m in Sources */,
-				D9F3BB8C166F63D400F0DEAE /* EKKeyboardAvoidingScrollViewManager.m in Sources */,
+				D9F3BB8C166F63D400F0DEAE /* EKKeyboardAvoidingManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,7 +219,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EKKeyboardAvoidingScrollView/EKKeyboardAvoidingScrollView-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = EKKeyboardAvoiding;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -231,7 +231,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EKKeyboardAvoidingScrollView/EKKeyboardAvoidingScrollView-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = EKKeyboardAvoiding;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

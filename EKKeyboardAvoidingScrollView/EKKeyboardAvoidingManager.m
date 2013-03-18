@@ -6,25 +6,32 @@
 //
 //
 
-#import "EKKeyboardAvoidingScrollViewManager.h"
+#import "EKKeyboardAvoidingManager.h"
 #import <objc/runtime.h>
 
 @interface RegisteredScrollPack : NSObject
-@property (nonatomic, assign) UIScrollView *scrollView;
+@property (nonatomic, retain) UIScrollView *scrollView;
 @property (nonatomic, assign) UIEdgeInsets scrollDefaultInsets;
 @end
 
 @implementation RegisteredScrollPack
+
+- (void)dealloc
+{
+    [self setScrollView:nil];
+    [super dealloc];
+}
+
 @end
 
 static NSString *const kMoveToWindowNotification = @"MoveToWindowNotification";
-static EKKeyboardAvoidingScrollViewManager *kUIScrollViewDisplayManager;
+static EKKeyboardAvoidingManager *kUIScrollViewDisplayManager;
 
-@interface EKKeyboardAvoidingScrollViewManager ()
+@interface EKKeyboardAvoidingManager ()
 @property (atomic, assign, readwrite) CGRect keyboardFrame;
 @end
 
-@implementation EKKeyboardAvoidingScrollViewManager
+@implementation EKKeyboardAvoidingManager
 
 + (id) sharedInstance
 {
@@ -63,7 +70,7 @@ static EKKeyboardAvoidingScrollViewManager *kUIScrollViewDisplayManager;
 #pragma mark -
 #pragma mark public methods
 
-- (void) registerScrollViewForKeyboardAvoiding:(UIScrollView *) scrollView
+- (void)registerForKeyboardAvoiding:(UIScrollView *)scrollView
 {
    @synchronized(self) {
        RegisteredScrollPack *scrollPack = [self registeredScrollForView:scrollView];
@@ -75,7 +82,7 @@ static EKKeyboardAvoidingScrollViewManager *kUIScrollViewDisplayManager;
     }
 }
 
-- (void) unregisterScrollViewFromKeyboardAvoiding:(UIScrollView *) scrollView
+- (void)unregisterFromKeyboardAvoiding:(UIScrollView *)scrollView
 {
     @synchronized(self) {
         if (scrollView != nil) {

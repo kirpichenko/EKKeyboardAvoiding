@@ -7,7 +7,7 @@
 //
 
 #import "EKKeyboardAvoidingScrollView.h"
-#import "EKKeyboardAvoidingScrollViewManager.h"
+#import "EKKeyboardAvoidingManager.h"
 
 @implementation EKKeyboardAvoidingScrollView
 
@@ -17,7 +17,7 @@
 - (id) initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super initWithCoder:aDecoder]) {
-        [[EKKeyboardAvoidingScrollViewManager sharedInstance] registerScrollViewForKeyboardAvoiding:self];
+        [[EKKeyboardAvoidingManager sharedInstance] registerForKeyboardAvoiding:self];
     }
     return self;
 }
@@ -25,7 +25,7 @@
 - (id) initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        [[EKKeyboardAvoidingScrollViewManager sharedInstance] registerScrollViewForKeyboardAvoiding:self];
+        [[EKKeyboardAvoidingManager sharedInstance] registerForKeyboardAvoiding:self];
     }
     return self;
 }
@@ -37,7 +37,7 @@
 
 - (void) dealloc
 {
-    [[EKKeyboardAvoidingScrollViewManager sharedInstance] unregisterScrollViewFromKeyboardAvoiding:self];
+    [[EKKeyboardAvoidingManager sharedInstance] unregisterFromKeyboardAvoiding:self];
     [super dealloc];
 }
 

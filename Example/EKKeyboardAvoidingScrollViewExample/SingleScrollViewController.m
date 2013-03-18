@@ -7,6 +7,8 @@
 //
 
 #import "SingleScrollViewController.h"
+#import "RegisteringViewController.h"
+
 #import "UIViewController+LoadWithXib.h"
 #import <EKKeyboardAvoidingScrollView/EKKeyboardAvoidingScrollViewManager.h>
 
@@ -59,6 +61,13 @@
 {
     SingleScrollViewController *controller = [[SingleScrollViewController alloc] initWithUniversalNib];
     [[self navigationController] pushViewController:[controller autorelease] animated:YES];
+}
+
+- (IBAction)showCustom
+{
+    RegisteringViewController *controller = [[RegisteringViewController alloc] init];
+    [[self navigationController] pushViewController:controller animated:YES];
+    [controller release];
 }
 
 #pragma mark -

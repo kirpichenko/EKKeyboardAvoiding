@@ -7,10 +7,9 @@
 //
 
 #import "MultipleScrollsViewController.h"
-#import <EKKeyboardAvoidingScrollView/EKKeyboardAvoidingManager.h>
+#import <EKKeyboardAvoiding/EKKeyboardAvoiding.h>
 
 @interface MultipleScrollsViewController () <UITextFieldDelegate>
-
 @end
 
 @implementation MultipleScrollsViewController
@@ -18,22 +17,22 @@
 #pragma mark -
 #pragma mark life cycle
 
-- (void) viewDidLoad
+- (void)viewDidLoad
 {
     [super viewDidLoad];
     
     [scrollView setContentSize:[scrollView frame].size];
     
-    [[EKKeyboardAvoidingManager sharedInstance] registerForKeyboardAvoiding:textView];
-    [[EKKeyboardAvoidingManager sharedInstance] registerForKeyboardAvoiding:tableView];
-    [[EKKeyboardAvoidingManager sharedInstance] registerForKeyboardAvoiding:scrollView];
+    [[EKKeyboardAvoidingManager sharedInstance] registerScrollView:textView];
+    [[EKKeyboardAvoidingManager sharedInstance] registerScrollView:tableView];
+    [[EKKeyboardAvoidingManager sharedInstance] registerScrollView:scrollView];
     
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                                                action:@selector(viewTapped:)];
+                                                                                action:@selector(viewWasTapped:)];
     [[self view] addGestureRecognizer:[singleTap autorelease]];
 }
 
-- (void) viewDidUnload
+- (void)viewDidUnload
 {
     [textView release]; textView = nil;
     [tableView release]; tableView = nil;
@@ -42,11 +41,11 @@
     [super viewDidUnload];
 }
 
-- (void) dealloc
+- (void)dealloc
 {
-    [[EKKeyboardAvoidingManager sharedInstance] unregisterFromKeyboardAvoiding:textView];
-    [[EKKeyboardAvoidingManager sharedInstance] unregisterFromKeyboardAvoiding:tableView];
-    [[EKKeyboardAvoidingManager sharedInstance] unregisterFromKeyboardAvoiding:scrollView];
+    [[EKKeyboardAvoidingManager sharedInstance] unregisterScrollView:textView];
+    [[EKKeyboardAvoidingManager sharedInstance] unregisterScrollView:tableView];
+    [[EKKeyboardAvoidingManager sharedInstance] unregisterScrollView:scrollView];
     
     [textView release];
     [tableView release];
@@ -89,7 +88,7 @@
 #pragma mark -
 #pragma mark touches
 
-- (void) viewTapped:(UITapGestureRecognizer *) singleTap
+- (void)viewWasTapped:(UITapGestureRecognizer *)singleTap
 {
     [[self view] endEditing:YES];
 }

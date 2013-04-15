@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 Evgeniy Kirpichenko. All rights reserved.
 //
 
-#import "EKKeyboardAvoidingScrollView.h"
+#import "EKKeyboardAvoidingView.h"
 #import "EKKeyboardAvoidingManager.h"
 
-@implementation EKKeyboardAvoidingScrollView
+@implementation EKKeyboardAvoidingView
 
 #pragma mark -
 #pragma mark life cycle
@@ -17,7 +17,7 @@
 - (id) initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super initWithCoder:aDecoder]) {
-        [[EKKeyboardAvoidingManager sharedInstance] registerForKeyboardAvoiding:self];
+        [[EKKeyboardAvoidingManager sharedInstance] registerScrollView:self];
     }
     return self;
 }
@@ -25,7 +25,7 @@
 - (id) initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        [[EKKeyboardAvoidingManager sharedInstance] registerForKeyboardAvoiding:self];
+        [[EKKeyboardAvoidingManager sharedInstance] registerScrollView:self];
     }
     return self;
 }
@@ -35,10 +35,12 @@
     return [self initWithFrame:CGRectZero];
 }
 
-- (void) dealloc
+#pragma mark -
+#pragma mark public methods
+
+- (void)unregisterFromAvoiding
 {
-    [[EKKeyboardAvoidingManager sharedInstance] unregisterFromKeyboardAvoiding:self];
-    [super dealloc];
+    [[EKKeyboardAvoidingManager sharedInstance] unregisterScrollView:self];
 }
 
 @end

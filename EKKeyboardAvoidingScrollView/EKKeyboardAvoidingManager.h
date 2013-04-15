@@ -17,9 +17,9 @@
 
 + (id)sharedInstance;
 
-- (void)registerForKeyboardAvoiding:(UIScrollView *)scrollView;
-- (void)unregisterFromKeyboardAvoiding:(UIScrollView *)scrollView;
+- (void)registerScrollView:(UIScrollView *)scrollView;
+- (void)unregisterScrollView:(UIScrollView *)scrollView;
 
-- (void)updateRegisteredScrolls;
+- (void)updateRegisteredScrollViews;
 
 @end

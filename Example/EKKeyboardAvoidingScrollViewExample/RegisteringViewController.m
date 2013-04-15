@@ -7,7 +7,7 @@
 //
 
 #import "RegisteringViewController.h"
-#import <EKKeyboardAvoiding/EKKeyboardAvoidingManager.h>
+#import <EKKeyboardAvoiding/EKKeyboardAvoiding.h>
 
 @interface RegisteringViewController ()
 
@@ -20,7 +20,7 @@
     [super viewDidLoad];
 
     [scrollView setContentSize:[scrollView frame].size];
-    [[EKKeyboardAvoidingManager sharedInstance] registerForKeyboardAvoiding:scrollView];
+    [[EKKeyboardAvoidingManager sharedInstance] registerScrollView:scrollView];
 }
 
 - (void)viewDidUnload
@@ -31,7 +31,8 @@
 
 - (void)dealloc
 {
-    NSLog(@"dealloc");
+    [[EKKeyboardAvoidingManager sharedInstance] unregisterScrollView:scrollView];
+
     [scrollView release];
     [super dealloc];
 }

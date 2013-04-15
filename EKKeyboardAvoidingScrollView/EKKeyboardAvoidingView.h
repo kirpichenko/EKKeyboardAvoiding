@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EKKeyboardAvoidingScrollView : UIScrollView
+@interface EKKeyboardAvoidingView : UIScrollView
+
+- (void)unregisterFromAvoiding;
 
 @end

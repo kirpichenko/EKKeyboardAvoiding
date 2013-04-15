@@ -24,7 +24,7 @@ To disable keyboard avoiding use `unregisterScrollView:` method of `EKKeyboardAv
 You can also use `EKKeyboardAvoidingView` class instead of `UIScrollView` that automatically registers objects for keyboard avoiding. If you use xib, set the scroll view's class as `EKKeyboardAvoidingView`, and put all your controls within that scroll view. You can also create it programmatically, without using xibs - just use `EKKeyboardAvoidingView` as a superclass for your scroll views.
 
 ##Example
-![screenshot#1](https://github.com/kirpichenko/EKKeyboardAvoidingScrollView/raw/develop/README/screenshot_1.PNG)![screenshot#2](https://github.com/kirpichenko/EKKeyboardAvoidingScrollView/raw/develop/README/screenshot_2.PNG)
+![screenshot#1](https://github.com/kirpichenko/EKKeyboardAvoiding/raw/develop/README/screenshot_1.PNG)![screenshot#2](https://github.com/kirpichenko/EKKeyboardAvoiding/raw/develop/README/screenshot_2.PNG)
 
 ##Notes
 Works on iPhone/iPad iOS 5.0+

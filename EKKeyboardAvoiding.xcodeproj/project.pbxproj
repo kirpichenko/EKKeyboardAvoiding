@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D920A529171BDD9000F04CCC /* EKKeyboardAvoiding.h in Headers */ = {isa = PBXBuildFile; fileRef = D920A528171BDD9000F04CCC /* EKKeyboardAvoiding.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D920A52A171BDDCF00F04CCC /* EKKeyboardAvoiding.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D920A528171BDD9000F04CCC /* EKKeyboardAvoiding.h */; };
-		D920A52B171BDDD700F04CCC /* EKKeyboardAvoidingView.h in Headers */ = {isa = PBXBuildFile; fileRef = D9F3BB39166F4B8A00F0DEAE /* EKKeyboardAvoidingView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D93DCBB2171BED780035DF45 /* EKKeyboardAvoiding.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9E868C3171BEC5C00728839 /* EKKeyboardAvoiding.h */; };
+		D93DCBB3171BED780035DF45 /* EKKeyboardAvoidingManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9E868C4171BEC5C00728839 /* EKKeyboardAvoidingManager.h */; };
+		D93DCBB4171BED780035DF45 /* EKKeyboardAvoidingView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9E868C6171BEC5C00728839 /* EKKeyboardAvoidingView.h */; };
+		D9E868C8171BEC5C00728839 /* EKKeyboardAvoiding-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = D9E868C2171BEC5C00728839 /* EKKeyboardAvoiding-Prefix.pch */; };
+		D9E868C9171BEC5C00728839 /* EKKeyboardAvoiding.h in Headers */ = {isa = PBXBuildFile; fileRef = D9E868C3171BEC5C00728839 /* EKKeyboardAvoiding.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D9E868CA171BEC5C00728839 /* EKKeyboardAvoidingManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D9E868C4171BEC5C00728839 /* EKKeyboardAvoidingManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D9E868CB171BEC5C00728839 /* EKKeyboardAvoidingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E868C5171BEC5C00728839 /* EKKeyboardAvoidingManager.m */; };
+		D9E868CC171BEC5C00728839 /* EKKeyboardAvoidingView.h in Headers */ = {isa = PBXBuildFile; fileRef = D9E868C6171BEC5C00728839 /* EKKeyboardAvoidingView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D9E868CD171BEC5C00728839 /* EKKeyboardAvoidingView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E868C7171BEC5C00728839 /* EKKeyboardAvoidingView.m */; };
 		D9F3BB35166F4B8A00F0DEAE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F3BB34166F4B8A00F0DEAE /* Foundation.framework */; };
-		D9F3BB3A166F4B8A00F0DEAE /* EKKeyboardAvoidingView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9F3BB39166F4B8A00F0DEAE /* EKKeyboardAvoidingView.h */; };
-		D9F3BB3C166F4B8A00F0DEAE /* EKKeyboardAvoidingView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F3BB3B166F4B8A00F0DEAE /* EKKeyboardAvoidingView.m */; };
-		D9F3BB8C166F63D400F0DEAE /* EKKeyboardAvoidingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F3BB8B166F63D400F0DEAE /* EKKeyboardAvoidingManager.m */; };
-		D9F3BB95166F6A9200F0DEAE /* EKKeyboardAvoidingManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D9F3BB8A166F63D400F0DEAE /* EKKeyboardAvoidingManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D9F3BB98166F6DA500F0DEAE /* EKKeyboardAvoidingManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9F3BB8A166F63D400F0DEAE /* EKKeyboardAvoidingManager.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,23 +26,23 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
-				D920A52A171BDDCF00F04CCC /* EKKeyboardAvoiding.h in CopyFiles */,
-				D9F3BB98166F6DA500F0DEAE /* EKKeyboardAvoidingManager.h in CopyFiles */,
-				D9F3BB3A166F4B8A00F0DEAE /* EKKeyboardAvoidingView.h in CopyFiles */,
+				D93DCBB2171BED780035DF45 /* EKKeyboardAvoiding.h in CopyFiles */,
+				D93DCBB3171BED780035DF45 /* EKKeyboardAvoidingManager.h in CopyFiles */,
+				D93DCBB4171BED780035DF45 /* EKKeyboardAvoidingView.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D920A528171BDD9000F04CCC /* EKKeyboardAvoiding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKKeyboardAvoiding.h; sourceTree = "<group>"; };
+		D9E868C2171BEC5C00728839 /* EKKeyboardAvoiding-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EKKeyboardAvoiding-Prefix.pch"; sourceTree = "<group>"; };
+		D9E868C3171BEC5C00728839 /* EKKeyboardAvoiding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKKeyboardAvoiding.h; sourceTree = "<group>"; };
+		D9E868C4171BEC5C00728839 /* EKKeyboardAvoidingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKKeyboardAvoidingManager.h; sourceTree = "<group>"; };
+		D9E868C5171BEC5C00728839 /* EKKeyboardAvoidingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKKeyboardAvoidingManager.m; sourceTree = "<group>"; };
+		D9E868C6171BEC5C00728839 /* EKKeyboardAvoidingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKKeyboardAvoidingView.h; sourceTree = "<group>"; };
+		D9E868C7171BEC5C00728839 /* EKKeyboardAvoidingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKKeyboardAvoidingView.m; sourceTree = "<group>"; };
 		D9F3BB31166F4B8A00F0DEAE /* libEKKeyboardAvoiding.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEKKeyboardAvoiding.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F3BB34166F4B8A00F0DEAE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		D9F3BB38166F4B8A00F0DEAE /* EKKeyboardAvoiding-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EKKeyboardAvoiding-Prefix.pch"; sourceTree = "<group>"; };
-		D9F3BB39166F4B8A00F0DEAE /* EKKeyboardAvoidingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EKKeyboardAvoidingView.h; sourceTree = "<group>"; };
-		D9F3BB3B166F4B8A00F0DEAE /* EKKeyboardAvoidingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EKKeyboardAvoidingView.m; sourceTree = "<group>"; };
-		D9F3BB8A166F63D400F0DEAE /* EKKeyboardAvoidingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKKeyboardAvoidingManager.h; sourceTree = "<group>"; };
-		D9F3BB8B166F63D400F0DEAE /* EKKeyboardAvoidingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKKeyboardAvoidingManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +57,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D9E868C1171BEC5C00728839 /* EKKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				D9E868C3171BEC5C00728839 /* EKKeyboardAvoiding.h */,
+				D9E868C4171BEC5C00728839 /* EKKeyboardAvoidingManager.h */,
+				D9E868C5171BEC5C00728839 /* EKKeyboardAvoidingManager.m */,
+				D9E868C6171BEC5C00728839 /* EKKeyboardAvoidingView.h */,
+				D9E868C7171BEC5C00728839 /* EKKeyboardAvoidingView.m */,
+				D9E868CE171BEC6A00728839 /* Supporting Files */,
+			);
+			path = EKKeyboardAvoiding;
+			sourceTree = "<group>";
+		};
+		D9E868CE171BEC6A00728839 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D9E868C2171BEC5C00728839 /* EKKeyboardAvoiding-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		D9F3BB26166F4B8A00F0DEAE = {
 			isa = PBXGroup;
 			children = (
-				D9F3BB36166F4B8A00F0DEAE /* EKKeyboardAvoiding */,
+				D9E868C1171BEC5C00728839 /* EKKeyboardAvoiding */,
 				D9F3BB33166F4B8A00F0DEAE /* Frameworks */,
 				D9F3BB32166F4B8A00F0DEAE /* Products */,
 			);
@@ -81,28 +103,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D9F3BB36166F4B8A00F0DEAE /* EKKeyboardAvoiding */ = {
-			isa = PBXGroup;
-			children = (
-				D920A528171BDD9000F04CCC /* EKKeyboardAvoiding.h */,
-				D9F3BB8A166F63D400F0DEAE /* EKKeyboardAvoidingManager.h */,
-				D9F3BB8B166F63D400F0DEAE /* EKKeyboardAvoidingManager.m */,
-				D9F3BB39166F4B8A00F0DEAE /* EKKeyboardAvoidingView.h */,
-				D9F3BB3B166F4B8A00F0DEAE /* EKKeyboardAvoidingView.m */,
-				D9F3BB37166F4B8A00F0DEAE /* Supporting Files */,
-			);
-			name = EKKeyboardAvoiding;
-			path = EKKeyboardAvoidingScrollView;
-			sourceTree = "<group>";
-		};
-		D9F3BB37166F4B8A00F0DEAE /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				D9F3BB38166F4B8A00F0DEAE /* EKKeyboardAvoiding-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -110,9 +110,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9F3BB95166F6A9200F0DEAE /* EKKeyboardAvoidingManager.h in Headers */,
-				D920A52B171BDDD700F04CCC /* EKKeyboardAvoidingView.h in Headers */,
-				D920A529171BDD9000F04CCC /* EKKeyboardAvoiding.h in Headers */,
+				D9E868C9171BEC5C00728839 /* EKKeyboardAvoiding.h in Headers */,
+				D9E868CA171BEC5C00728839 /* EKKeyboardAvoidingManager.h in Headers */,
+				D9E868CC171BEC5C00728839 /* EKKeyboardAvoidingView.h in Headers */,
+				D9E868C8171BEC5C00728839 /* EKKeyboardAvoiding-Prefix.pch in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,8 +169,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9F3BB3C166F4B8A00F0DEAE /* EKKeyboardAvoidingView.m in Sources */,
-				D9F3BB8C166F63D400F0DEAE /* EKKeyboardAvoidingManager.m in Sources */,
+				D9E868CB171BEC5C00728839 /* EKKeyboardAvoidingManager.m in Sources */,
+				D9E868CD171BEC5C00728839 /* EKKeyboardAvoidingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,7 +227,7 @@
 			buildSettings = {
 				DSTROOT = /tmp/EKKeyboardAvoidingScrollView.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "EKKeyboardAvoidingScrollView/EKKeyboardAvoiding-Prefix.pch";
+				GCC_PREFIX_HEADER = "EKKeyboardAvoiding/EKKeyboardAvoiding-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = EKKeyboardAvoiding;
 				SKIP_INSTALL = YES;
@@ -238,7 +239,7 @@
 			buildSettings = {
 				DSTROOT = /tmp/EKKeyboardAvoidingScrollView.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "EKKeyboardAvoidingScrollView/EKKeyboardAvoiding-Prefix.pch";
+				GCC_PREFIX_HEADER = "EKKeyboardAvoiding/EKKeyboardAvoiding-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = EKKeyboardAvoiding;
 				SKIP_INSTALL = YES;

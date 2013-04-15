@@ -6,30 +6,39 @@
 //
 //
 
-#import "EKKeyboardAvoidingScrollViewManager.h"
+#import "EKKeyboardAvoidingManager.h"
 #import <objc/runtime.h>
 
 @interface RegisteredScrollPack : NSObject
-@property (nonatomic, assign) UIScrollView *scrollView;
-@property (nonatomic, assign) UIEdgeInsets scrollDefaultInsets;
+@property (nonatomic,retain) UIScrollView *scrollView;
+@property (nonatomic,assign) UIEdgeInsets scrollDefaultInsets;
 @end
 
 @implementation RegisteredScrollPack
+
+- (void)dealloc
+{
+    [self setScrollView:nil];
+    [super dealloc];
+}
+
 @end
 
 static NSString *const kMoveToWindowNotification = @"MoveToWindowNotification";
-static EKKeyboardAvoidingScrollViewManager *kUIScrollViewDisplayManager;
+static EKKeyboardAvoidingManager *kUIScrollViewDisplayManager;
 
-@interface EKKeyboardAvoidingScrollViewManager ()
+@interface EKKeyboardAvoidingManager ()
 @property (atomic, assign, readwrite) CGRect keyboardFrame;
 @end
 
-@implementation EKKeyboardAvoidingScrollViewManager
+@implementation EKKeyboardAvoidingManager
 
-+ (id) sharedInstance
++ (id)sharedInstance
 {
-    @synchronized (self) {
-        if (kUIScrollViewDisplayManager == nil) {
+    @synchronized (self)
+    {
+        if (kUIScrollViewDisplayManager == nil)
+        {
             kUIScrollViewDisplayManager = [[self alloc] init];
             [kUIScrollViewDisplayManager installDidMoveToWindowNotifications];
         }
@@ -37,9 +46,10 @@ static EKKeyboardAvoidingScrollViewManager *kUIScrollViewDisplayManager;
     return kUIScrollViewDisplayManager;
 }
 
-- (id) init
+- (id)init
 {
-    if (self = [super init]) {
+    if (self = [super init])
+    {
         registeredScrolls = [[NSMutableArray alloc] init];
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                selector:@selector(keyboardFrameDidChange:)
@@ -53,7 +63,7 @@ static EKKeyboardAvoidingScrollViewManager *kUIScrollViewDisplayManager;
     return self;
 }
 
-- (void) dealloc
+- (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [registeredScrolls release];
@@ -63,11 +73,13 @@ static EKKeyboardAvoidingScrollViewManager *kUIScrollViewDisplayManager;
 #pragma mark -
 #pragma mark public methods
 
-- (void) registerScrollViewForKeyboardAvoiding:(UIScrollView *) scrollView
+- (void)registerScrollView:(UIScrollView *)scrollView
 {
-   @synchronized(self) {
+   @synchronized(self)
+    {
        RegisteredScrollPack *scrollPack = [self registeredScrollForView:scrollView];
-       if (scrollPack == nil) {
+       if (scrollPack == nil)
+       {
            scrollPack = [self prepareScrollPackWithScrollView:scrollView];
            [registeredScrolls addObject:scrollPack];
            [self updateRegisteredScroll:scrollPack];
@@ -75,12 +87,15 @@ static EKKeyboardAvoidingScrollViewManager *kUIScrollViewDisplayManager;
     }
 }
 
-- (void) unregisterScrollViewFromKeyboardAvoiding:(UIScrollView *) scrollView
+- (void)unregisterScrollView:(UIScrollView *)scrollView
 {
-    @synchronized(self) {
-        if (scrollView != nil) {
+    @synchronized(self)
+    {
+        if (scrollView != nil)
+        {
             RegisteredScrollPack *scrollPack = [self registeredScrollForView:scrollView];
-            if (scrollPack != nil) {
+            if (scrollPack != nil)
+            {
                 [scrollView window];
                 [scrollView setContentInset:[scrollPack scrollDefaultInsets]];
                 [registeredScrolls removeObject:scrollPack];
@@ -89,10 +104,11 @@ static EKKeyboardAvoidingScrollViewManager *kUIScrollViewDisplayManager;
     }
 }
 
-- (void) updateRegisteredScrolls
+- (void) updateRegisteredScrollViews
 {
     @synchronized (self) {
-        for (RegisteredScrollPack *scrollPack in registeredScrolls) {
+        for (RegisteredScrollPack *scrollPack in registeredScrolls)
+        {
             [self updateRegisteredScroll:scrollPack];
         }
     }
@@ -101,29 +117,39 @@ static EKKeyboardAvoidingScrollViewManager *kUIScrollViewDisplayManager;
 #pragma mark -
 #pragma mark notifications
 
-- (void) keyboardFrameDidChange:(NSNotification *) notification
+- (void)keyboardFrameDidChange:(NSNotification *)notification
 {
     NSValue *keyboardFrameValue = [[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey];
     [self setKeyboardFrame:[keyboardFrameValue CGRectValue]];
-    [self updateRegisteredScrolls];
+    [self updateRegisteredScrollViews];
 }
 
 #pragma mark -
 #pragma mark helpers
 
-- (RegisteredScrollPack *) prepareScrollPackWithScrollView:(UIScrollView *) scrollView
+- (RegisteredScrollPack *)prepareScrollPackWithScrollView:(UIScrollView *)scrollView
 {
     RegisteredScrollPack *scrollPack = [[RegisteredScrollPack alloc] init];
+
     [scrollPack setScrollView:scrollView];
     [scrollPack setScrollDefaultInsets:[scrollView contentInset]];
+    
     return [scrollPack autorelease];
 }
 
-- (RegisteredScrollPack *) registeredScrollForView:(UIScrollView *) scrollView
+- (RegisteredScrollPack *)registeredScrollForView:(UIScrollView *)scrollView
 {
-    @synchronized (self) {
-        for (RegisteredScrollPack *scrollPack in registeredScrolls) {
-            if ([scrollPack scrollView] == scrollView) {
+    if (scrollView == nil)
+    {
+        return nil;
+    }
+    
+    @synchronized (self)
+    {
+        for (RegisteredScrollPack *scrollPack in registeredScrolls)
+        {
+            if ([scrollPack scrollView] == scrollView)
+            {
                 return scrollPack;
             }
         }
@@ -131,10 +157,11 @@ static EKKeyboardAvoidingScrollViewManager *kUIScrollViewDisplayManager;
     }
 }
 
-- (void) updateRegisteredScroll:(RegisteredScrollPack *) scrollPack
+- (void)updateRegisteredScroll:(RegisteredScrollPack *)scrollPack
 {
     UIScrollView *scrollView = [scrollPack scrollView];
-    if ([scrollView window] == nil) {
+    if ([scrollView window] == nil)
+    {
         return;
     }
     
@@ -149,7 +176,7 @@ static EKKeyboardAvoidingScrollViewManager *kUIScrollViewDisplayManager;
                      }];
 }
 
-- (void) scrollToFirstResponder:(UIScrollView *)scrollView
+- (void)scrollToFirstResponder:(UIScrollView *)scrollView
 {
     UIView *firstResponder = [self findFirstResponderInView:scrollView];
     if (firstResponder != nil)
@@ -160,7 +187,7 @@ static EKKeyboardAvoidingScrollViewManager *kUIScrollViewDisplayManager;
     }
 }
 
-- (UIView *) findFirstResponderInView:(UIView *) view
+- (UIView *)findFirstResponderInView:(UIView *)view
 {
     for (UIView *subview in [view subviews])
     {
@@ -181,7 +208,7 @@ static EKKeyboardAvoidingScrollViewManager *kUIScrollViewDisplayManager;
 #pragma mark -
 #pragma mark count insets
 
-- (UIEdgeInsets) scrollViewContentInsets:(RegisteredScrollPack *) scrollPack
+- (UIEdgeInsets)scrollViewContentInsets:(RegisteredScrollPack *)scrollPack
 {
     UIScrollView *scrollView = [scrollPack scrollView];
     CGRect transformedKeyboardFrame = [[scrollView superview] convertRect:[self keyboardFrame]
@@ -194,20 +221,22 @@ static EKKeyboardAvoidingScrollViewManager *kUIScrollViewDisplayManager;
 #pragma mark -
 #pragma mark geometry
 
-- (UIEdgeInsets) contentInsetWithDefaultInset:(UIEdgeInsets) inset
-                                    viewFrame:(CGRect) scrollViewFrame
-                                keyboardFrame:(CGRect) keyboardFrame
+- (UIEdgeInsets)contentInsetWithDefaultInset:(UIEdgeInsets) inset
+                                   viewFrame:(CGRect) scrollViewFrame
+                               keyboardFrame:(CGRect) keyboardFrame
 {
     UIEdgeInsets contentInset = inset;
     if (CGRectIntersectsRect(keyboardFrame, scrollViewFrame) &&
         !CGRectEqualToRect(keyboardFrame, CGRectZero) &&
         !CGRectContainsRect(keyboardFrame, scrollViewFrame))
     {
-        if (keyboardFrame.origin.y <= scrollViewFrame.origin.y) {
+        if (keyboardFrame.origin.y <= scrollViewFrame.origin.y)
+        {
             contentInset.top += CGRectGetMaxY(keyboardFrame) - CGRectGetMinY(scrollViewFrame);
         }
         else if (keyboardFrame.origin.y <= CGRectGetMaxY(scrollViewFrame) &&
-                 CGRectGetMaxY(keyboardFrame) >= CGRectGetMaxY(scrollViewFrame)) {
+                 CGRectGetMaxY(keyboardFrame) >= CGRectGetMaxY(scrollViewFrame))
+        {
             contentInset.bottom += CGRectGetMaxY(scrollViewFrame) - CGRectGetMinY(keyboardFrame);
         }
     }
@@ -217,11 +246,13 @@ static EKKeyboardAvoidingScrollViewManager *kUIScrollViewDisplayManager;
 #pragma mark -
 #pragma mark scroll adding to window observing
 
-- (void) subviewAdded:(NSNotification *) notification
+- (void)subviewAdded:(NSNotification *)notification
 {
-    if ([[notification object] isKindOfClass:[UIScrollView class]]) {
+    if ([[notification object] isKindOfClass:[UIScrollView class]])
+    {
         RegisteredScrollPack *scroll = [self registeredScrollForView:[notification object]];
-        if (scroll) {
+        if (scroll)
+        {
             [self updateRegisteredScroll:scroll];
         }
     }
@@ -230,7 +261,7 @@ static EKKeyboardAvoidingScrollViewManager *kUIScrollViewDisplayManager;
 #pragma mark -
 #pragma mark install move ot window observing
 
-- (void) installDidMoveToWindowNotifications
+- (void)installDidMoveToWindowNotifications
 {
     Method didMoveMethod = class_getInstanceMethod([UIScrollView class], @selector(didMoveToWindow));
     IMP originalImplementation = method_getImplementation(didMoveMethod);

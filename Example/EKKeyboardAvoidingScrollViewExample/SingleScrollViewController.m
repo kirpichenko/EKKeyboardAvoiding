@@ -7,8 +7,10 @@
 //
 
 #import "SingleScrollViewController.h"
+#import "RegisteringViewController.h"
+
 #import "UIViewController+LoadWithXib.h"
-#import <EKKeyboardAvoidingScrollView/EKKeyboardAvoidingScrollViewManager.h>
+#import <EKKeyboardAvoiding/EKKeyboardAvoiding.h>
 
 
 @interface SingleScrollViewController () <UITextFieldDelegate>
@@ -25,7 +27,7 @@
     [scrollView setContentSize:[scrollView frame].size];
     
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                                                action:@selector(viewTapped:)];
+                                                                                action:@selector(viewWasTapped:)];
     [singleTap setCancelsTouchesInView:NO];
     [[self view] addGestureRecognizer:[singleTap autorelease]];
 }
@@ -47,7 +49,7 @@
 #pragma mark -
 #pragma mark touches
 
-- (void) viewTapped:(UITapGestureRecognizer *) singleTap
+- (void)viewWasTapped:(UITapGestureRecognizer *) singleTap
 {
     [[self view] endEditing:YES];
 }
@@ -55,10 +57,17 @@
 #pragma mark -
 #pragma mark actions
 
-- (IBAction) showNext
+- (IBAction)showNext
 {
     SingleScrollViewController *controller = [[SingleScrollViewController alloc] initWithUniversalNib];
     [[self navigationController] pushViewController:[controller autorelease] animated:YES];
+}
+
+- (IBAction)showCustom
+{
+    RegisteringViewController *controller = [[RegisteringViewController alloc] initWithUniversalNib];
+    [[self navigationController] pushViewController:controller animated:YES];
+    [controller release];
 }
 
 #pragma mark -

@@ -29,14 +29,14 @@
     
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                 action:@selector(viewWasTapped:)];
-    [[self view] addGestureRecognizer:[singleTap autorelease]];
+    [[self view] addGestureRecognizer:singleTap];
 }
 
 - (void)viewDidUnload
 {
-    [textView release]; textView = nil;
-    [tableView release]; tableView = nil;
-    [scrollView release]; scrollView = nil;
+     textView = nil;
+     tableView = nil;
+     scrollView = nil;
     
     [super viewDidUnload];
 }
@@ -47,11 +47,7 @@
     [[EKKeyboardAvoidingManager sharedInstance] unregisterScrollView:tableView];
     [[EKKeyboardAvoidingManager sharedInstance] unregisterScrollView:scrollView];
     
-    [textView release];
-    [tableView release];
-    [scrollView release];
     
-    [super dealloc];
 }
 
 #pragma mark -
@@ -69,7 +65,6 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                       reuseIdentifier:cellIdentifier];
-        [cell autorelease];
     }
     [[cell textLabel] setText:[NSString stringWithFormat:@"Cell #%d",indexPath.row]];
     

@@ -12,27 +12,22 @@
 #import "UIViewController+LoadWithXib.h"
 
 @interface AppDelegate ()
-@property (nonatomic, retain) UITabBarController *tabBarController;
+@property (nonatomic, strong) UITabBarController *tabBarController;
 @end
 
 @implementation AppDelegate
 
-- (void)dealloc
-{
-    [_window release];
-    [super dealloc];
-}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    SingleScrollViewController *controller = [[[SingleScrollViewController alloc] initWithUniversalNib] autorelease];
+    SingleScrollViewController *controller = [[SingleScrollViewController alloc] initWithUniversalNib];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
-    self.tabBarController = [[[UITabBarController alloc] init] autorelease];
+    self.tabBarController = [[UITabBarController alloc] init];
     [self.tabBarController setViewControllers:@[
-        [navigationController autorelease],
-        [[[MultipleScrollsViewController alloc] initWithUniversalNib] autorelease]
+        navigationController,
+        [[MultipleScrollsViewController alloc] initWithUniversalNib]
      ]];
     
     [self setTabBarItemWithText:@"Single Scroll" forControllerAtIndex:0];
@@ -48,7 +43,6 @@
 {
     UITabBarItem *item = [[UITabBarItem alloc] initWithTitle:text image:nil tag:NSNotFound];
     [[[self.tabBarController viewControllers] objectAtIndex:index] setTabBarItem:item];
-    [item release];
 }
 
 @end

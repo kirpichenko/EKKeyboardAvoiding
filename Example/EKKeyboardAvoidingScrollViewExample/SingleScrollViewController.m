@@ -29,13 +29,9 @@
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                 action:@selector(viewWasTapped:)];
     [singleTap setCancelsTouchesInView:NO];
-    [[self view] addGestureRecognizer:[singleTap autorelease]];
+    [[self view] addGestureRecognizer:singleTap];
 }
 
-- (void)dealloc {
-    [scrollView release];
-    [super dealloc];
-}
 
 #pragma mark -
 #pragma mark UITextFieldDelegate methods
@@ -60,14 +56,13 @@
 - (IBAction)showNext
 {
     SingleScrollViewController *controller = [[SingleScrollViewController alloc] initWithUniversalNib];
-    [[self navigationController] pushViewController:[controller autorelease] animated:YES];
+    [[self navigationController] pushViewController:controller animated:YES];
 }
 
 - (IBAction)showCustom
 {
     RegisteringViewController *controller = [[RegisteringViewController alloc] initWithUniversalNib];
     [[self navigationController] pushViewController:controller animated:YES];
-    [controller release];
 }
 
 #pragma mark -

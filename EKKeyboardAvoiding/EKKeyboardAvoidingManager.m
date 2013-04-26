@@ -10,16 +10,16 @@
 #import <objc/runtime.h>
 
 @interface RegisteredScrollPack : NSObject
-@property (nonatomic,retain) UIScrollView *scrollView;
+@property (nonatomic,weak) UIScrollView *scrollView;
 @property (nonatomic,assign) UIEdgeInsets scrollDefaultInsets;
 @end
 
 @implementation RegisteredScrollPack
 
-- (void)dealloc
+- (void)setScrollView:(UIScrollView *)scrollView
 {
-    [self setScrollView:nil];
-    [super dealloc];
+    _scrollView = scrollView;
+    NSLog(@"scrollView = %@",scrollView);
 }
 
 @end
@@ -28,7 +28,7 @@ static NSString *const kMoveToWindowNotification = @"MoveToWindowNotification";
 static EKKeyboardAvoidingManager *kUIScrollViewDisplayManager;
 
 @interface EKKeyboardAvoidingManager ()
-@property (atomic, assign, readwrite) CGRect keyboardFrame;
+@property (atomic,readwrite) CGRect keyboardFrame;
 @end
 
 @implementation EKKeyboardAvoidingManager
@@ -66,8 +66,6 @@ static EKKeyboardAvoidingManager *kUIScrollViewDisplayManager;
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [registeredScrolls release];
-    [super dealloc];
 }
 
 #pragma mark -
@@ -119,6 +117,9 @@ static EKKeyboardAvoidingManager *kUIScrollViewDisplayManager;
 
 - (void)keyboardFrameDidChange:(NSNotification *)notification
 {
+    [self removeInvalidScrollPacks];
+    
+    NSLog(@"update views %d",[registeredScrolls count]);
     NSValue *keyboardFrameValue = [[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey];
     [self setKeyboardFrame:[keyboardFrameValue CGRectValue]];
     [self updateRegisteredScrollViews];
@@ -134,7 +135,7 @@ static EKKeyboardAvoidingManager *kUIScrollViewDisplayManager;
     [scrollPack setScrollView:scrollView];
     [scrollPack setScrollDefaultInsets:[scrollView contentInset]];
     
-    return [scrollPack autorelease];
+    return scrollPack;
 }
 
 - (RegisteredScrollPack *)registeredScrollForView:(UIScrollView *)scrollView
@@ -157,6 +158,19 @@ static EKKeyboardAvoidingManager *kUIScrollViewDisplayManager;
     }
 }
 
+- (void)removeInvalidScrollPacks
+{
+    for (int i = 0; i < [registeredScrolls count]; ++i)
+    {
+        if ([registeredScrolls[i] scrollView] == nil)
+        {
+            NSLog(@"unused view");
+            [registeredScrolls removeObjectAtIndex:i];
+            i -= 1;
+        }
+    }
+}
+
 - (void)updateRegisteredScroll:(RegisteredScrollPack *)scrollPack
 {
     UIScrollView *scrollView = [scrollPack scrollView];
@@ -165,6 +179,7 @@ static EKKeyboardAvoidingManager *kUIScrollViewDisplayManager;
         return;
     }
     
+    __weak id weakSelf = self;
     [UIView animateWithDuration:0.3
                      animations:^{
                          UIEdgeInsets insets = [self scrollViewContentInsets:scrollPack];
@@ -172,7 +187,7 @@ static EKKeyboardAvoidingManager *kUIScrollViewDisplayManager;
                          [[scrollPack scrollView] setScrollIndicatorInsets:insets];
                      }
                      completion:^(BOOL finished) {
-                         [self scrollToFirstResponder:scrollView];
+                         [weakSelf scrollToFirstResponder:scrollView];
                      }];
 }
 
@@ -272,7 +287,7 @@ static EKKeyboardAvoidingManager *kUIScrollViewDisplayManager;
                                                             object:_self];
     };
     
-    IMP newImplementation = imp_implementationWithBlock((void*)block);
+    IMP newImplementation = imp_implementationWithBlock((__bridge id)((__bridge void*)block));
     method_setImplementation(didMoveMethod, newImplementation);
 }
 

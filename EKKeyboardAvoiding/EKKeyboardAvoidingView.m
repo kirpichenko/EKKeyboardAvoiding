@@ -35,6 +35,12 @@
     return [self initWithFrame:CGRectZero];
 }
 
+- (void)dealloc
+{
+    NSLog(@"view = %@",self);
+    [self unregisterFromAvoiding];
+}
+
 #pragma mark -
 #pragma mark public methods
 

@@ -25,16 +25,13 @@
 
 - (void)viewDidUnload
 {
-    [scrollView release]; scrollView = nil;
+     scrollView = nil;
     [super viewDidUnload];
 }
 
 - (void)dealloc
 {
     [[EKKeyboardAvoidingManager sharedInstance] unregisterScrollView:scrollView];
-
-    [scrollView release];
-    [super dealloc];
 }
 
 @end

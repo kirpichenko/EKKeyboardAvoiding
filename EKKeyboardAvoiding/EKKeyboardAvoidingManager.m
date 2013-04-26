@@ -19,7 +19,6 @@
 - (void)setScrollView:(UIScrollView *)scrollView
 {
     _scrollView = scrollView;
-    NSLog(@"scrollView = %@",scrollView);
 }
 
 @end
@@ -118,8 +117,7 @@ static EKKeyboardAvoidingManager *kUIScrollViewDisplayManager;
 - (void)keyboardFrameDidChange:(NSNotification *)notification
 {
     [self removeInvalidScrollPacks];
-    
-    NSLog(@"update views %d",[registeredScrolls count]);
+
     NSValue *keyboardFrameValue = [[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey];
     [self setKeyboardFrame:[keyboardFrameValue CGRectValue]];
     [self updateRegisteredScrollViews];
@@ -160,13 +158,15 @@ static EKKeyboardAvoidingManager *kUIScrollViewDisplayManager;
 
 - (void)removeInvalidScrollPacks
 {
-    for (int i = 0; i < [registeredScrolls count]; ++i)
+    @synchronized (self)
     {
-        if ([registeredScrolls[i] scrollView] == nil)
+        for (int i = 0; i < [registeredScrolls count]; ++i)
         {
-            NSLog(@"unused view");
-            [registeredScrolls removeObjectAtIndex:i];
-            i -= 1;
+            if ([registeredScrolls[i] scrollView] == nil)
+            {
+                [registeredScrolls removeObjectAtIndex:i];
+                i -= 1;
+            }
         }
     }
 }

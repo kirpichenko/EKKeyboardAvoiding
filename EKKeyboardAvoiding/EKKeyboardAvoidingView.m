@@ -37,7 +37,6 @@
 
 - (void)dealloc
 {
-    NSLog(@"view = %@",self);
     [self unregisterFromAvoiding];
 }
 

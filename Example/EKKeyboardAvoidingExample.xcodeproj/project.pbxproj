@@ -379,6 +379,7 @@
 		D9F3BB6C166F4E2F00F0DEAE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -396,6 +397,7 @@
 		D9F3BB6D166F4E2F00F0DEAE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EKKeyboardAvoidingScrollViewExample/EKKeyboardAvoidingExample-Prefix.pch";
 				INFOPLIST_FILE = "EKKeyboardAvoidingScrollViewExample/EKKeyboardAvoidingExample-Info.plist";

@@ -35,6 +35,11 @@
     return [self initWithFrame:CGRectZero];
 }
 
+- (void)dealloc
+{
+    [self unregisterFromAvoiding];
+}
+
 #pragma mark -
 #pragma mark public methods
 

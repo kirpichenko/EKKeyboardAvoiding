@@ -225,6 +225,7 @@
 		D9F3BB40166F4B8B00F0DEAE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DSTROOT = /tmp/EKKeyboardAvoidingScrollView.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EKKeyboardAvoiding/EKKeyboardAvoiding-Prefix.pch";
@@ -237,6 +238,7 @@
 		D9F3BB41166F4B8B00F0DEAE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DSTROOT = /tmp/EKKeyboardAvoidingScrollView.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EKKeyboardAvoiding/EKKeyboardAvoiding-Prefix.pch";

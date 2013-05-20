@@ -35,7 +35,7 @@
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
 			<object class="IBUIView" id="191373211">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">274</int>
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="IBUIScrollView" id="595020801">
@@ -47,6 +47,7 @@
 								<int key="NSvFlags">293</int>
 								<string key="NSFrame">{{60, 166}, {200, 30}}</string>
 								<reference key="NSSuperview" ref="595020801"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="825925572"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
@@ -83,6 +84,7 @@
 								<int key="NSvFlags">293</int>
 								<string key="NSFrame">{{60, 229}, {200, 30}}</string>
 								<reference key="NSSuperview" ref="595020801"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="464013359"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
@@ -110,6 +112,7 @@
 								<int key="NSvFlags">293</int>
 								<string key="NSFrame">{{60, 289}, {200, 30}}</string>
 								<reference key="NSSuperview" ref="595020801"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="878499347"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
@@ -137,6 +140,7 @@
 								<int key="NSvFlags">293</int>
 								<string key="NSFrame">{{103, 53}, {114, 21}}</string>
 								<reference key="NSSuperview" ref="595020801"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="11476939"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
@@ -169,6 +173,8 @@
 								<int key="NSvFlags">293</int>
 								<string key="NSFrame">{{89, 497}, {142, 21}}</string>
 								<reference key="NSSuperview" ref="595020801"/>
+								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -189,6 +195,7 @@
 								<int key="NSvFlags">293</int>
 								<string key="NSFrame">{{93, 361}, {134, 44}}</string>
 								<reference key="NSSuperview" ref="595020801"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="1013881150"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
@@ -224,6 +231,7 @@
 								<int key="NSvFlags">293</int>
 								<string key="NSFrame">{{93, 412}, {134, 44}}</string>
 								<reference key="NSSuperview" ref="595020801"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="254775210"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
@@ -244,6 +252,7 @@
 						</array>
 						<string key="NSFrameSize">{320, 548}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="77335260"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
@@ -256,6 +265,8 @@
 					</object>
 				</array>
 				<string key="NSFrame">{{0, 20}, {320, 548}}</string>
+				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="595020801"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
@@ -446,6 +457,14 @@
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<object class="IBPartialClassDescription">
+					<string key="className">EKKeyboardAvoidingView</string>
+					<string key="superclassName">UIScrollView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/EKKeyboardAvoidingView.h</string>
+					</object>
+				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">SingleScrollViewController</string>
 					<string key="superclassName">UIViewController</string>

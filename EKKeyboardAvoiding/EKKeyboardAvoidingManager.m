@@ -10,21 +10,37 @@
 #import <objc/runtime.h>
 
 @interface RegisteredScrollPack : NSObject
+
+- (id)initWithScrollView:(UIScrollView *)sscrollView;
+
 @property (nonatomic,weak) UIScrollView *scrollView;
 @property (nonatomic,assign) UIEdgeInsets scrollDefaultInsets;
 @end
 
 @implementation RegisteredScrollPack
 
-- (void)setScrollView:(UIScrollView *)scrollView
+- (id)initWithScrollView:(UIScrollView *)scrollView
 {
-    _scrollView = scrollView;
+    if(self = [super init])
+    {
+        [self setScrollView:scrollView];
+        [self setScrollDefaultInsets:[scrollView contentInset]];
+    }
+    return self;
+}
+
+- (BOOL)isEqual:(id)object
+{
+    if ([object isKindOfClass:[self class]])
+    {
+        return [self scrollView] == [object scrollView];
+    }
+    return NO;
 }
 
 @end
 
 static NSString *const kMoveToWindowNotification = @"MoveToWindowNotification";
-static EKKeyboardAvoidingManager *kUIScrollViewDisplayManager;
 
 @interface EKKeyboardAvoidingManager ()
 @property (atomic,readwrite) CGRect keyboardFrame;
@@ -34,30 +50,26 @@ static EKKeyboardAvoidingManager *kUIScrollViewDisplayManager;
 
 + (id)sharedInstance
 {
-    @synchronized (self)
-    {
-        if (kUIScrollViewDisplayManager == nil)
-        {
-            kUIScrollViewDisplayManager = [[self alloc] init];
-            [kUIScrollViewDisplayManager installDidMoveToWindowNotifications];
-        }
-    }
-    return kUIScrollViewDisplayManager;
+    static EKKeyboardAvoidingManager *manager;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        manager = [[self alloc] init];
+    });
+    return manager;
 }
 
 - (id)init
 {
     if (self = [super init])
     {
-        registeredScrolls = [[NSMutableArray alloc] init];
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                               selector:@selector(keyboardFrameDidChange:)
-                                                     name:UIKeyboardDidChangeFrameNotification
-                                                   object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(subviewAdded:)
-                                                     name:kMoveToWindowNotification
-                                                   object:nil];
+        registeredScrolls = [[NSMutableSet alloc] init];
+
+        [self installDidMoveToWindowNotifications];
+        
+        [self registerForNotificationNamed:UIKeyboardDidChangeFrameNotification
+                                    action:@selector(keyboardFrameDidChange:)];
+        [self registerForNotificationNamed:kMoveToWindowNotification
+                                    action:@selector(subviewAdded:)];
     }
     return self;
 }
@@ -72,12 +84,12 @@ static EKKeyboardAvoidingManager *kUIScrollViewDisplayManager;
 
 - (void)registerScrollView:(UIScrollView *)scrollView
 {
-   @synchronized(self)
+    @synchronized(self)
     {
        RegisteredScrollPack *scrollPack = [self registeredScrollForView:scrollView];
        if (scrollPack == nil)
        {
-           scrollPack = [self prepareScrollPackWithScrollView:scrollView];
+           scrollPack = [[RegisteredScrollPack alloc] initWithScrollView:scrollView];
            [registeredScrolls addObject:scrollPack];
            [self updateRegisteredScroll:scrollPack];
        }
@@ -88,22 +100,19 @@ static EKKeyboardAvoidingManager *kUIScrollViewDisplayManager;
 {
     @synchronized(self)
     {
-        if (scrollView != nil)
+        RegisteredScrollPack *scrollPack = [self registeredScrollForView:scrollView];
+        if (scrollPack != nil)
         {
-            RegisteredScrollPack *scrollPack = [self registeredScrollForView:scrollView];
-            if (scrollPack != nil)
-            {
-                [scrollView window];
-                [scrollView setContentInset:[scrollPack scrollDefaultInsets]];
-                [registeredScrolls removeObject:scrollPack];
-            }
+            [scrollView setContentInset:[scrollPack scrollDefaultInsets]];
+            [registeredScrolls removeObject:scrollPack];
         }
     }
 }
 
 - (void) updateRegisteredScrollViews
 {
-    @synchronized (self) {
+    @synchronized (self)
+    {
         for (RegisteredScrollPack *scrollPack in registeredScrolls)
         {
             [self updateRegisteredScroll:scrollPack];
@@ -126,23 +135,8 @@ static EKKeyboardAvoidingManager *kUIScrollViewDisplayManager;
 #pragma mark -
 #pragma mark helpers
 
-- (RegisteredScrollPack *)prepareScrollPackWithScrollView:(UIScrollView *)scrollView
-{
-    RegisteredScrollPack *scrollPack = [[RegisteredScrollPack alloc] init];
-
-    [scrollPack setScrollView:scrollView];
-    [scrollPack setScrollDefaultInsets:[scrollView contentInset]];
-    
-    return scrollPack;
-}
-
 - (RegisteredScrollPack *)registeredScrollForView:(UIScrollView *)scrollView
 {
-    if (scrollView == nil)
-    {
-        return nil;
-    }
-    
     @synchronized (self)
     {
         for (RegisteredScrollPack *scrollPack in registeredScrolls)
@@ -158,15 +152,12 @@ static EKKeyboardAvoidingManager *kUIScrollViewDisplayManager;
 
 - (void)removeInvalidScrollPacks
 {
-    @synchronized (self)
+    NSArray *scrolls = [registeredScrolls allObjects];
+    for (RegisteredScrollPack *scrollPack in scrolls)
     {
-        for (int i = 0; i < [registeredScrolls count]; ++i)
+        if ([scrollPack scrollView] == nil)
         {
-            if ([registeredScrolls[i] scrollView] == nil)
-            {
-                [registeredScrolls removeObjectAtIndex:i];
-                i -= 1;
-            }
+            [registeredScrolls removeObject:scrollPack];
         }
     }
 }
@@ -179,7 +170,6 @@ static EKKeyboardAvoidingManager *kUIScrollViewDisplayManager;
         return;
     }
     
-    __weak id weakSelf = self;
     [UIView animateWithDuration:0.3
                      animations:^{
                          UIEdgeInsets insets = [self scrollViewContentInsets:scrollPack];
@@ -187,7 +177,7 @@ static EKKeyboardAvoidingManager *kUIScrollViewDisplayManager;
                          [[scrollPack scrollView] setScrollIndicatorInsets:insets];
                      }
                      completion:^(BOOL finished) {
-                         [weakSelf scrollToFirstResponder:scrollView];
+                         [self scrollToFirstResponder:scrollView];
                      }];
 }
 
@@ -289,6 +279,14 @@ static EKKeyboardAvoidingManager *kUIScrollViewDisplayManager;
     
     IMP newImplementation = imp_implementationWithBlock((__bridge id)((__bridge void*)block));
     method_setImplementation(didMoveMethod, newImplementation);
+}
+
+#pragma mark - notifications
+
+- (void)registerForNotificationNamed:(NSString *)name action:(SEL)action
+{
+    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+    [notificationCenter addObserver:self selector:action name:name object:nil];
 }
 
 @end

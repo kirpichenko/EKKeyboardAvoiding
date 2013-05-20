@@ -10,7 +10,7 @@
 
 @interface EKKeyboardAvoidingManager : NSObject
 {
-    NSMutableArray *registeredScrolls;
+    NSMutableSet *registeredScrolls;
 }
 
 @property (atomic,readonly) CGRect keyboardFrame;

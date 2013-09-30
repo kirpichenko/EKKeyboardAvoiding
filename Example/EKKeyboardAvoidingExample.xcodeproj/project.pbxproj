@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D948F7C4171BDFFF00DC9E37 /* RegisteringViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D948F7C3171BDFFF00DC9E37 /* RegisteringViewController_iPad.xib */; };
-		D96C117916709DE3005FEE63 /* SingleScrollViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D96C117816709DE3005FEE63 /* SingleScrollViewController_iPad.xib */; };
+		D948F7C4171BDFFF00DC9E37 /* RegisteringViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D948F7C3171BDFFF00DC9E37 /* RegisteringViewController~ipad.xib */; };
+		D96C117916709DE3005FEE63 /* SingleScrollViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D96C117816709DE3005FEE63 /* SingleScrollViewController~ipad.xib */; };
 		D9AF3152171BDB9800FAB741 /* libEKKeyboardAvoiding.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9AF3151171BDB9800FAB741 /* libEKKeyboardAvoiding.a */; };
 		D9D2F34D16F7324200A78061 /* RegisteringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9D2F34B16F7324200A78061 /* RegisteringViewController.m */; };
-		D9D2F34E16F7324200A78061 /* RegisteringViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9D2F34C16F7324200A78061 /* RegisteringViewController.xib */; };
+		D9D2F34E16F7324200A78061 /* RegisteringViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9D2F34C16F7324200A78061 /* RegisteringViewController~iphone.xib */; };
 		D9F3BB52166F4E2F00F0DEAE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F3BB51166F4E2F00F0DEAE /* UIKit.framework */; };
 		D9F3BB54166F4E2F00F0DEAE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F3BB53166F4E2F00F0DEAE /* Foundation.framework */; };
 		D9F3BB56166F4E2F00F0DEAE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F3BB55166F4E2F00F0DEAE /* CoreGraphics.framework */; };
@@ -22,11 +22,10 @@
 		D9F3BB66166F4E2F00F0DEAE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9F3BB65166F4E2F00F0DEAE /* Default@2x.png */; };
 		D9F3BB68166F4E2F00F0DEAE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9F3BB67166F4E2F00F0DEAE /* Default-568h@2x.png */; };
 		D9F3BB81166F4EFC00F0DEAE /* MultipleScrollsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F3BB7F166F4EFC00F0DEAE /* MultipleScrollsViewController.m */; };
-		D9F3BB82166F4EFC00F0DEAE /* MultipleScrollsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9F3BB80166F4EFC00F0DEAE /* MultipleScrollsViewController.xib */; };
-		D9F3BB84166F4F2300F0DEAE /* MultipleScrollsViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9F3BB83166F4F2300F0DEAE /* MultipleScrollsViewController_iPad.xib */; };
+		D9F3BB82166F4EFC00F0DEAE /* MultipleScrollsViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9F3BB80166F4EFC00F0DEAE /* MultipleScrollsViewController~iphone.xib */; };
+		D9F3BB84166F4F2300F0DEAE /* MultipleScrollsViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9F3BB83166F4F2300F0DEAE /* MultipleScrollsViewController~ipad.xib */; };
 		D9F3BB88166F522700F0DEAE /* SingleScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F3BB86166F522700F0DEAE /* SingleScrollViewController.m */; };
-		D9F3BB89166F522700F0DEAE /* SingleScrollViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9F3BB87166F522700F0DEAE /* SingleScrollViewController.xib */; };
-		D9F3BBA3166F9D9C00F0DEAE /* UIViewController+LoadWithXib.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F3BBA2166F9D9C00F0DEAE /* UIViewController+LoadWithXib.m */; };
+		D9F3BB89166F522700F0DEAE /* SingleScrollViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9F3BB87166F522700F0DEAE /* SingleScrollViewController~iphone.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,16 +36,23 @@
 			remoteGlobalIDString = D9F3BB31166F4B8A00F0DEAE;
 			remoteInfo = EKKeyboardAvoiding;
 		};
+		D9BC46BC17F57B6800BD6AC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D9F3BB72166F4E4C00F0DEAE /* EKKeyboardAvoiding.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D9F906C017F2D64D00BDDF5F;
+			remoteInfo = "EKKeyboardAvoiding-UnitTests";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		11A735D05168431AB87498E5 /* libPods-EKKeyboardAvoidingScrollViewExample-unit_tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EKKeyboardAvoidingScrollViewExample-unit_tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D948F7C3171BDFFF00DC9E37 /* RegisteringViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisteringViewController_iPad.xib; sourceTree = "<group>"; };
-		D96C117816709DE3005FEE63 /* SingleScrollViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SingleScrollViewController_iPad.xib; sourceTree = "<group>"; };
+		D948F7C3171BDFFF00DC9E37 /* RegisteringViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "RegisteringViewController~ipad.xib"; sourceTree = "<group>"; };
+		D96C117816709DE3005FEE63 /* SingleScrollViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "SingleScrollViewController~ipad.xib"; sourceTree = "<group>"; };
 		D9AF3151171BDB9800FAB741 /* libEKKeyboardAvoiding.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libEKKeyboardAvoiding.a; path = "../build/Release-iphoneos/libEKKeyboardAvoiding.a"; sourceTree = "<group>"; };
 		D9D2F34A16F7324200A78061 /* RegisteringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisteringViewController.h; sourceTree = "<group>"; };
 		D9D2F34B16F7324200A78061 /* RegisteringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisteringViewController.m; sourceTree = "<group>"; };
-		D9D2F34C16F7324200A78061 /* RegisteringViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisteringViewController.xib; sourceTree = "<group>"; };
+		D9D2F34C16F7324200A78061 /* RegisteringViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "RegisteringViewController~iphone.xib"; sourceTree = "<group>"; };
 		D9F3BB4D166F4E2F00F0DEAE /* EKKeyboardAvoidingExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EKKeyboardAvoidingExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F3BB51166F4E2F00F0DEAE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D9F3BB53166F4E2F00F0DEAE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -63,13 +69,11 @@
 		D9F3BB72166F4E4C00F0DEAE /* EKKeyboardAvoiding.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EKKeyboardAvoiding.xcodeproj; path = ../EKKeyboardAvoiding.xcodeproj; sourceTree = "<group>"; };
 		D9F3BB7E166F4EFC00F0DEAE /* MultipleScrollsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipleScrollsViewController.h; sourceTree = "<group>"; };
 		D9F3BB7F166F4EFC00F0DEAE /* MultipleScrollsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipleScrollsViewController.m; sourceTree = "<group>"; };
-		D9F3BB80166F4EFC00F0DEAE /* MultipleScrollsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultipleScrollsViewController.xib; sourceTree = "<group>"; };
-		D9F3BB83166F4F2300F0DEAE /* MultipleScrollsViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultipleScrollsViewController_iPad.xib; sourceTree = "<group>"; };
+		D9F3BB80166F4EFC00F0DEAE /* MultipleScrollsViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "MultipleScrollsViewController~iphone.xib"; sourceTree = "<group>"; };
+		D9F3BB83166F4F2300F0DEAE /* MultipleScrollsViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "MultipleScrollsViewController~ipad.xib"; sourceTree = "<group>"; };
 		D9F3BB85166F522700F0DEAE /* SingleScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleScrollViewController.h; sourceTree = "<group>"; };
 		D9F3BB86166F522700F0DEAE /* SingleScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleScrollViewController.m; sourceTree = "<group>"; };
-		D9F3BB87166F522700F0DEAE /* SingleScrollViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SingleScrollViewController.xib; sourceTree = "<group>"; };
-		D9F3BBA1166F9D9C00F0DEAE /* UIViewController+LoadWithXib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LoadWithXib.h"; sourceTree = "<group>"; };
-		D9F3BBA2166F9D9C00F0DEAE /* UIViewController+LoadWithXib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LoadWithXib.m"; sourceTree = "<group>"; };
+		D9F3BB87166F522700F0DEAE /* SingleScrollViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "SingleScrollViewController~iphone.xib"; sourceTree = "<group>"; };
 		FD9C8928A25648D9BA1A661B /* libPods-EKKeyboardAvoidingScrollViewExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EKKeyboardAvoidingScrollViewExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -92,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				D920A527171BDBC600F04CCC /* libEKKeyboardAvoiding.a */,
+				D9BC46BD17F57B6800BD6AC2 /* EKKeyboardAvoiding-UnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,8 +106,8 @@
 			children = (
 				D9F3BB7E166F4EFC00F0DEAE /* MultipleScrollsViewController.h */,
 				D9F3BB7F166F4EFC00F0DEAE /* MultipleScrollsViewController.m */,
-				D9F3BB80166F4EFC00F0DEAE /* MultipleScrollsViewController.xib */,
-				D9F3BB83166F4F2300F0DEAE /* MultipleScrollsViewController_iPad.xib */,
+				D9F3BB80166F4EFC00F0DEAE /* MultipleScrollsViewController~iphone.xib */,
+				D9F3BB83166F4F2300F0DEAE /* MultipleScrollsViewController~ipad.xib */,
 			);
 			name = MultipleScrolsViewcontroller;
 			sourceTree = "<group>";
@@ -112,8 +117,8 @@
 			children = (
 				D9F3BB85166F522700F0DEAE /* SingleScrollViewController.h */,
 				D9F3BB86166F522700F0DEAE /* SingleScrollViewController.m */,
-				D9F3BB87166F522700F0DEAE /* SingleScrollViewController.xib */,
-				D96C117816709DE3005FEE63 /* SingleScrollViewController_iPad.xib */,
+				D9F3BB87166F522700F0DEAE /* SingleScrollViewController~iphone.xib */,
+				D96C117816709DE3005FEE63 /* SingleScrollViewController~ipad.xib */,
 			);
 			name = SingleScrollViewController;
 			sourceTree = "<group>";
@@ -123,8 +128,8 @@
 			children = (
 				D9D2F34A16F7324200A78061 /* RegisteringViewController.h */,
 				D9D2F34B16F7324200A78061 /* RegisteringViewController.m */,
-				D9D2F34C16F7324200A78061 /* RegisteringViewController.xib */,
-				D948F7C3171BDFFF00DC9E37 /* RegisteringViewController_iPad.xib */,
+				D9D2F34C16F7324200A78061 /* RegisteringViewController~iphone.xib */,
+				D948F7C3171BDFFF00DC9E37 /* RegisteringViewController~ipad.xib */,
 			);
 			name = RegisteringViewController;
 			sourceTree = "<group>";
@@ -165,7 +170,6 @@
 			children = (
 				D9F3BB7C166F4E9300F0DEAE /* Application */,
 				D9F3BB7D166F4EA400F0DEAE /* Controllers */,
-				D9F3BBA0166F9D6100F0DEAE /* Extensions */,
 				D9F3BB58166F4E2F00F0DEAE /* Supporting Files */,
 			);
 			name = EKKeyboardAvoidingExample;
@@ -203,15 +207,6 @@
 				D96C11861670DDFF005FEE63 /* MultipleScrolsViewcontroller */,
 			);
 			name = Controllers;
-			sourceTree = "<group>";
-		};
-		D9F3BBA0166F9D6100F0DEAE /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				D9F3BBA1166F9D9C00F0DEAE /* UIViewController+LoadWithXib.h */,
-				D9F3BBA2166F9D9C00F0DEAE /* UIViewController+LoadWithXib.m */,
-			);
-			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,6 +269,13 @@
 			remoteRef = D920A526171BDBC600F04CCC /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		D9BC46BD17F57B6800BD6AC2 /* EKKeyboardAvoiding-UnitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "EKKeyboardAvoiding-UnitTests.xctest";
+			remoteRef = D9BC46BC17F57B6800BD6AC2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -285,12 +287,12 @@
 				D9F3BB64166F4E2F00F0DEAE /* Default.png in Resources */,
 				D9F3BB66166F4E2F00F0DEAE /* Default@2x.png in Resources */,
 				D9F3BB68166F4E2F00F0DEAE /* Default-568h@2x.png in Resources */,
-				D9F3BB82166F4EFC00F0DEAE /* MultipleScrollsViewController.xib in Resources */,
-				D9F3BB84166F4F2300F0DEAE /* MultipleScrollsViewController_iPad.xib in Resources */,
-				D9F3BB89166F522700F0DEAE /* SingleScrollViewController.xib in Resources */,
-				D96C117916709DE3005FEE63 /* SingleScrollViewController_iPad.xib in Resources */,
-				D9D2F34E16F7324200A78061 /* RegisteringViewController.xib in Resources */,
-				D948F7C4171BDFFF00DC9E37 /* RegisteringViewController_iPad.xib in Resources */,
+				D9F3BB82166F4EFC00F0DEAE /* MultipleScrollsViewController~iphone.xib in Resources */,
+				D9F3BB84166F4F2300F0DEAE /* MultipleScrollsViewController~ipad.xib in Resources */,
+				D9F3BB89166F522700F0DEAE /* SingleScrollViewController~iphone.xib in Resources */,
+				D96C117916709DE3005FEE63 /* SingleScrollViewController~ipad.xib in Resources */,
+				D9D2F34E16F7324200A78061 /* RegisteringViewController~iphone.xib in Resources */,
+				D948F7C4171BDFFF00DC9E37 /* RegisteringViewController~ipad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,7 +307,6 @@
 				D9F3BB62166F4E2F00F0DEAE /* AppDelegate.m in Sources */,
 				D9F3BB81166F4EFC00F0DEAE /* MultipleScrollsViewController.m in Sources */,
 				D9F3BB88166F522700F0DEAE /* SingleScrollViewController.m in Sources */,
-				D9F3BBA3166F9D9C00F0DEAE /* UIViewController+LoadWithXib.m in Sources */,
 				D9D2F34D16F7324200A78061 /* RegisteringViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

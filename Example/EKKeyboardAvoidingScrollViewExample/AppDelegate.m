@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "MultipleScrollsViewController.h"
 #import "SingleScrollViewController.h"
-#import "UIViewController+LoadWithXib.h"
 
 @interface AppDelegate ()
 @property (nonatomic, strong) UITabBarController *tabBarController;
@@ -22,20 +21,20 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    SingleScrollViewController *controller = [[SingleScrollViewController alloc] initWithUniversalNib];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
+    SingleScrollViewController *controller = [[SingleScrollViewController alloc] init];
+
     self.tabBarController = [[UITabBarController alloc] init];
     [self.tabBarController setViewControllers:@[
-        navigationController,
-        [[MultipleScrollsViewController alloc] initWithUniversalNib]
+        [[UINavigationController alloc] initWithRootViewController:controller],
+        [[MultipleScrollsViewController alloc] init]
      ]];
     
     [self setTabBarItemWithText:@"Single Scroll" forControllerAtIndex:0];
     [self setTabBarItemWithText:@"Multiple Scrolls" forControllerAtIndex:1];
     
     [self.window setRootViewController:self.tabBarController];
-    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+
     return YES;
 }
 

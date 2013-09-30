@@ -7,7 +7,8 @@
 //
 
 #import "MultipleScrollsViewController.h"
-#import <EKKeyboardAvoiding/EKKeyboardAvoiding.h>
+
+#import <EKKeyboardAvoiding/UIScrollView+EKKeyboardAvoiding.h>
 
 @interface MultipleScrollsViewController () <UITextFieldDelegate>
 @end
@@ -23,9 +24,9 @@
     
     [scrollView setContentSize:[scrollView frame].size];
     
-    [[EKKeyboardAvoidingManager sharedInstance] registerScrollView:textView];
-    [[EKKeyboardAvoidingManager sharedInstance] registerScrollView:tableView];
-    [[EKKeyboardAvoidingManager sharedInstance] registerScrollView:scrollView];
+    [textView setKeyboardAvoidingEnabled:YES];
+    [tableView setKeyboardAvoidingEnabled:YES];
+    [scrollView setKeyboardAvoidingEnabled:YES];
     
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                 action:@selector(viewWasTapped:)];
@@ -39,15 +40,6 @@
      scrollView = nil;
     
     [super viewDidUnload];
-}
-
-- (void)dealloc
-{
-    [[EKKeyboardAvoidingManager sharedInstance] unregisterScrollView:textView];
-    [[EKKeyboardAvoidingManager sharedInstance] unregisterScrollView:tableView];
-    [[EKKeyboardAvoidingManager sharedInstance] unregisterScrollView:scrollView];
-    
-    
 }
 
 #pragma mark -

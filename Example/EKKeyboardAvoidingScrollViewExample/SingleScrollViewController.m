@@ -9,9 +9,7 @@
 #import "SingleScrollViewController.h"
 #import "RegisteringViewController.h"
 
-#import "UIViewController+LoadWithXib.h"
-#import <EKKeyboardAvoiding/EKKeyboardAvoiding.h>
-
+#import <EKKeyboardAvoiding/UIScrollView+EKKeyboardAvoiding.h>
 
 @interface SingleScrollViewController () <UITextFieldDelegate>
 @end
@@ -24,14 +22,33 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];    
+   
     [scrollView setContentSize:[scrollView frame].size];
+    [scrollView setKeyboardAvoidingEnabled:YES];
+
     
+    [self setAutomaticallyAdjustsScrollViewInsets:NO];
+
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                 action:@selector(viewWasTapped:)];
     [singleTap setCancelsTouchesInView:NO];
     [[self view] addGestureRecognizer:singleTap];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    
+//    [scrollView setContentInset:UIEdgeInsetsMake(10, 0, 20, 0)];
+    
+    [super viewDidAppear:animated];
+    
+    NSLog(@"co  = %@",NSStringFromUIEdgeInsets([scrollView contentInset]));
+}
 
 #pragma mark -
 #pragma mark UITextFieldDelegate methods
@@ -55,13 +72,13 @@
 
 - (IBAction)showNext
 {
-    SingleScrollViewController *controller = [[SingleScrollViewController alloc] initWithUniversalNib];
+    SingleScrollViewController *controller = [[SingleScrollViewController alloc] init];
     [[self navigationController] pushViewController:controller animated:YES];
 }
 
 - (IBAction)showCustom
 {
-    RegisteringViewController *controller = [[RegisteringViewController alloc] initWithUniversalNib];
+    RegisteringViewController *controller = [[RegisteringViewController alloc] init];
     [[self navigationController] pushViewController:controller animated:YES];
 }
 

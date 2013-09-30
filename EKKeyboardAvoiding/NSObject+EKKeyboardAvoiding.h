@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSObject (EKAssociatedObject)
+@interface NSObject (EKKeyboardAvoiding)
 
-- (void)setAssociatedObject:(id)object forKey:(NSString *)key;
+- (void)associateObject:(id)object forKey:(NSString *)key;
 - (id)associatedObjectForKey:(NSString *)key;
+
+- (void)observeNotificationNamed:(NSString *)notificationName action:(SEL)action;
+- (void)stopNotificationsObserving;
 
 @end

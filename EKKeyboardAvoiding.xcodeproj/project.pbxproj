@@ -15,8 +15,9 @@
 		D92A33AB17F4246A0052C93D /* EKAvoidingListenerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D92A33AA17F4246A0052C93D /* EKAvoidingListenerTest.m */; };
 		D94172B517E8F4DE00C9DB01 /* EKAvoidingListener.h in Headers */ = {isa = PBXBuildFile; fileRef = D94172B317E8F4DE00C9DB01 /* EKAvoidingListener.h */; };
 		D94172B617E8F4DE00C9DB01 /* EKAvoidingListener.m in Sources */ = {isa = PBXBuildFile; fileRef = D94172B417E8F4DE00C9DB01 /* EKAvoidingListener.m */; };
-		D946965E17F98BFB00DE2921 /* NSObject+EKAssociatedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = D946965C17F98BFB00DE2921 /* NSObject+EKAssociatedObject.h */; };
-		D946965F17F98BFB00DE2921 /* NSObject+EKAssociatedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D946965D17F98BFB00DE2921 /* NSObject+EKAssociatedObject.m */; };
+		D946965E17F98BFB00DE2921 /* NSObject+EKKeyboardAvoiding.h in Headers */ = {isa = PBXBuildFile; fileRef = D946965C17F98BFB00DE2921 /* NSObject+EKKeyboardAvoiding.h */; };
+		D946965F17F98BFB00DE2921 /* NSObject+EKKeyboardAvoiding.m in Sources */ = {isa = PBXBuildFile; fileRef = D946965D17F98BFB00DE2921 /* NSObject+EKKeyboardAvoiding.m */; };
+		D946966617F9AA9500DE2921 /* NSObject+EKKeyboardAvoiding.m in Sources */ = {isa = PBXBuildFile; fileRef = D946965D17F98BFB00DE2921 /* NSObject+EKKeyboardAvoiding.m */; };
 		D951C81717F452E100B972D6 /* UIScrollView+EKKeyboardAvoiding.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9D5B2AB17E8F38600B8184E /* UIScrollView+EKKeyboardAvoiding.h */; };
 		D9D5B2AD17E8F38600B8184E /* UIScrollView+EKKeyboardAvoiding.h in Headers */ = {isa = PBXBuildFile; fileRef = D9D5B2AB17E8F38600B8184E /* UIScrollView+EKKeyboardAvoiding.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D9D5B2AE17E8F38600B8184E /* UIScrollView+EKKeyboardAvoiding.m in Sources */ = {isa = PBXBuildFile; fileRef = D9D5B2AC17E8F38600B8184E /* UIScrollView+EKKeyboardAvoiding.m */; };
@@ -60,8 +61,8 @@
 		D92A33AA17F4246A0052C93D /* EKAvoidingListenerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKAvoidingListenerTest.m; sourceTree = "<group>"; };
 		D94172B317E8F4DE00C9DB01 /* EKAvoidingListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKAvoidingListener.h; sourceTree = "<group>"; };
 		D94172B417E8F4DE00C9DB01 /* EKAvoidingListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKAvoidingListener.m; sourceTree = "<group>"; };
-		D946965C17F98BFB00DE2921 /* NSObject+EKAssociatedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+EKAssociatedObject.h"; sourceTree = "<group>"; };
-		D946965D17F98BFB00DE2921 /* NSObject+EKAssociatedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EKAssociatedObject.m"; sourceTree = "<group>"; };
+		D946965C17F98BFB00DE2921 /* NSObject+EKKeyboardAvoiding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+EKKeyboardAvoiding.h"; sourceTree = "<group>"; };
+		D946965D17F98BFB00DE2921 /* NSObject+EKKeyboardAvoiding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EKKeyboardAvoiding.m"; sourceTree = "<group>"; };
 		D9D5B2AB17E8F38600B8184E /* UIScrollView+EKKeyboardAvoiding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+EKKeyboardAvoiding.h"; sourceTree = "<group>"; };
 		D9D5B2AC17E8F38600B8184E /* UIScrollView+EKKeyboardAvoiding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+EKKeyboardAvoiding.m"; sourceTree = "<group>"; };
 		D9E868C2171BEC5C00728839 /* EKKeyboardAvoiding-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EKKeyboardAvoiding-Prefix.pch"; sourceTree = "<group>"; };
@@ -103,8 +104,8 @@
 			children = (
 				D9D5B2AB17E8F38600B8184E /* UIScrollView+EKKeyboardAvoiding.h */,
 				D9D5B2AC17E8F38600B8184E /* UIScrollView+EKKeyboardAvoiding.m */,
-				D946965C17F98BFB00DE2921 /* NSObject+EKAssociatedObject.h */,
-				D946965D17F98BFB00DE2921 /* NSObject+EKAssociatedObject.m */,
+				D946965C17F98BFB00DE2921 /* NSObject+EKKeyboardAvoiding.h */,
+				D946965D17F98BFB00DE2921 /* NSObject+EKKeyboardAvoiding.m */,
 				D94172B317E8F4DE00C9DB01 /* EKAvoidingListener.h */,
 				D94172B417E8F4DE00C9DB01 /* EKAvoidingListener.m */,
 				D92A33A117F2FA0C0052C93D /* EKAvoidingInsetCalculator.h */,
@@ -181,7 +182,7 @@
 			files = (
 				D94172B517E8F4DE00C9DB01 /* EKAvoidingListener.h in Headers */,
 				D9D5B2AD17E8F38600B8184E /* UIScrollView+EKKeyboardAvoiding.h in Headers */,
-				D946965E17F98BFB00DE2921 /* NSObject+EKAssociatedObject.h in Headers */,
+				D946965E17F98BFB00DE2921 /* NSObject+EKKeyboardAvoiding.h in Headers */,
 				D9E868C8171BEC5C00728839 /* EKKeyboardAvoiding-Prefix.pch in Headers */,
 				D92A33A317F2FA0C0052C93D /* EKAvoidingInsetCalculator.h in Headers */,
 			);
@@ -276,7 +277,7 @@
 			files = (
 				D94172B617E8F4DE00C9DB01 /* EKAvoidingListener.m in Sources */,
 				D92A33A417F2FA0C0052C93D /* EKAvoidingInsetCalculator.m in Sources */,
-				D946965F17F98BFB00DE2921 /* NSObject+EKAssociatedObject.m in Sources */,
+				D946965F17F98BFB00DE2921 /* NSObject+EKKeyboardAvoiding.m in Sources */,
 				D9D5B2AE17E8F38600B8184E /* UIScrollView+EKKeyboardAvoiding.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D946966617F9AA9500DE2921 /* NSObject+EKKeyboardAvoiding.m in Sources */,
 				D92A33A517F2FA0C0052C93D /* EKAvoidingInsetCalculator.m in Sources */,
 				D92A33A917F306E10052C93D /* EKAvoidingCalculatorTest.m in Sources */,
 				D92A33AB17F4246A0052C93D /* EKAvoidingListenerTest.m in Sources */,

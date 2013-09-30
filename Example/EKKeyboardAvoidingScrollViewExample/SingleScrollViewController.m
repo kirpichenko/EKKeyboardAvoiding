@@ -27,7 +27,7 @@
     [scrollView setKeyboardAvoidingEnabled:YES];
 
     
-    [self setAutomaticallyAdjustsScrollViewInsets:NO];
+//    [self setAutomaticallyAdjustsScrollViewInsets:NO];
 
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                 action:@selector(viewWasTapped:)];
@@ -85,7 +85,7 @@
 #pragma mark -
 #pragma mark rotation
 
-- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 {
     return YES;
 }

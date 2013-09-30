@@ -7,7 +7,7 @@
 //
 
 #import "UIScrollView+EKKeyboardAvoiding.h"
-#import "NSObject+EKAssociatedObject.h"
+#import "NSObject+EKKeyboardAvoiding.h"
 
 #import "EKAvoidingListener.h"
 
@@ -34,11 +34,11 @@ static NSString *const kListenerKey = @"KeyboardAvoidingListener";
 
 - (void)addKeyboardAvoidingListener {
     EKAvoidingListener *listener = [[EKAvoidingListener alloc] initWithScrollView:self];
-    [self setAssociatedObject:listener forKey:kListenerKey];
+    [self associateObject:listener forKey:kListenerKey];
 }
 
 - (void)removeKeyboardAvoidingListener {
-    [self setAssociatedObject:nil forKey:kListenerKey];
+    [self associateObject:nil forKey:kListenerKey];
 }
 
 - (EKAvoidingListener *)keyboardAvoidingListener {

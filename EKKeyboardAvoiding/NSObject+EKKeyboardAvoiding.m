@@ -9,6 +9,7 @@
 #import "NSObject+EKKeyboardAvoiding.h"
 
 #import <objc/runtime.h>
+#import <UIKit/UIKit.h>
 
 @implementation NSObject (EKKeyboardAvoiding)
 
@@ -32,6 +33,12 @@
 - (void)stopNotificationsObserving {
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
     [notificationCenter removeObserver:self];
+}
+
+#pragma mark - observe key path
+
+- (void)addObserver:(id)target forKeyPath:(NSString *)keyPath {
+    [self addObserver:target forKeyPath:keyPath options:NSKeyValueObservingOptionNew context:nil];
 }
 
 @end

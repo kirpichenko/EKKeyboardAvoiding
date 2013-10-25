@@ -16,4 +16,6 @@
 - (void)observeNotificationNamed:(NSString *)notificationName action:(SEL)action;
 - (void)stopNotificationsObserving;
 
+- (void)addObserver:(id)target forKeyPath:(NSString *)keyPath;
+
 @end

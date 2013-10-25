@@ -25,10 +25,7 @@
    
     [scrollView setContentSize:[scrollView frame].size];
     [scrollView setKeyboardAvoidingEnabled:YES];
-
     
-//    [self setAutomaticallyAdjustsScrollViewInsets:NO];
-
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                 action:@selector(viewWasTapped:)];
     [singleTap setCancelsTouchesInView:NO];
@@ -48,6 +45,10 @@
     [super viewDidAppear:animated];
     
     NSLog(@"co  = %@",NSStringFromUIEdgeInsets([scrollView contentInset]));
+}
+
+- (void)dealloc {
+    [scrollView setKeyboardAvoidingEnabled:NO];
 }
 
 #pragma mark -

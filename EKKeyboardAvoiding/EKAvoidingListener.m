@@ -29,15 +29,17 @@ static NSString *const kContentInsetKey = @"contentInset";
         [self setInitialContentInset:[scrollView contentInset]];
 
         [self startNotificationsObseving];
-        [self startContentInsetsObserving];
+        [self startKeyPathsObserving];
     }
     return self;
 }
 
 - (void)dealloc {
+    NSLog(@"ekavoiding dealloc");
+
     [self resetAvoidingContentInset];
     [self stopNotificationsObserving];
-    [self stopContentInsetsObserving];
+    [self stopKeyPathsObserving];
 }
 
 #pragma mark - track notifications
@@ -57,6 +59,24 @@ static NSString *const kContentInsetKey = @"contentInset";
 
     [self setKeyboardFrame:keyboardFrame];
     [self updateScrollViewsContentInset];
+}
+
+#pragma mark - track key paths
+
+- (void)startKeyPathsObserving {
+    [[self scrollView] addObserver:self forKeyPath:kContentInsetKey];
+}
+
+- (void)stopKeyPathsObserving {
+    [[self scrollView] removeObserver:self forKeyPath:kContentInsetKey];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context
+{
+    NSLog(@"change to %@",change);
 }
 
 #pragma mark - update inset
@@ -84,29 +104,10 @@ static NSString *const kContentInsetKey = @"contentInset";
     EKAvoidingInsetCalculator *calculator = [[EKAvoidingInsetCalculator alloc] init];
     
     [calculator setScrollViewFrame:[[self scrollView] frame]];
-    [calculator setScrollViewInitialInset:[[self scrollView] contentInset]];
+    [calculator setScrollViewInitialInset:[self initialContentInset]];
     [calculator setKeyboardFrame:[self keyboardFrame]];
     
     return [calculator calculateAvoidingInset];
-}
-
-#pragma mark - content inset observing
-
-- (void)startContentInsetsObserving {
-    [[self scrollView] addObserver:self forKeyPath:kContentInsetKey
-                           options:NSKeyValueObservingOptionNew context:(void *)self];
-}
-
-- (void)stopContentInsetsObserving {
-    [[self scrollView] removeObserver:self forKeyPath:kContentInsetKey context:(void *)self];
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object
-                        change:(NSDictionary *)change context:(void *)context
-{
-    if (context == (__bridge void *)self) {
-        NSLog(@"content changed %@",change);
-    }
 }
 
 @end

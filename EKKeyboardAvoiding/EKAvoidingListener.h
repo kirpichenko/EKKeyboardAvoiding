@@ -9,8 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+#import "EKKeyboardFrameConverter.h"
+
 @interface EKAvoidingListener : NSObject
 
 - (id)initWithScrollView:(UIScrollView *)scrollView;
+
+@property (nonatomic, strong) EKKeyboardFrameConverter *frameConverter;
 
 @end

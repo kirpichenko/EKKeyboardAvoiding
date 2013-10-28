@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface EKKeyboard : NSObject
+@interface EKFakeKeyboard : NSObject
 
 + (void)showFromBottom;
 + (void)showFromTop;
 + (void)showAtMiddle;
 + (void)hide;
+
++ (void)showWithFrame:(CGRect)frame;
 
 @end

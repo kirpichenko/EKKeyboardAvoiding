@@ -53,8 +53,8 @@ static NSString *const kContentInsetKey = @"contentInset";
     NSValue *frameValue = [[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey];
     
     CGRect keyboardFrame = [frameValue CGRectValue];
-    if ([self.scrollView superview]) {
-        keyboardFrame = [[self.scrollView superview] convertRect:keyboardFrame fromView:nil];
+    if ([self frameConverter]) {
+        keyboardFrame = [[self frameConverter] convertFrame:keyboardFrame forView:[self scrollView]];
     }
 
     [self setKeyboardFrame:keyboardFrame];

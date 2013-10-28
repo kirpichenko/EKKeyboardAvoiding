@@ -8,7 +8,7 @@
 
 #import <XCTest/XCTest.h>
 
-#import "EKKeyboard.h"
+#import "EKFakeKeyboard.h"
 #import "UIScrollView+EKKeyboardAvoiding.h"
 
 @interface AvoidingDisabledTest : XCTestCase {
@@ -46,21 +46,21 @@
 }
 
 - (void)testContentInsetWithKeyboardAtBottom {
-    [EKKeyboard showFromBottom];
+    [EKFakeKeyboard showFromBottom];
     
     UIEdgeInsets expectedInset = UIEdgeInsetsMake(10, 0, 216, 0);
     XCTAssertEqual([scrollView contentInset], expectedInset, @"content insets should be equal");
 }
 
 - (void)testContentInsetWithKeyboardAtTop {
-    [EKKeyboard showFromTop];
+    [EKFakeKeyboard showFromTop];
     
     UIEdgeInsets expectedInset = UIEdgeInsetsMake(216, 0, 20, 0);
     XCTAssertEqual([scrollView contentInset], expectedInset, @"content insets should be equal");
 }
 
 - (void)testContentInsetWithKeyboardAtMiddle {
-    [EKKeyboard showAtMiddle];
+    [EKFakeKeyboard showAtMiddle];
     
     XCTAssertEqual([scrollView contentInset], defaultInsets, @"content inset should be equal to default");
 }
@@ -75,7 +75,7 @@
 }
 
 - (void)testSetLargeBottomContentInsetWithKeyboardOnScreen {
-    [EKKeyboard showFromBottom];
+    [EKFakeKeyboard showFromBottom];
     
     UIEdgeInsets customInset = UIEdgeInsetsMake(20, 0, 250, 0);
     [scrollView setContentInset:customInset];
@@ -84,7 +84,7 @@
 }
 
 - (void)testSetSmallBottomContentInsetWithKeyboardOnScreen {
-    [EKKeyboard showFromBottom];
+    [EKFakeKeyboard showFromBottom];
     
     UIEdgeInsets customInset = UIEdgeInsetsMake(20, 0, 200, 0);
     UIEdgeInsets expectedInset = UIEdgeInsetsMake(20, 0, 216, 0);

@@ -12,11 +12,12 @@
 #import "NSObject+EKKeyboardAvoiding.h"
 
 static NSString *const kContentInsetKey = @"contentInset";
+static NSString *const kKeyboardFrameKey = @"keyboardFrame";
 
 @interface EKAvoidingListener ()
 @property (nonatomic, weak) UIScrollView *scrollView;
 @property (nonatomic, assign) UIEdgeInsets initialContentInset;
-@property (nonatomic, assign) CGRect keyboardFrame;
+@property (nonatomic, assign) BOOL avoidingStarted;
 @end
 
 @implementation EKAvoidingListener
@@ -27,9 +28,6 @@ static NSString *const kContentInsetKey = @"contentInset";
     if (self = [super init]) {
         [self setScrollView:scrollView];
         [self setInitialContentInset:[scrollView contentInset]];
-
-        [self startNotificationsObseving];
-        [self startKeyPathsObserving];
     }
     return self;
 }
@@ -37,77 +35,89 @@ static NSString *const kContentInsetKey = @"contentInset";
 - (void)dealloc {
     NSLog(@"ekavoiding dealloc");
 
-    [self resetAvoidingContentInset];
-    [self stopNotificationsObserving];
-    [self stopKeyPathsObserving];
+    [self stopAvoiding];
 }
 
-#pragma mark - track notifications
+#pragma mark - public methods
 
-- (void)startNotificationsObseving {
-    [self observeNotificationNamed:UIKeyboardDidChangeFrameNotification
-                            action:@selector(keyboardDidChangeFrame:)];
-}
-
-- (void)keyboardDidChangeFrame:(NSNotification *)notification {
-    NSValue *frameValue = [[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey];
-    
-    CGRect keyboardFrame = [frameValue CGRectValue];
-    if ([self frameConverter]) {
-        keyboardFrame = [[self frameConverter] convertFrame:keyboardFrame forView:[self scrollView]];
-    }
-
-    [self setKeyboardFrame:keyboardFrame];
-    [self updateScrollViewsContentInset];
-}
-
-#pragma mark - track key paths
-
-- (void)startKeyPathsObserving {
-    [[self scrollView] addObserver:self forKeyPath:kContentInsetKey];
-}
-
-- (void)stopKeyPathsObserving {
-    [[self scrollView] removeObserver:self forKeyPath:kContentInsetKey];
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath
-                      ofObject:(id)object
-                        change:(NSDictionary *)change
-                       context:(void *)context
+- (void)startAvoiding
 {
-    NSLog(@"change to %@",change);
+    if (!self.avoidingStarted) {
+        [self beginKeyboardFrameObserving];
+        [self beginContentInsetObserving];
+        [self setAvoidingStarted:YES];
+    }
+}
+
+- (void)stopAvoiding
+{
+    if (self.avoidingStarted) {
+        [self resetAvoidingContentInset];
+        
+        [self endKeyboardFrameObserving];
+        [self endContentInsetObserving];
+        [self setAvoidingStarted:NO];
+    }
 }
 
 #pragma mark - update inset
 
-- (void)updateScrollViewsContentInset {
-    [self resetAvoidingContentInset];
-    
+- (void)updateContentInset {
     UIEdgeInsets avoidingInset = [self calculateAvoidingContentInset];
     [self applyAvoidingContentInset:avoidingInset];
 }
 
+- (void)resetAvoidingContentInset {
+    [self applyAvoidingContentInset:initialContentInset];
+}
+
 - (void)applyAvoidingContentInset:(UIEdgeInsets)avoidingInset {
-    [self setInitialContentInset:[[self scrollView] contentInset]];
+    [self endContentInsetObserving];
 
     [[self scrollView] setContentInset:avoidingInset];
     [[self scrollView] setScrollIndicatorInsets:avoidingInset];
-}
-
-- (void)resetAvoidingContentInset {
-    [[self scrollView] setContentInset:initialContentInset];
-    [[self scrollView] setScrollIndicatorInsets:initialContentInset];
+    
+    [self beginContentInsetObserving];
 }
 
 - (UIEdgeInsets)calculateAvoidingContentInset {
     EKAvoidingInsetCalculator *calculator = [[EKAvoidingInsetCalculator alloc] init];
     
-    [calculator setScrollViewFrame:[[self scrollView] frame]];
+    [calculator setScrollViewFrame:[self.scrollView frame]];
     [calculator setScrollViewInitialInset:[self initialContentInset]];
-    [calculator setKeyboardFrame:[self keyboardFrame]];
+    [calculator setKeyboardFrame:[self.keyboardListener keyboardFrame]];
     
     return [calculator calculateAvoidingInset];
 }
+
+#pragma mark - private methods
+
+- (void)beginKeyboardFrameObserving {
+    [[self keyboardListener] addObserver:self forKeyPath:kKeyboardFrameKey];
+}
+
+- (void)endKeyboardFrameObserving {
+    [[self keyboardListener] removeObserver:self forKeyPath:kKeyboardFrameKey];
+}
+
+- (void)beginContentInsetObserving {
+    [[self scrollView] addObserver:self forKeyPath:kContentInsetKey];
+}
+
+- (void)endContentInsetObserving {
+    [[self scrollView] removeObserver:self forKeyPath:kContentInsetKey];
+}
+
+#pragma mark - observe
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object
+                        change:(NSDictionary *)change context:(void *)context
+{
+    if (object == [self scrollView]) {
+        [self setInitialContentInset:[self.scrollView contentInset]];
+    }
+    [self updateContentInset];
+}
+
 
 @end

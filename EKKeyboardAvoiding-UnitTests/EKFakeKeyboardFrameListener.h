@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Evgeniy Kirpichenko. All rights reserved.
 //
 
-#import "EKKeyboardFrameConverter.h"
+#import "EKKeyboardFrameListener.h"
 
-@interface EKFakeKeyboardFrameConverter : EKKeyboardFrameConverter
+@interface EKFakeKeyboardFrameListener : EKKeyboardFrameListener
 
 @end

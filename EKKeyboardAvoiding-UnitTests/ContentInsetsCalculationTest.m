@@ -11,7 +11,7 @@
 #import "EKAvoidingListener.h"
 
 #import "EKFakeKeyboard.h"
-#import "EKFakeKeyboardFrameConverter.h"
+#import "EKFakeKeyboardFrameListener.h"
 
 @interface EKAvoidingListenerTest : XCTestCase {
     UIScrollView *scrollView;
@@ -29,7 +29,9 @@
     scrollView.contentInset = UIEdgeInsetsMake(40, 0, 100, 0);
     
     listener = [[EKAvoidingListener alloc] initWithScrollView:scrollView];
-    listener.frameConverter = [EKFakeKeyboardFrameConverter new];
+    listener.keyboardListener = [EKFakeKeyboardFrameListener new];
+    
+    [listener startAvoiding];
 }
 
 - (void)tearDown {

@@ -11,6 +11,9 @@
 
 @interface EKKeyboardFrameListener : NSObject
 
+- (CGRect)convertedKeyboardFrameForView:(UIView *)view;
+
 @property (nonatomic,readonly) CGRect keyboardFrame;
+@property (nonatomic,readonly) NSDictionary *keyboardInfo;
 
 @end

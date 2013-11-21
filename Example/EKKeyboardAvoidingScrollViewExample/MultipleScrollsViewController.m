@@ -10,7 +10,12 @@
 
 #import <EKKeyboardAvoiding/UIScrollView+EKKeyboardAvoiding.h>
 
+static NSString *const kCellIdentifier = @"CellIdentifier";
+
 @interface MultipleScrollsViewController () <UITextFieldDelegate>
+@property (strong, nonatomic) IBOutlet UITextView *textView;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @end
 
 @implementation MultipleScrollsViewController
@@ -22,28 +27,19 @@
 {
     [super viewDidLoad];
     
-    [scrollView setContentSize:[scrollView frame].size];
+    [self.scrollView setContentSize:[self.scrollView frame].size];
+    [self.scrollView setKeyboardAvoidingEnabled:YES];
     
-    [textView setKeyboardAvoidingEnabled:YES];
-    [tableView setKeyboardAvoidingEnabled:YES];
-    [scrollView setKeyboardAvoidingEnabled:YES];
+    [self.textView setKeyboardAvoidingEnabled:YES];
+
+    [self.tableView setKeyboardAvoidingEnabled:YES];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kCellIdentifier];
     
-    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                                                action:@selector(viewWasTapped:)];
-    [[self view] addGestureRecognizer:singleTap];
+    [self addViewTap];
+    
 }
 
-- (void)viewDidUnload
-{
-     textView = nil;
-     tableView = nil;
-     scrollView = nil;
-    
-    [super viewDidUnload];
-}
-
-#pragma mark -
-#pragma mark UITableViewDataSource
+#pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -52,13 +48,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *cellIdentifier = @"cellIdentifier";
-    UITableViewCell *cell = (UITableViewCell *)[aTableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                      reuseIdentifier:cellIdentifier];
-    }
-    [[cell textLabel] setText:[NSString stringWithFormat:@"Cell #%d",indexPath.row]];
+    UITableViewCell *cell = [aTableView dequeueReusableCellWithIdentifier:kCellIdentifier];
+    [cell.textLabel setText:[NSString stringWithFormat:@"Cell #%d",indexPath.row]];
     
     return cell;
 }
@@ -68,25 +59,30 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [[self view] endEditing:YES];
+    [self.view endEditing:YES];
     return YES;
 }
 
-#pragma mark -
-#pragma mark touches
-
-- (void)viewWasTapped:(UITapGestureRecognizer *)singleTap
-{
-    [[self view] endEditing:YES];
-}
-
-#pragma mark -
-#pragma mark rotation
+#pragma mark - rotation
 
 - (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 {
     return YES;
 }
 
+#pragma mark - helpers
+
+- (void)addViewTap
+{
+    UITapGestureRecognizer *singleTap;
+    singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewWasTapped:)];
+
+    [self.view addGestureRecognizer:singleTap];
+}
+
+- (void)viewWasTapped:(UITapGestureRecognizer *)singleTap
+{
+    [self.view endEditing:YES];
+}
 
 @end

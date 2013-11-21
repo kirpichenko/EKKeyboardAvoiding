@@ -7,7 +7,7 @@
 //
 
 #import "SingleScrollViewController.h"
-#import "RegisteringViewController.h"
+#import "MultipleScrollsViewController.h"
 
 #import <EKKeyboardAvoiding/UIScrollView+EKKeyboardAvoiding.h>
 
@@ -17,49 +17,23 @@
 
 @implementation SingleScrollViewController
 
-#pragma mark - life cycle
+#pragma mark - view life cycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];    
    
-    [scrollView setContentSize:[scrollView frame].size];
-    [scrollView setKeyboardAvoidingEnabled:YES];
-//    [scrollView addObserver:self forKeyPath:@"contentInset" options:NSKeyValueObservingOptionNew
-//                    context:nil];
+    [self.scrollView setContentSize:[self.scrollView frame].size];
+    [self.scrollView setKeyboardAvoidingEnabled:YES];
     
-    
-    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                                                action:@selector(viewWasTapped:)];
-    [singleTap setCancelsTouchesInView:NO];
-    [[self view] addGestureRecognizer:singleTap];
-    
-    [self setAutomaticallyAdjustsScrollViewInsets:<#(BOOL)#>]
+    [self addViewTapGesture];
 }
 
-- (void)dealloc {
-    [scrollView setKeyboardAvoidingEnabled:NO];
-}
+//- (void)dealloc {
+//    [scrollView setKeyboardAvoidingEnabled:NO];
+//}
 
-#pragma mark -
-#pragma mark UITextFieldDelegate methods
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    [[self view] endEditing:YES];
-    return YES;
-}
-
-#pragma mark -
-#pragma mark touches
-
-- (void)viewWasTapped:(UITapGestureRecognizer *) singleTap
-{
-    [[self view] endEditing:YES];
-}
-
-#pragma mark -
-#pragma mark actions
+#pragma mark - actions
 
 - (IBAction)showNext
 {
@@ -69,23 +43,40 @@
 
 - (IBAction)showCustom
 {
-    RegisteringViewController *controller = [[RegisteringViewController alloc] init];
+    MultipleScrollsViewController *controller = [[MultipleScrollsViewController alloc] init];
     [[self navigationController] pushViewController:controller animated:YES];
 }
 
-#pragma mark -
-#pragma mark rotation
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [[self view] endEditing:YES];
+    return YES;
+}
+
+#pragma mark - rotation
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 {
     return YES;
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+#pragma mark - helpers
+
+- (void)addViewTapGesture
 {
-    
-    NSLog(@"aa new value %@",change);
-    NSLog(@"scroll %@",scrollView);
+    UITapGestureRecognizer *singleTap;
+    singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewWasTapped:)];
+
+    [singleTap setCancelsTouchesInView:NO];
+    [self.view addGestureRecognizer:singleTap];
 }
+
+- (void)viewWasTapped:(UITapGestureRecognizer *) singleTap
+{
+    [[self view] endEditing:YES];
+}
+
 
 @end

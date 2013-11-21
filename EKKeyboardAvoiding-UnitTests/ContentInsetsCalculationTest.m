@@ -1,5 +1,5 @@
 //
-//  EKAvoidingListenerTest.m
+//  EKKeyboardAvoidingProviderTest.m
 //  EKKeyboardAvoiding
 //
 //  Created by Evgeniy Kirpichenko on 9/26/13.
@@ -8,19 +8,19 @@
 
 #import <XCTest/XCTest.h>
 
-#import "EKAvoidingListener.h"
+#import "EKKeyboardAvoidingProvider.h"
 
 #import "EKFakeKeyboard.h"
 #import "EKFakeKeyboardFrameListener.h"
 
-@interface EKAvoidingListenerTest : XCTestCase {
+@interface EKKeyboardAvoidingProviderTest : XCTestCase {
     UIScrollView *scrollView;
-    EKAvoidingListener *listener;
+    EKKeyboardAvoidingProvider *avoidingProvider;
 }
 
 @end
 
-@implementation EKAvoidingListenerTest
+@implementation EKKeyboardAvoidingProviderTest
 
 - (void)setUp {
     [super setUp];
@@ -28,10 +28,10 @@
     scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 160, 320, 200)];
     scrollView.contentInset = UIEdgeInsetsMake(40, 0, 100, 0);
     
-    listener = [[EKAvoidingListener alloc] initWithScrollView:scrollView];
-    listener.keyboardListener = [EKFakeKeyboardFrameListener new];
+    avoidingProvider = [[EKKeyboardAvoidingProvider alloc] initWithScrollView:scrollView];
+    avoidingProvider.keyboardListener = [EKFakeKeyboardFrameListener new];
     
-    [listener startAvoiding];
+    [avoidingProvider startAvoiding];
 }
 
 - (void)tearDown {

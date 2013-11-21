@@ -25,26 +25,16 @@
    
     [scrollView setContentSize:[scrollView frame].size];
     [scrollView setKeyboardAvoidingEnabled:YES];
+//    [scrollView addObserver:self forKeyPath:@"contentInset" options:NSKeyValueObservingOptionNew
+//                    context:nil];
+    
     
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                 action:@selector(viewWasTapped:)];
     [singleTap setCancelsTouchesInView:NO];
     [[self view] addGestureRecognizer:singleTap];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
     
-    
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    
-//    [scrollView setContentInset:UIEdgeInsetsMake(10, 0, 20, 0)];
-    
-    [super viewDidAppear:animated];
-    
-    NSLog(@"co  = %@",NSStringFromUIEdgeInsets([scrollView contentInset]));
+    [self setAutomaticallyAdjustsScrollViewInsets:<#(BOOL)#>]
 }
 
 - (void)dealloc {
@@ -89,6 +79,13 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 {
     return YES;
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    
+    NSLog(@"aa new value %@",change);
+    NSLog(@"scroll %@",scrollView);
 }
 
 @end

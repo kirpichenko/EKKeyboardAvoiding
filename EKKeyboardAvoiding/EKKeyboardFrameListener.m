@@ -32,7 +32,8 @@
 #pragma mark - public methods
 
 - (CGRect)convertedKeyboardFrameForView:(UIView *)view {
-    return [[view superview] convertRect:[self keyboardFrame] fromView:nil];
+    CGRect convertedFrame = [[view superview] convertRect:[self keyboardFrame] fromView:nil];
+    return convertedFrame;
 }
 
 #pragma mark - private methods
@@ -48,9 +49,9 @@
     self.keyboardInfo = [notification userInfo];
     
     NSValue *frameValue = [self.keyboardInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
-    self.keyboardFrame = [frameValue CGRectValue];
-    
-    NSLog(@"1");
+    if (!CGRectEqualToRect(self.keyboardFrame, [frameValue CGRectValue])) {
+        self.keyboardFrame = [frameValue CGRectValue];
+    }
 }
 
 @end

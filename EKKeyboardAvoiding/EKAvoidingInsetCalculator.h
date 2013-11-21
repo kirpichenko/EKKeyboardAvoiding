@@ -13,7 +13,7 @@
 
 @property (nonatomic, assign) CGRect keyboardFrame;
 @property (nonatomic, assign) CGRect scrollViewFrame;
-@property (nonatomic, assign) UIEdgeInsets scrollViewInitialInset;
+@property (nonatomic, assign) UIEdgeInsets scrollViewInset;
 
 - (UIEdgeInsets)calculateAvoidingInset;
 

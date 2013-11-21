@@ -12,20 +12,20 @@
 
 @synthesize keyboardFrame;
 @synthesize scrollViewFrame;
-@synthesize scrollViewInitialInset;
+@synthesize scrollViewInset;
 
 #pragma mark - public methods
 
 - (UIEdgeInsets)calculateAvoidingInset {
-    UIEdgeInsets contentInset = scrollViewInitialInset;
+    UIEdgeInsets contentInset = UIEdgeInsetsZero;
     if ([self intersectionExists]) {
         if ([self keyboardAtTheTop]) {
             CGFloat coverage = CGRectGetMaxY(keyboardFrame) - CGRectGetMinY(scrollViewFrame);
-            contentInset.top = MAX(contentInset.top, coverage);
+            contentInset.top = MAX(coverage - scrollViewInset.top, 0);
         }
         else if ([self keyboardAtTheBottom] ) {
             CGFloat coverage = CGRectGetMaxY(scrollViewFrame) - CGRectGetMinY(keyboardFrame);
-            contentInset.bottom = MAX(contentInset.bottom, coverage);
+            contentInset.bottom = MAX(coverage - scrollViewInset.bottom, 0);
         }
     }
     return contentInset;
@@ -35,10 +35,11 @@
 
 - (BOOL)intersectionExists {
     BOOL intersect = CGRectIntersectsRect(keyboardFrame, scrollViewFrame);
-    BOOL contain = CGRectContainsRect(keyboardFrame, scrollViewFrame);
+    BOOL keyboardContains = CGRectContainsRect(keyboardFrame, scrollViewFrame);
+    BOOL sameHeight =  scrollViewFrame.size.height == keyboardFrame.size.height;
     BOOL empty = CGRectEqualToRect(keyboardFrame, CGRectZero);
     
-    return (intersect && !contain && !empty);
+    return (intersect && !keyboardContains && !sameHeight && !empty);
 }
 
 - (BOOL)keyboardAtTheTop {

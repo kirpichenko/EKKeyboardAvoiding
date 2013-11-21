@@ -1,5 +1,5 @@
 //
-//  EKAvoidingListener.h
+//  EKKeyboardAvoidingProvider.h
 //  EKKeyboardAvoiding
 //
 //  Created by Evgeniy Kirpichenko on 9/17/13.
@@ -11,7 +11,7 @@
 
 #import "EKKeyboardFrameListener.h"
 
-@interface EKAvoidingListener : NSObject
+@interface EKKeyboardAvoidingProvider : NSObject
 
 - (id)initWithScrollView:(UIScrollView *)scrollView;
 

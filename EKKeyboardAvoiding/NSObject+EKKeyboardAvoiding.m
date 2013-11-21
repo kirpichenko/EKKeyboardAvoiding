@@ -38,7 +38,9 @@
 #pragma mark - observe key path
 
 - (void)addObserver:(id)target forKeyPath:(NSString *)keyPath {
-    [self addObserver:target forKeyPath:keyPath options:NSKeyValueObservingOptionNew context:nil];
+    [self addObserver:target forKeyPath:keyPath
+              options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld
+              context:nil];
 }
 
 @end

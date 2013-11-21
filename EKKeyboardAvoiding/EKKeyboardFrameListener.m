@@ -18,38 +18,45 @@
 
 #pragma mark life cycle
 
-- (id)init {
-    if (self = [super init]) {
+- (id)init
+{
+    if (self = [super init])
+    {
         [self startNotificationsObseving];
     }
     return self;
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
     [self stopNotificationsObserving];
 }
 
 #pragma mark - public methods
 
-- (CGRect)convertedKeyboardFrameForView:(UIView *)view {
+- (CGRect)convertedKeyboardFrameForView:(UIView *)view
+{
     CGRect convertedFrame = [[view superview] convertRect:[self keyboardFrame] fromView:nil];
     return convertedFrame;
 }
 
 #pragma mark - private methods
 
-- (void)startNotificationsObseving {
+- (void)startNotificationsObseving
+{
     [self observeNotificationNamed:UIKeyboardDidChangeFrameNotification
                             action:@selector(keyboardDidChangeFrame:)];
 }
 
 #pragma mark - observe keyboard frame
 
-- (void)keyboardDidChangeFrame:(NSNotification *)notification {
+- (void)keyboardDidChangeFrame:(NSNotification *)notification
+{
     self.keyboardInfo = [notification userInfo];
     
     NSValue *frameValue = [self.keyboardInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
-    if (!CGRectEqualToRect(self.keyboardFrame, [frameValue CGRectValue])) {
+    if (!CGRectEqualToRect(self.keyboardFrame, [frameValue CGRectValue]))
+    {
         self.keyboardFrame = [frameValue CGRectValue];
     }
 }

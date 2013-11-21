@@ -94,7 +94,8 @@
 
 #pragma mark - helpers
 
-- (void)updateContentInset:(UIEdgeInsets)contentInset {
+- (void)updateContentInset:(UIEdgeInsets)contentInset
+{
     [[self scrollView] setContentInset:contentInset];
 }
 

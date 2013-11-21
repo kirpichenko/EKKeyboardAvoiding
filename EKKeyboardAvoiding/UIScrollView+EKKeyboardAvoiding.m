@@ -18,22 +18,27 @@ static NSString *const kListenerKey = @"KeyboardAvoidingListener";
 
 #pragma mark - public methods
 
-- (BOOL)keyboardAvoidingEnabled {
+- (BOOL)keyboardAvoidingEnabled
+{
     return ([self keyboardAvoidingListener] != nil);
 }
 
-- (void)setKeyboardAvoidingEnabled:(BOOL)enabled {
-    if (enabled) {
+- (void)setKeyboardAvoidingEnabled:(BOOL)enabled
+{
+    if (enabled)
+    {
         [self addKeyboardAvoidingListener];
     }
-    else {
+    else
+    {
         [self removeKeyboardAvoidingListener];
     }
 }
 
 #pragma mark - associate avoiding listener
 
-- (void)addKeyboardAvoidingListener {
+- (void)addKeyboardAvoidingListener
+{
     EKKeyboardAvoidingProvider *listener = [[EKKeyboardAvoidingProvider alloc] initWithScrollView:self];
     [listener setKeyboardListener:[self keyboardFrameListener]];
     [listener startAvoiding];
@@ -41,19 +46,22 @@ static NSString *const kListenerKey = @"KeyboardAvoidingListener";
     [self associateObject:listener forKey:kListenerKey];
 }
 
-- (void)removeKeyboardAvoidingListener {
+- (void)removeKeyboardAvoidingListener
+{
     EKKeyboardAvoidingProvider *listener = [self keyboardAvoidingListener];
     [listener stopAvoiding];
 
     [self associateObject:nil forKey:kListenerKey];
 }
 
-- (EKKeyboardAvoidingProvider *)keyboardAvoidingListener {
+- (EKKeyboardAvoidingProvider *)keyboardAvoidingListener
+{
     return [self associatedObjectForKey:kListenerKey];
 }
 
 
-- (EKKeyboardFrameListener *)keyboardFrameListener {
+- (EKKeyboardFrameListener *)keyboardFrameListener
+{
     static EKKeyboardFrameListener *listener;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

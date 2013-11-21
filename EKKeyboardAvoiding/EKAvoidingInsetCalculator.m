@@ -16,14 +16,18 @@
 
 #pragma mark - public methods
 
-- (UIEdgeInsets)calculateAvoidingInset {
+- (UIEdgeInsets)calculateAvoidingInset
+{
     UIEdgeInsets contentInset = UIEdgeInsetsZero;
-    if ([self intersectionExists]) {
-        if ([self keyboardAtTheTop]) {
+    if ([self intersectionExists])
+    {
+        if ([self keyboardAtTheTop])
+        {
             CGFloat coverage = CGRectGetMaxY(keyboardFrame) - CGRectGetMinY(scrollViewFrame);
             contentInset.top = MAX(coverage - scrollViewInset.top, 0);
         }
-        else if ([self keyboardAtTheBottom] ) {
+        else if ([self keyboardAtTheBottom])
+        {
             CGFloat coverage = CGRectGetMaxY(scrollViewFrame) - CGRectGetMinY(keyboardFrame);
             contentInset.bottom = MAX(coverage - scrollViewInset.bottom, 0);
         }
@@ -33,7 +37,8 @@
 
 #pragma mark - find intersection
 
-- (BOOL)intersectionExists {
+- (BOOL)intersectionExists
+{
     BOOL intersect = CGRectIntersectsRect(keyboardFrame, scrollViewFrame);
     BOOL keyboardContains = CGRectContainsRect(keyboardFrame, scrollViewFrame);
     BOOL sameHeight =  scrollViewFrame.size.height == keyboardFrame.size.height;
@@ -42,11 +47,13 @@
     return (intersect && !keyboardContains && !sameHeight && !empty);
 }
 
-- (BOOL)keyboardAtTheTop {
+- (BOOL)keyboardAtTheTop
+{
     return keyboardFrame.origin.y <= scrollViewFrame.origin.y;
 }
 
-- (BOOL)keyboardAtTheBottom {
+- (BOOL)keyboardAtTheBottom
+{
     return (keyboardFrame.origin.y <= CGRectGetMaxY(scrollViewFrame) &&
             CGRectGetMaxY(keyboardFrame) >= CGRectGetMaxY(scrollViewFrame));
 }

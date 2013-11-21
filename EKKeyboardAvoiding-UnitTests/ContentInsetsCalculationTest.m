@@ -13,7 +13,8 @@
 #import "EKFakeKeyboard.h"
 #import "EKFakeKeyboardFrameListener.h"
 
-@interface EKKeyboardAvoidingProviderTest : XCTestCase {
+@interface EKKeyboardAvoidingProviderTest : XCTestCase
+{
     UIScrollView *scrollView;
     EKKeyboardAvoidingProvider *avoidingProvider;
 }
@@ -22,7 +23,8 @@
 
 @implementation EKKeyboardAvoidingProviderTest
 
-- (void)setUp {
+- (void)setUp
+{
     [super setUp];
     
     scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 160, 320, 200)];
@@ -34,11 +36,13 @@
     [avoidingProvider startAvoiding];
 }
 
-- (void)tearDown {
+- (void)tearDown
+{
     [super tearDown];
 }
 
-- (void)testBottomIntersectionWithoutCoverage {
+- (void)testBottomIntersectionWithoutCoverage
+{
     [EKFakeKeyboard showFromBottom];
     
     UIEdgeInsets expectedInset = UIEdgeInsetsMake(40, 0, 100, 0);
@@ -48,7 +52,8 @@
     XCTAssertEqual(expectedInset, calculatedInset);
 }
 
-- (void)testBottomIntersectionWithCoverage {
+- (void)testBottomIntersectionWithCoverage
+{
     [EKFakeKeyboard showWithFrame:CGRectMake(0, 240, 320, 216)];
     
     UIEdgeInsets expectedInset = UIEdgeInsetsMake(40, 0, 120, 0);
@@ -58,7 +63,8 @@
     XCTAssertEqual(expectedInset, calculatedInset);
 }
 
-- (void)testTopIntersectionWithoutCoverage {
+- (void)testTopIntersectionWithoutCoverage
+{
     [EKFakeKeyboard showWithFrame:CGRectMake(0, -40, 320, 216)];
     
     UIEdgeInsets expectedInset = UIEdgeInsetsMake(40, 0, 100, 0);
@@ -68,7 +74,8 @@
     XCTAssertEqual(expectedInset, calculatedInset);
 }
 
-- (void)testTopIntersectionWithCoverage {
+- (void)testTopIntersectionWithCoverage
+{
     [EKFakeKeyboard showFromTop];
     
     UIEdgeInsets expectedInset = UIEdgeInsetsMake(56, 0, 100, 0);
@@ -78,7 +85,8 @@
     XCTAssertEqual(expectedInset, calculatedInset);
 }
 
-- (void)testMiddleIntersection {
+- (void)testMiddleIntersection
+{
     [EKFakeKeyboard showWithFrame:CGRectMake(0, 200, 320, 100)];
     
     UIEdgeInsets expectedInset = UIEdgeInsetsMake(40, 0, 100, 0);
@@ -88,7 +96,8 @@
     XCTAssertEqual(expectedInset, calculatedInset);
 }
 
-- (void)testAppearanceWithoutIntersection {
+- (void)testAppearanceWithoutIntersection
+{
     [EKFakeKeyboard showWithFrame:CGRectMake(0, 480, 320, 216)];
     
     UIEdgeInsets expectedInset = UIEdgeInsetsMake(40, 0, 100, 0);

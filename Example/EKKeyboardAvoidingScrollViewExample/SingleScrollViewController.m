@@ -12,12 +12,12 @@
 #import <EKKeyboardAvoiding/UIScrollView+EKKeyboardAvoiding.h>
 
 @interface SingleScrollViewController () <UITextFieldDelegate>
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @end
 
 @implementation SingleScrollViewController
 
-#pragma mark -
-#pragma mark life cycle
+#pragma mark - life cycle
 
 - (void)viewDidLoad
 {

@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SingleScrollViewController : UIViewController {
-    IBOutlet UIScrollView *scrollView;
-}
+@interface SingleScrollViewController : UIViewController
 
 @end

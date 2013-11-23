@@ -23,10 +23,10 @@
     
     SingleScrollViewController *controller = [[SingleScrollViewController alloc] init];
 
-    self.tabBarController = [[UITabBarController alloc] init];
+    [self setTabBarController:[UITabBarController new]];
     [self.tabBarController setViewControllers:@[
         [[UINavigationController alloc] initWithRootViewController:controller],
-        [[MultipleScrollsViewController alloc] init]
+        [MultipleScrollsViewController new]
      ]];
     
     [self setTabBarItemWithText:@"Single Scroll" forControllerAtIndex:0];

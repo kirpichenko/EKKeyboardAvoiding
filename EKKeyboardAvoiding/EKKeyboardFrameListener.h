@@ -11,9 +11,13 @@
 
 @interface EKKeyboardFrameListener : NSObject
 
+/*! Returns keyboard frame in coordinate system ov view's superview
+ \param view View which superview to be used for keyboard frame converting
+ \returns Converted keyboard frame
+ */
 - (CGRect)convertedKeyboardFrameForView:(UIView *)view;
 
+/// Last observed keyboard frame
 @property (nonatomic,readonly) CGRect keyboardFrame;
-@property (nonatomic,readonly) NSDictionary *keyboardInfo;
 
 @end

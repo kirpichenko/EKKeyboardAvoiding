@@ -1,27 +1,22 @@
 ## EKKeyboardAvoiding
-It's an universal solution for keyboard avoiding that allows automatically change content inset of `UIScrollView` and it's subclasses. When keyboard appears you will be able to see all content of your scroll views.
+It's an universal solution for keyboard avoiding that automatically changes content inset of your `UIScrollView` classes. When keyboard appears you will be able to see all content of your scroll views.
 
 ## How to install
-If you use `CocoaPods` in your project just add it into your `Podfile`
+Install using `CocoaPods`. 
 <pre><code>pod 'EKKeyboardAvoiding'</code></pre>
 
-If you don't use `CocoaPods` you can compile static lib and add it to your project or just add `EKKeyboardAvoidingScrollView` and `EKKeyboardAvoidingScrollViewManager` files into your project
-
 ## Usage
-To enable keyboard avoiding set `contentSize` for your scroll and use `EKKeyboardAvoidingManager` class and `registerScrollView:` method to register and start avoiding. 
+First import `UIScrollView+EKKeyboardAvoiding` category to your project
+<pre><code>@import UIScrollView+EKKeyboardAvoiding</code></pre>
 
+To enable keyboard avoiding you have to set `contentSize` of your scroll view and enable keyboard avoiding using category method `setKeyboardAvoidingEnabled:`
 <pre><code>UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:[[self view] bounds]];
 [scrollView setContentSize:[scrollView frame].size];
 ...
-[[EKKeyboardAvoidingManager sharedInstance] registerScrollView:scrollView];
+[scrollView setKeyboardAvoidingEnabled:YES];
 </code></pre>
 
-To disable keyboard avoiding use `unregisterScrollView:` method of `EKKeyboardAvoidingManager` class
-
-<pre><code>[[EKKeyboardAvoidingManager sharedInstance] unregisterScrollView:scrollView];
-</code></pre>
-
-You can also use `EKKeyboardAvoidingView` class instead of `UIScrollView` that automatically registers objects for keyboard avoiding. If you use xib, set the scroll view's class as `EKKeyboardAvoidingView`, and put all your controls within that scroll view. You can also create it programmatically, without using xibs - just use `EKKeyboardAvoidingView` as a superclass for your scroll views.
+To disable keyboard avoiding provide `NO` to `setKeyboardAvoidingEnabled:` method
 
 ##Example
 ![screenshot#1](https://github.com/kirpichenko/EKKeyboardAvoiding/raw/develop/README/screenshot_1.PNG)![screenshot#2](https://github.com/kirpichenko/EKKeyboardAvoiding/raw/develop/README/screenshot_2.PNG)

@@ -23,6 +23,14 @@ static NSString *const kCellIdentifier = @"CellIdentifier";
 #pragma mark -
 #pragma mark life cycle
 
+- (id)init
+{
+    if (self = [super init]) {
+        [self setAutomaticallyAdjustsScrollViewInsets:NO];
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

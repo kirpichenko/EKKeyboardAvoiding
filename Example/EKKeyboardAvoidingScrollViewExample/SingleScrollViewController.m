@@ -29,10 +29,6 @@
     [self addViewTapGesture];
 }
 
-//- (void)dealloc {
-//    [scrollView setKeyboardAvoidingEnabled:NO];
-//}
-
 #pragma mark - actions
 
 - (IBAction)showNext

@@ -1,4 +1,4 @@
-## EKKeyboardAvoiding
+## EKKeyboardAvoiding 2.0
 It's an universal solution for keyboard avoiding that automatically changes content inset of your `UIScrollView` classes. When keyboard appears you will be able to see all content of your scroll views.
 
 ## How to install

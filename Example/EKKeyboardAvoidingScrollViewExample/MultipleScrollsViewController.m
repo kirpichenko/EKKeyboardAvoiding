@@ -23,14 +23,6 @@ static NSString *const kCellIdentifier = @"CellIdentifier";
 #pragma mark -
 #pragma mark life cycle
 
-- (id)init
-{
-    if (self = [super init]) {
-        [self setAutomaticallyAdjustsScrollViewInsets:NO];
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -45,6 +37,16 @@ static NSString *const kCellIdentifier = @"CellIdentifier";
     
     [self addViewTap];
     
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    UIEdgeInsets autoInset = [self.scrollView contentInset];
+    autoInset.bottom = 0;
+    self.scrollView.contentInset = autoInset;
+    self.scrollView.scrollIndicatorInsets = autoInset;
 }
 
 #pragma mark - UITableViewDataSource

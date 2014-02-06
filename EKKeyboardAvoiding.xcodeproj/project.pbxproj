@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13AC37A718A32DE40097F408 /* EKKAPInsetsControllerBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 13AC37A518A32DE40097F408 /* EKKAPInsetsControllerBase.h */; };
+		13AC37AB18A32E790097F408 /* EKKAPInsetsControllerContentInsets.h in Headers */ = {isa = PBXBuildFile; fileRef = 13AC37A918A32E790097F408 /* EKKAPInsetsControllerContentInsets.h */; };
+		13AC37AF18A32E9A0097F408 /* EKKAPInsetsControllerScrollIndicatorsInsets.h in Headers */ = {isa = PBXBuildFile; fileRef = 13AC37AD18A32E9A0097F408 /* EKKAPInsetsControllerScrollIndicatorsInsets.h */; };
+		13AC37B318A336B20097F408 /* EKKAPInsetsControllerScrollIndicatorsInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AC37AE18A32E9A0097F408 /* EKKAPInsetsControllerScrollIndicatorsInsets.m */; };
+		13AC37B418A336B50097F408 /* EKKAPInsetsControllerContentInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AC37AA18A32E790097F408 /* EKKAPInsetsControllerContentInsets.m */; };
+		13AC37B518A336B80097F408 /* EKKAPInsetsControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AC37A618A32DE40097F408 /* EKKAPInsetsControllerBase.m */; };
+		13AC37B618A336C60097F408 /* EKKAPInsetsControllerContentInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AC37AA18A32E790097F408 /* EKKAPInsetsControllerContentInsets.m */; };
+		13AC37B718A336C80097F408 /* EKKAPInsetsControllerScrollIndicatorsInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AC37AE18A32E9A0097F408 /* EKKAPInsetsControllerScrollIndicatorsInsets.m */; };
+		13AC37B818A336CB0097F408 /* EKKAPInsetsControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AC37A618A32DE40097F408 /* EKKAPInsetsControllerBase.m */; };
 		D92A33A317F2FA0C0052C93D /* EKAvoidingInsetCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = D92A33A117F2FA0C0052C93D /* EKAvoidingInsetCalculator.h */; };
 		D92A33A417F2FA0C0052C93D /* EKAvoidingInsetCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = D92A33A217F2FA0C0052C93D /* EKAvoidingInsetCalculator.m */; };
 		D92A33AB17F4246A0052C93D /* ContentInsetsCalculationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D92A33AA17F4246A0052C93D /* ContentInsetsCalculationTest.m */; };
@@ -61,6 +70,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		13AC37A518A32DE40097F408 /* EKKAPInsetsControllerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKKAPInsetsControllerBase.h; sourceTree = "<group>"; };
+		13AC37A618A32DE40097F408 /* EKKAPInsetsControllerBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKKAPInsetsControllerBase.m; sourceTree = "<group>"; };
+		13AC37A918A32E790097F408 /* EKKAPInsetsControllerContentInsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKKAPInsetsControllerContentInsets.h; sourceTree = "<group>"; };
+		13AC37AA18A32E790097F408 /* EKKAPInsetsControllerContentInsets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKKAPInsetsControllerContentInsets.m; sourceTree = "<group>"; };
+		13AC37AD18A32E9A0097F408 /* EKKAPInsetsControllerScrollIndicatorsInsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKKAPInsetsControllerScrollIndicatorsInsets.h; sourceTree = "<group>"; };
+		13AC37AE18A32E9A0097F408 /* EKKAPInsetsControllerScrollIndicatorsInsets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKKAPInsetsControllerScrollIndicatorsInsets.m; sourceTree = "<group>"; };
 		D92A33A117F2FA0C0052C93D /* EKAvoidingInsetCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKAvoidingInsetCalculator.h; sourceTree = "<group>"; };
 		D92A33A217F2FA0C0052C93D /* EKAvoidingInsetCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKAvoidingInsetCalculator.m; sourceTree = "<group>"; };
 		D92A33AA17F4246A0052C93D /* ContentInsetsCalculationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentInsetsCalculationTest.m; sourceTree = "<group>"; };
@@ -111,6 +126,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13AC37A418A32DBB0097F408 /* InsetsController */ = {
+			isa = PBXGroup;
+			children = (
+				13AC37A518A32DE40097F408 /* EKKAPInsetsControllerBase.h */,
+				13AC37A618A32DE40097F408 /* EKKAPInsetsControllerBase.m */,
+				13AC37A918A32E790097F408 /* EKKAPInsetsControllerContentInsets.h */,
+				13AC37AA18A32E790097F408 /* EKKAPInsetsControllerContentInsets.m */,
+				13AC37AD18A32E9A0097F408 /* EKKAPInsetsControllerScrollIndicatorsInsets.h */,
+				13AC37AE18A32E9A0097F408 /* EKKAPInsetsControllerScrollIndicatorsInsets.m */,
+			);
+			path = InsetsController;
+			sourceTree = "<group>";
+		};
 		D94CFAB11805ED2E002CD9F1 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +175,7 @@
 			children = (
 				D94172B317E8F4DE00C9DB01 /* EKKeyboardAvoidingProvider.h */,
 				D94172B417E8F4DE00C9DB01 /* EKKeyboardAvoidingProvider.m */,
+				13AC37A418A32DBB0097F408 /* InsetsController */,
 			);
 			name = EKKeyboardAvoidingProvider;
 			sourceTree = "<group>";
@@ -264,11 +293,14 @@
 			files = (
 				D94172B517E8F4DE00C9DB01 /* EKKeyboardAvoidingProvider.h in Headers */,
 				D9D5B2AD17E8F38600B8184E /* UIScrollView+EKKeyboardAvoiding.h in Headers */,
+				13AC37AF18A32E9A0097F408 /* EKKAPInsetsControllerScrollIndicatorsInsets.h in Headers */,
+				13AC37A718A32DE40097F408 /* EKKAPInsetsControllerBase.h in Headers */,
 				D946965E17F98BFB00DE2921 /* NSObject+EKKeyboardAvoiding.h in Headers */,
 				D9E868C8171BEC5C00728839 /* EKKeyboardAvoiding-Prefix.pch in Headers */,
 				D92A33A317F2FA0C0052C93D /* EKAvoidingInsetCalculator.h in Headers */,
 				D988E8E5180496E900F3D6C0 /* EKKeyboardFrameListener.h in Headers */,
 				D9AB8735181EE8D7001CB5B9 /* EKFakeKeyboardFrameListener.h in Headers */,
+				13AC37AB18A32E790097F408 /* EKKAPInsetsControllerContentInsets.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,9 +393,12 @@
 			files = (
 				D988E8E6180496E900F3D6C0 /* EKKeyboardFrameListener.m in Sources */,
 				D94172B617E8F4DE00C9DB01 /* EKKeyboardAvoidingProvider.m in Sources */,
+				13AC37B318A336B20097F408 /* EKKAPInsetsControllerScrollIndicatorsInsets.m in Sources */,
 				D92A33A417F2FA0C0052C93D /* EKAvoidingInsetCalculator.m in Sources */,
 				D946965F17F98BFB00DE2921 /* NSObject+EKKeyboardAvoiding.m in Sources */,
 				D9D5B2AE17E8F38600B8184E /* UIScrollView+EKKeyboardAvoiding.m in Sources */,
+				13AC37B418A336B50097F408 /* EKKAPInsetsControllerContentInsets.m in Sources */,
+				13AC37B518A336B80097F408 /* EKKAPInsetsControllerBase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,14 +408,17 @@
 			files = (
 				D9C7141D183679F600BA9FFB /* UIScrollView+EKKeyboardAvoiding.m in Sources */,
 				D9C7141E183679F600BA9FFB /* NSObject+EKKeyboardAvoiding.m in Sources */,
+				13AC37B818A336CB0097F408 /* EKKAPInsetsControllerBase.m in Sources */,
 				D9C7141F183679F600BA9FFB /* EKKeyboardAvoidingProvider.m in Sources */,
 				D9C71420183679F600BA9FFB /* EKAvoidingInsetCalculator.m in Sources */,
 				D9C71421183679F600BA9FFB /* EKKeyboardFrameListener.m in Sources */,
 				D9C7141C1836768800BA9FFB /* EKFakeKeyboard.m in Sources */,
 				D9AB8737181EE8D7001CB5B9 /* EKFakeKeyboardFrameListener.m in Sources */,
+				13AC37B618A336C60097F408 /* EKKAPInsetsControllerContentInsets.m in Sources */,
 				D9B59BC8182989DA00CA251C /* ContenInsetRotationTest.m in Sources */,
 				D9C7141B18366E4700BA9FFB /* EKAvoidingInsetCalculatorTest.m in Sources */,
 				D92A33AB17F4246A0052C93D /* ContentInsetsCalculationTest.m in Sources */,
+				13AC37B718A336C80097F408 /* EKKAPInsetsControllerScrollIndicatorsInsets.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +448,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -436,6 +475,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_EMPTY_BODY = YES;

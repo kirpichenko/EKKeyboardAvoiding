@@ -20,4 +20,7 @@
 /// Last observed keyboard frame
 @property (nonatomic,readonly) CGRect keyboardFrame;
 
+/// Last observed keyboard change info
+@property (nonatomic,strong,readonly) NSDictionary *keyboardInfo;
+
 @end

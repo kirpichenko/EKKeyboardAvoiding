@@ -7,7 +7,7 @@ Install using `CocoaPods`.
 
 ## Usage
 First import `UIScrollView+EKKeyboardAvoiding` category to your project
-<pre><code>@import UIScrollView+EKKeyboardAvoiding</code></pre>
+<pre><code>#import "UIScrollView+EKKeyboardAvoiding.h"</code></pre>
 
 To enable keyboard avoiding you have to set `contentSize` of your scroll view and enable keyboard avoiding using category method `setKeyboardAvoidingEnabled:`
 <pre><code>UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:[[self view] bounds]];

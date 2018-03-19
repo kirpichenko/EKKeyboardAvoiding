@@ -47,7 +47,7 @@
 
 	[_insetsControllers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
 		EKKAPInsetsControllerBase* controller = obj;
-		controller.scrollView = _scrollView;
+		controller.scrollView = scrollView;
 	}];
 }
 

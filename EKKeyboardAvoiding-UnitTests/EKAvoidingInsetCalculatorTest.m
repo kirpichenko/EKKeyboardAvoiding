@@ -18,29 +18,30 @@
 
 - (void)setUp
 {
-    [super setUp];
-    
-    self.calculator = [EKAvoidingInsetCalculator new];
+	[super setUp];
+	
+	self.calculator = [EKAvoidingInsetCalculator new];
 }
 
 - (void)testViewFrameFullyContainsKeyboardFrame
 {
-    self.calculator.scrollViewFrame = CGRectMake(0, 0, 568, 320);
-    self.calculator.keyboardFrame = CGRectMake(320, 0, 216, 320);
-    self.calculator.scrollViewInset = UIEdgeInsetsMake(10, 0, 20, 0);
-    
-    UIEdgeInsets insets = [self.calculator calculateAvoidingInset];
-    XCTAssertEqual(insets, UIEdgeInsetsZero, @"shouldn't calculate any extra inset");
+	self.calculator.scrollViewFrame = CGRectMake(0, 0, 568, 320);
+	self.calculator.keyboardFrame = CGRectMake(320, 0, 216, 320);
+	self.calculator.scrollViewInset = UIEdgeInsetsMake(10, 0, 20, 0);
+	
+	UIEdgeInsets insets = [self.calculator calculateAvoidingInset];
+	XCTAssertTrue(UIEdgeInsetsEqualToEdgeInsets(insets, UIEdgeInsetsZero), @"shouldn't calculate any extra inset");
 }
 
 - (void)testKeyboardFrameContainsViewFrame
 {
-    self.calculator.scrollViewFrame = CGRectMake(0, 352, 320, 216);
-    self.calculator.keyboardFrame = CGRectMake(0, 352, 320, 216);
-    self.calculator.scrollViewInset = UIEdgeInsetsMake(10, 0, 20, 0);
-    
-    UIEdgeInsets insets = [self.calculator calculateAvoidingInset];
-    XCTAssertEqual(insets, UIEdgeInsetsZero, @"shouldn't calculate any extra inset");
+	self.calculator.scrollViewFrame = CGRectMake(0, 352, 320, 216);
+	self.calculator.keyboardFrame = CGRectMake(0, 352, 320, 216);
+	self.calculator.scrollViewInset = UIEdgeInsetsMake(10, 0, 20, 0);
+	
+	UIEdgeInsets insets = [self.calculator calculateAvoidingInset];
+	XCTAssertTrue(UIEdgeInsetsEqualToEdgeInsets(insets, UIEdgeInsetsZero), @"shouldn't calculate any extra inset");
 }
 
 @end
+

@@ -16,6 +16,8 @@
 		13AC37B618A336C60097F408 /* EKKAPInsetsControllerContentInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AC37AA18A32E790097F408 /* EKKAPInsetsControllerContentInsets.m */; };
 		13AC37B718A336C80097F408 /* EKKAPInsetsControllerScrollIndicatorsInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AC37AE18A32E9A0097F408 /* EKKAPInsetsControllerScrollIndicatorsInsets.m */; };
 		13AC37B818A336CB0097F408 /* EKKAPInsetsControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AC37A618A32DE40097F408 /* EKKAPInsetsControllerBase.m */; };
+		492AD8E4205FA4BD001B4943 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F3BB34166F4B8A00F0DEAE /* Foundation.framework */; };
+		492AD8E6205FA4C3001B4943 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 492AD8E5205FA4C3001B4943 /* UIKit.framework */; };
 		D92A33A317F2FA0C0052C93D /* EKAvoidingInsetCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = D92A33A117F2FA0C0052C93D /* EKAvoidingInsetCalculator.h */; };
 		D92A33A417F2FA0C0052C93D /* EKAvoidingInsetCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = D92A33A217F2FA0C0052C93D /* EKAvoidingInsetCalculator.m */; };
 		D92A33AB17F4246A0052C93D /* ContentInsetsCalculationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D92A33AA17F4246A0052C93D /* ContentInsetsCalculationTest.m */; };
@@ -39,7 +41,6 @@
 		D9D5B2AD17E8F38600B8184E /* UIScrollView+EKKeyboardAvoiding.h in Headers */ = {isa = PBXBuildFile; fileRef = D9D5B2AB17E8F38600B8184E /* UIScrollView+EKKeyboardAvoiding.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D9D5B2AE17E8F38600B8184E /* UIScrollView+EKKeyboardAvoiding.m in Sources */ = {isa = PBXBuildFile; fileRef = D9D5B2AC17E8F38600B8184E /* UIScrollView+EKKeyboardAvoiding.m */; };
 		D9E868C8171BEC5C00728839 /* EKKeyboardAvoiding-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = D9E868C2171BEC5C00728839 /* EKKeyboardAvoiding-Prefix.pch */; };
-		D9F3BB35166F4B8A00F0DEAE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F3BB34166F4B8A00F0DEAE /* Foundation.framework */; };
 		D9F906C217F2D64D00BDDF5F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F906C117F2D64D00BDDF5F /* XCTest.framework */; };
 		D9F906C317F2D64D00BDDF5F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F3BB34166F4B8A00F0DEAE /* Foundation.framework */; };
 		D9F906C517F2D64D00BDDF5F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F906C417F2D64D00BDDF5F /* UIKit.framework */; };
@@ -76,6 +77,7 @@
 		13AC37AA18A32E790097F408 /* EKKAPInsetsControllerContentInsets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKKAPInsetsControllerContentInsets.m; sourceTree = "<group>"; };
 		13AC37AD18A32E9A0097F408 /* EKKAPInsetsControllerScrollIndicatorsInsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKKAPInsetsControllerScrollIndicatorsInsets.h; sourceTree = "<group>"; };
 		13AC37AE18A32E9A0097F408 /* EKKAPInsetsControllerScrollIndicatorsInsets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKKAPInsetsControllerScrollIndicatorsInsets.m; sourceTree = "<group>"; };
+		492AD8E5205FA4C3001B4943 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D92A33A117F2FA0C0052C93D /* EKAvoidingInsetCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKAvoidingInsetCalculator.h; sourceTree = "<group>"; };
 		D92A33A217F2FA0C0052C93D /* EKAvoidingInsetCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKAvoidingInsetCalculator.m; sourceTree = "<group>"; };
 		D92A33AA17F4246A0052C93D /* ContentInsetsCalculationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentInsetsCalculationTest.m; sourceTree = "<group>"; };
@@ -109,7 +111,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9F3BB35166F4B8A00F0DEAE /* Foundation.framework in Frameworks */,
+				492AD8E6205FA4C3001B4943 /* UIKit.framework in Frameworks */,
+				492AD8E4205FA4BD001B4943 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +260,7 @@
 		D9F3BB33166F4B8A00F0DEAE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				492AD8E5205FA4C3001B4943 /* UIKit.framework */,
 				D9F3BB34166F4B8A00F0DEAE /* Foundation.framework */,
 				D9F906C117F2D64D00BDDF5F /* XCTest.framework */,
 				D9F906C417F2D64D00BDDF5F /* UIKit.framework */,
@@ -349,7 +353,7 @@
 		D9F3BB28166F4B8A00F0DEAE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Evgeniy Kirpichenko";
 				TargetAttributes = {
 					D9F906BF17F2D64D00BDDF5F = {
@@ -448,24 +452,44 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -475,17 +499,36 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -544,7 +587,8 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = "EKKeyboardAvoiding-UnitTests/EKKeyboardAvoiding-UnitTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mls.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -574,7 +618,8 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = "EKKeyboardAvoiding-UnitTests/EKKeyboardAvoiding-UnitTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mls.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};

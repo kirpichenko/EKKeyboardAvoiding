@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import <UIKit/UIKit.h>
 
 #import "EKKeyboardAvoidingProvider.h"
 
@@ -125,14 +126,14 @@
 - (void)checkContentInsetsWithExpectedInsets:(UIEdgeInsets)expectedInsets
 {
 	UIEdgeInsets calculatedInset = [scrollView contentInset];
-	XCTAssertEqual(expectedInsets, calculatedInset);
+	XCTAssertTrue(UIEdgeInsetsEqualToEdgeInsets(expectedInsets, calculatedInset));
 }
 
 
 - (void)checkIndicatorsInsetsWithExpectedInsets:(UIEdgeInsets)expectedInsets
 {
 	UIEdgeInsets calculatedIndicatorsInsets = [scrollView scrollIndicatorInsets];
-	XCTAssertEqual(expectedInsets, calculatedIndicatorsInsets);
+	XCTAssertTrue(UIEdgeInsetsEqualToEdgeInsets(expectedInsets, calculatedIndicatorsInsets));
 }
 
 @end

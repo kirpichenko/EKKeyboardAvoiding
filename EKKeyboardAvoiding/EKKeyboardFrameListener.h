@@ -11,6 +11,8 @@
 
 @interface EKKeyboardFrameListener : NSObject
 
+@property (nonatomic, copy) void(^keyboadFrameUpdatedBlock)(EKKeyboardFrameListener* sender);
+
 /*! Returns keyboard frame in coordinate system ov view's superview
  \param view View which superview to be used for keyboard frame converting
  \returns Converted keyboard frame

@@ -57,7 +57,11 @@
     NSValue *frameValue = [self.keyboardInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
     if (!CGRectEqualToRect(self.keyboardFrame, [frameValue CGRectValue]))
     {
-        self.keyboardFrame = [frameValue CGRectValue];
+      self.keyboardFrame = [frameValue CGRectValue];
+			if (self.keyboadFrameUpdatedBlock)
+			{
+				self.keyboadFrameUpdatedBlock(self);
+			}
     }
 }
 

@@ -18,6 +18,8 @@
 		13AC37B818A336CB0097F408 /* EKKAPInsetsControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AC37A618A32DE40097F408 /* EKKAPInsetsControllerBase.m */; };
 		492AD8E4205FA4BD001B4943 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F3BB34166F4B8A00F0DEAE /* Foundation.framework */; };
 		492AD8E6205FA4C3001B4943 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 492AD8E5205FA4C3001B4943 /* UIKit.framework */; };
+		492AD8EB205FB6F7001B4943 /* EKKeyboardFrameListenerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 492AD8EA205FB6F7001B4943 /* EKKeyboardFrameListenerTest.m */; };
+		492AD8ED205FBB39001B4943 /* EKKeyboardFrameListener.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D988E8E3180496E900F3D6C0 /* EKKeyboardFrameListener.h */; };
 		D92A33A317F2FA0C0052C93D /* EKAvoidingInsetCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = D92A33A117F2FA0C0052C93D /* EKAvoidingInsetCalculator.h */; };
 		D92A33A417F2FA0C0052C93D /* EKAvoidingInsetCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = D92A33A217F2FA0C0052C93D /* EKAvoidingInsetCalculator.m */; };
 		D92A33AB17F4246A0052C93D /* ContentInsetsCalculationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D92A33AA17F4246A0052C93D /* ContentInsetsCalculationTest.m */; };
@@ -26,7 +28,7 @@
 		D946965E17F98BFB00DE2921 /* NSObject+EKKeyboardAvoiding.h in Headers */ = {isa = PBXBuildFile; fileRef = D946965C17F98BFB00DE2921 /* NSObject+EKKeyboardAvoiding.h */; };
 		D946965F17F98BFB00DE2921 /* NSObject+EKKeyboardAvoiding.m in Sources */ = {isa = PBXBuildFile; fileRef = D946965D17F98BFB00DE2921 /* NSObject+EKKeyboardAvoiding.m */; };
 		D951C81717F452E100B972D6 /* UIScrollView+EKKeyboardAvoiding.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9D5B2AB17E8F38600B8184E /* UIScrollView+EKKeyboardAvoiding.h */; };
-		D988E8E5180496E900F3D6C0 /* EKKeyboardFrameListener.h in Headers */ = {isa = PBXBuildFile; fileRef = D988E8E3180496E900F3D6C0 /* EKKeyboardFrameListener.h */; };
+		D988E8E5180496E900F3D6C0 /* EKKeyboardFrameListener.h in Headers */ = {isa = PBXBuildFile; fileRef = D988E8E3180496E900F3D6C0 /* EKKeyboardFrameListener.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D988E8E6180496E900F3D6C0 /* EKKeyboardFrameListener.m in Sources */ = {isa = PBXBuildFile; fileRef = D988E8E4180496E900F3D6C0 /* EKKeyboardFrameListener.m */; };
 		D9AB8735181EE8D7001CB5B9 /* EKFakeKeyboardFrameListener.h in Headers */ = {isa = PBXBuildFile; fileRef = D9AB8733181EE8D7001CB5B9 /* EKFakeKeyboardFrameListener.h */; };
 		D9AB8737181EE8D7001CB5B9 /* EKFakeKeyboardFrameListener.m in Sources */ = {isa = PBXBuildFile; fileRef = D9AB8734181EE8D7001CB5B9 /* EKFakeKeyboardFrameListener.m */; };
@@ -64,6 +66,7 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
+				492AD8ED205FBB39001B4943 /* EKKeyboardFrameListener.h in CopyFiles */,
 				D951C81717F452E100B972D6 /* UIScrollView+EKKeyboardAvoiding.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,6 +81,7 @@
 		13AC37AD18A32E9A0097F408 /* EKKAPInsetsControllerScrollIndicatorsInsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKKAPInsetsControllerScrollIndicatorsInsets.h; sourceTree = "<group>"; };
 		13AC37AE18A32E9A0097F408 /* EKKAPInsetsControllerScrollIndicatorsInsets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKKAPInsetsControllerScrollIndicatorsInsets.m; sourceTree = "<group>"; };
 		492AD8E5205FA4C3001B4943 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		492AD8EA205FB6F7001B4943 /* EKKeyboardFrameListenerTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EKKeyboardFrameListenerTest.m; sourceTree = "<group>"; };
 		D92A33A117F2FA0C0052C93D /* EKAvoidingInsetCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EKAvoidingInsetCalculator.h; sourceTree = "<group>"; };
 		D92A33A217F2FA0C0052C93D /* EKAvoidingInsetCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EKAvoidingInsetCalculator.m; sourceTree = "<group>"; };
 		D92A33AA17F4246A0052C93D /* ContentInsetsCalculationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentInsetsCalculationTest.m; sourceTree = "<group>"; };
@@ -142,9 +146,18 @@
 			path = InsetsController;
 			sourceTree = "<group>";
 		};
+		492AD8EC205FB6FE001B4943 /* EKKeyboardFrameListener */ = {
+			isa = PBXGroup;
+			children = (
+				492AD8EA205FB6F7001B4943 /* EKKeyboardFrameListenerTest.m */,
+			);
+			name = EKKeyboardFrameListener;
+			sourceTree = "<group>";
+		};
 		D94CFAB11805ED2E002CD9F1 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				492AD8EC205FB6FE001B4943 /* EKKeyboardFrameListener */,
 				D9B00DCD183E5847008D4864 /* EKKeyboardAvoidingProvider */,
 				D9B00DCE183E5850008D4864 /* EKAvoidingInsetcalculator */,
 			);
@@ -296,14 +309,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D94172B517E8F4DE00C9DB01 /* EKKeyboardAvoidingProvider.h in Headers */,
+				D988E8E5180496E900F3D6C0 /* EKKeyboardFrameListener.h in Headers */,
 				D9D5B2AD17E8F38600B8184E /* UIScrollView+EKKeyboardAvoiding.h in Headers */,
 				13AC37AF18A32E9A0097F408 /* EKKAPInsetsControllerScrollIndicatorsInsets.h in Headers */,
 				13AC37A718A32DE40097F408 /* EKKAPInsetsControllerBase.h in Headers */,
 				D946965E17F98BFB00DE2921 /* NSObject+EKKeyboardAvoiding.h in Headers */,
+				D9AB8735181EE8D7001CB5B9 /* EKFakeKeyboardFrameListener.h in Headers */,
 				D9E868C8171BEC5C00728839 /* EKKeyboardAvoiding-Prefix.pch in Headers */,
 				D92A33A317F2FA0C0052C93D /* EKAvoidingInsetCalculator.h in Headers */,
-				D988E8E5180496E900F3D6C0 /* EKKeyboardFrameListener.h in Headers */,
-				D9AB8735181EE8D7001CB5B9 /* EKFakeKeyboardFrameListener.h in Headers */,
 				13AC37AB18A32E790097F408 /* EKKAPInsetsControllerContentInsets.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,6 +431,7 @@
 				D9C71421183679F600BA9FFB /* EKKeyboardFrameListener.m in Sources */,
 				D9C7141C1836768800BA9FFB /* EKFakeKeyboard.m in Sources */,
 				D9AB8737181EE8D7001CB5B9 /* EKFakeKeyboardFrameListener.m in Sources */,
+				492AD8EB205FB6F7001B4943 /* EKKeyboardFrameListenerTest.m in Sources */,
 				13AC37B618A336C60097F408 /* EKKAPInsetsControllerContentInsets.m in Sources */,
 				D9B59BC8182989DA00CA251C /* ContenInsetRotationTest.m in Sources */,
 				D9C7141B18366E4700BA9FFB /* EKAvoidingInsetCalculatorTest.m in Sources */,
@@ -472,6 +486,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 2;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -492,6 +507,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -519,6 +535,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -531,6 +548,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};

@@ -28,11 +28,11 @@ static NSString *const kCellIdentifier = @"CellIdentifier";
     [super viewDidLoad];
     
     [self.scrollView setContentSize:[self.scrollView frame].size];
-    [self.scrollView setKeyboardAvoidingEnabled:YES];
+    [self.scrollView ek_setKeyboardAvoidingEnabled:YES];
     
-    [self.textView setKeyboardAvoidingEnabled:YES];
+    [self.textView ek_setKeyboardAvoidingEnabled:YES];
 
-    [self.tableView setKeyboardAvoidingEnabled:YES];
+    [self.tableView ek_setKeyboardAvoidingEnabled:YES];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kCellIdentifier];
     
     [self addViewTap];
@@ -59,7 +59,7 @@ static NSString *const kCellIdentifier = @"CellIdentifier";
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [aTableView dequeueReusableCellWithIdentifier:kCellIdentifier];
-    [cell.textLabel setText:[NSString stringWithFormat:@"Cell #%d",indexPath.row]];
+	[cell.textLabel setText:[NSString stringWithFormat:@"Cell #%ld",(long)indexPath.row]];
     
     return cell;
 }
@@ -75,9 +75,14 @@ static NSString *const kCellIdentifier = @"CellIdentifier";
 
 #pragma mark - rotation
 
-- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
-    return YES;
+	return UIInterfaceOrientationMaskAll;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
+{
+	return UIInterfaceOrientationPortrait;
 }
 
 #pragma mark - helpers

@@ -24,7 +24,7 @@
     [super viewDidLoad];    
    
     [self.scrollView setContentSize:[self.scrollView frame].size];
-    [self.scrollView setKeyboardAvoidingEnabled:YES];
+    [self.scrollView ek_setKeyboardAvoidingEnabled:YES];
     
     [self addViewTapGesture];
 }
@@ -53,9 +53,14 @@
 
 #pragma mark - rotation
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
-    return YES;
+	return UIInterfaceOrientationMaskAll;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
+{
+	return UIInterfaceOrientationPortrait;
 }
 
 #pragma mark - helpers

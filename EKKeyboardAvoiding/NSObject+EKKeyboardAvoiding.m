@@ -15,25 +15,25 @@
 
 #pragma mark - associate objects
 
-- (void)associateObject:(id)object forKey:(NSString *)key
+- (void)ek_associateObject:(id)object forKey:(NSString *)key
 {
     objc_setAssociatedObject(self, [key UTF8String], object, OBJC_ASSOCIATION_RETAIN);
 }
 
-- (id)associatedObjectForKey:(NSString *)key
+- (id)ek_associatedObjectForKey:(NSString *)key
 {
     return objc_getAssociatedObject(self, [key UTF8String]);
 }
 
 #pragma mark - observe notifications
 
-- (void)observeNotificationNamed:(NSString *)notificationName action:(SEL)action
+- (void)ek_observeNotificationNamed:(NSString *)notificationName action:(SEL)action
 {
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
     [notificationCenter addObserver:self selector:action name:notificationName object:nil];
 }
 
-- (void)stopNotificationsObserving
+- (void)ek_stopNotificationsObserving
 {
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
     [notificationCenter removeObserver:self];
@@ -41,7 +41,7 @@
 
 #pragma mark - observe key path
 
-- (void)addObserver:(id)target forKeyPath:(NSString *)keyPath
+- (void)ek_addObserver:(id)target forKeyPath:(NSString *)keyPath
 {
     [self addObserver:target forKeyPath:keyPath
               options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld

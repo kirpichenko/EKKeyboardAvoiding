@@ -148,7 +148,7 @@ static NSString *const kKeyboardFrameKey = @"keyboardFrame";
 {
 	@try
 	{
-		[[self keyboardListener] addObserver:self forKeyPath:kKeyboardFrameKey];
+		[[self keyboardListener] ek_addObserver:self forKeyPath:kKeyboardFrameKey];
 	}
 	@catch (NSException *exception)
 	{

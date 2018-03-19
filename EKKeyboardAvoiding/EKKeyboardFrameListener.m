@@ -29,7 +29,7 @@
 
 - (void)dealloc
 {
-    [self stopNotificationsObserving];
+    [self ek_stopNotificationsObserving];
 }
 
 #pragma mark - public methods
@@ -44,7 +44,7 @@
 
 - (void)startNotificationsObseving
 {
-    [self observeNotificationNamed:UIKeyboardDidChangeFrameNotification
+    [self ek_observeNotificationNamed:UIKeyboardDidChangeFrameNotification
                             action:@selector(keyboardDidChangeFrame:)];
 }
 

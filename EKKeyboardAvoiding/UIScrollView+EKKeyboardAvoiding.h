@@ -13,11 +13,11 @@
 /*! Returns the state of the keyboard avoiding
  \returns A Boolean value that determines whether the keyboard avoiding is enabled.
  */
-- (BOOL)keyboardAvoidingEnabled;
+- (BOOL)ek_keyboardAvoidingEnabled;
 
 /*! Set the state of the keyboard avoiding to On or Off
  \params enabled YES if the scrollView should avoid keyboard and NO if it shouldn't
  */
-- (void)setKeyboardAvoidingEnabled:(BOOL)enabled;
+- (void)ek_setKeyboardAvoidingEnabled:(BOOL)enabled;
 
 @end

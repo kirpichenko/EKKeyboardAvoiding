@@ -15,7 +15,7 @@
 @interface EKKeyboardAvoidingProvider ()
 
 @property (nonatomic, weak) UIScrollView* scrollView;
-@property (nonatomic, strong) NSArray* insetsControllers;
+@property (nonatomic, strong) NSArray<EKKAPInsetsControllerBase*>* insetsControllers;
 
 @end
 

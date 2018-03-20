@@ -10,9 +10,22 @@
 #import "NSObject+EKKeyboardAvoiding.h"
 
 @interface EKKeyboardFrameListener ()
+
 @property (nonatomic,assign) CGRect keyboardFrame;
 @property (nonatomic,strong) NSDictionary *keyboardInfo;
+
 @end
+
+
+@interface EKKeyboardFrameListener (Notifications)
+
+- (void)_startNotificationsObseving;
+- (void)_stopObservingNotifications;
+- (void)_keyboardDidChangeFrame:(NSNotification *)notification;
+- (void)_keyboardWillChangeFrameNotification:(NSNotification*)notification;
+
+@end
+
 
 @implementation EKKeyboardFrameListener
 
@@ -22,14 +35,14 @@
 {
     if (self = [super init])
     {
-        [self startNotificationsObseving];
+        [self _startNotificationsObseving];
     }
     return self;
 }
 
 - (void)dealloc
 {
-    [self ek_stopNotificationsObserving];
+	[self _stopObservingNotifications];
 }
 
 #pragma mark - public methods
@@ -40,29 +53,45 @@
     return convertedFrame;
 }
 
-#pragma mark - private methods
+@end
 
-- (void)startNotificationsObseving
+
+#pragma mark -
+@implementation EKKeyboardFrameListener (Notifications)
+
+- (void)_startNotificationsObseving
 {
-    [self ek_observeNotificationNamed:UIKeyboardDidChangeFrameNotification
-                            action:@selector(keyboardDidChangeFrame:)];
+	[self ek_observeNotificationNamed:UIKeyboardWillChangeFrameNotification
+														 action:@selector(_keyboardWillChangeFrameNotification:)];
+	[self ek_observeNotificationNamed:UIKeyboardDidChangeFrameNotification
+														 action:@selector(_keyboardDidChangeFrame:)];
 }
 
-#pragma mark - observe keyboard frame
 
-- (void)keyboardDidChangeFrame:(NSNotification *)notification
+- (void)_stopObservingNotifications
 {
-    self.keyboardInfo = [notification userInfo];
-    
-    NSValue *frameValue = [self.keyboardInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
-    if (!CGRectEqualToRect(self.keyboardFrame, [frameValue CGRectValue]))
-    {
-      self.keyboardFrame = [frameValue CGRectValue];
-			if (self.keyboadFrameUpdatedBlock)
-			{
-				self.keyboadFrameUpdatedBlock(self);
-			}
-    }
+	[self ek_stopNotificationsObserving];
 }
 
+
+- (void)_keyboardDidChangeFrame:(NSNotification *)notification
+{
+	self.keyboardInfo = [notification userInfo];
+	
+	NSValue *frameValue = [self.keyboardInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
+	if (!CGRectEqualToRect(self.keyboardFrame, [frameValue CGRectValue]))
+	{
+		self.keyboardFrame = [frameValue CGRectValue];
+		if (self.keyboadFrameUpdatedBlock)
+		{
+			self.keyboadFrameUpdatedBlock(self);
+		}
+	}
+}
+
+
+- (void)_keyboardWillChangeFrameNotification:(NSNotification*)notification
+{
+	
+}
 @end

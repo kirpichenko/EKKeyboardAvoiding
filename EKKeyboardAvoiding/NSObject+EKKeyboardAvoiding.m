@@ -25,19 +25,6 @@
     return objc_getAssociatedObject(self, [key UTF8String]);
 }
 
-#pragma mark - observe notifications
-
-- (void)ek_observeNotificationNamed:(NSString *)notificationName action:(SEL)action
-{
-    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
-    [notificationCenter addObserver:self selector:action name:notificationName object:nil];
-}
-
-- (void)ek_stopNotificationsObserving
-{
-    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
-    [notificationCenter removeObserver:self];
-}
 
 #pragma mark - observe key path
 
@@ -49,3 +36,42 @@
 }
 
 @end
+
+
+@implementation NSObject (EK_NotificationsObserving)
+
+static NSString* ekp_notificationsListKey = @"__EK_NotificationsObserving_notificationsListKey";
+
+
+- (NSMutableArray<NSString*>*)ekp_subscribedNotificationsList
+{
+	NSMutableArray* list = [self ek_associatedObjectForKey:ekp_notificationsListKey];
+	if (!list)
+	{
+		list = [[NSMutableArray alloc] init];
+		[self ek_associateObject:list forKey:ekp_notificationsListKey];
+	}
+	
+	return list;
+}
+
+
+#pragma mark - observe notifications
+- (void)ek_observeNotificationNamed:(NSString *)notificationName action:(SEL)action
+{
+	[[self ekp_subscribedNotificationsList] addObject:notificationName];
+	NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+	[notificationCenter addObserver:self selector:action name:notificationName object:nil];
+}
+
+
+- (void)ek_stopNotificationsObserving
+{
+	NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+	[[self ekp_subscribedNotificationsList] enumerateObjectsUsingBlock:^(NSString * _Nonnull notificationName, NSUInteger idx, BOOL * _Nonnull stop) {
+		[notificationCenter removeObserver:self name:notificationName object:nil];
+	}];
+}
+
+@end
+

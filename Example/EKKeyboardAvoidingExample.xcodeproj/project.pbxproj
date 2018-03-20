@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07B66E5D0F739C6A599AECDC /* Pods_CocoaPodsExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4712CBEA5087C26211EA9B /* Pods_CocoaPodsExample.framework */; };
 		49468E462060C7FD0087F9B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49468E452060C7FD0087F9B6 /* AppDelegate.m */; };
 		49468E492060C7FD0087F9B6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49468E482060C7FD0087F9B6 /* ViewController.m */; };
 		49468E4C2060C7FD0087F9B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49468E4A2060C7FD0087F9B6 /* Main.storyboard */; };
@@ -14,7 +15,6 @@
 		49468E512060C7FF0087F9B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49468E4F2060C7FF0087F9B6 /* LaunchScreen.storyboard */; };
 		49468E542060C7FF0087F9B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49468E532060C7FF0087F9B6 /* main.m */; };
 		7843D804CC796F8455533485 /* libPods-EKKeyboardAvoidingExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2442D9B9FEB218EA03F6D2 /* libPods-EKKeyboardAvoidingExample.a */; };
-		C0282AC8CABEFB1D05608A2E /* libPods-CocoaPodsExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFC6B83E4F5D86C8F0783A7C /* libPods-CocoaPodsExample.a */; };
 		D96C117916709DE3005FEE63 /* SingleScrollViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D96C117816709DE3005FEE63 /* SingleScrollViewController~ipad.xib */; };
 		D9AF3152171BDB9800FAB741 /* libEKKeyboardAvoiding.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9AF3151171BDB9800FAB741 /* libEKKeyboardAvoiding.a */; };
 		D9B00DDC183E622C008D4864 /* MultipleScrollsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B00DD9183E622C008D4864 /* MultipleScrollsViewController.m */; };
@@ -89,9 +89,9 @@
 		D9F3BB85166F522700F0DEAE /* SingleScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleScrollViewController.h; sourceTree = "<group>"; };
 		D9F3BB86166F522700F0DEAE /* SingleScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleScrollViewController.m; sourceTree = "<group>"; };
 		D9F3BB87166F522700F0DEAE /* SingleScrollViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "SingleScrollViewController~iphone.xib"; sourceTree = "<group>"; };
+		DD4712CBEA5087C26211EA9B /* Pods_CocoaPodsExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CocoaPodsExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E591CF68777D2508F69CCB5B /* Pods-CocoaPodsExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaPodsExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CocoaPodsExample/Pods-CocoaPodsExample.debug.xcconfig"; sourceTree = "<group>"; };
 		FD9C8928A25648D9BA1A661B /* libPods-EKKeyboardAvoidingScrollViewExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EKKeyboardAvoidingScrollViewExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FFC6B83E4F5D86C8F0783A7C /* libPods-CocoaPodsExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CocoaPodsExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0282AC8CABEFB1D05608A2E /* libPods-CocoaPodsExample.a in Frameworks */,
+				07B66E5D0F739C6A599AECDC /* Pods_CocoaPodsExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,8 +205,8 @@
 				D9F3BB55166F4E2F00F0DEAE /* CoreGraphics.framework */,
 				FD9C8928A25648D9BA1A661B /* libPods-EKKeyboardAvoidingScrollViewExample.a */,
 				11A735D05168431AB87498E5 /* libPods-EKKeyboardAvoidingScrollViewExample-unit_tests.a */,
-				FFC6B83E4F5D86C8F0783A7C /* libPods-CocoaPodsExample.a */,
 				CB2442D9B9FEB218EA03F6D2 /* libPods-EKKeyboardAvoidingExample.a */,
+				DD4712CBEA5087C26211EA9B /* Pods_CocoaPodsExample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -438,9 +438,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CocoaPodsExample/Pods-CocoaPodsExample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/EKKeyboardAvoiding/EKKeyboardAvoiding.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EKKeyboardAvoiding.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49468E462060C7FD0087F9B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49468E452060C7FD0087F9B6 /* AppDelegate.m */; };
+		49468E492060C7FD0087F9B6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49468E482060C7FD0087F9B6 /* ViewController.m */; };
+		49468E4C2060C7FD0087F9B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49468E4A2060C7FD0087F9B6 /* Main.storyboard */; };
+		49468E4E2060C7FF0087F9B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49468E4D2060C7FF0087F9B6 /* Assets.xcassets */; };
+		49468E512060C7FF0087F9B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49468E4F2060C7FF0087F9B6 /* LaunchScreen.storyboard */; };
+		49468E542060C7FF0087F9B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49468E532060C7FF0087F9B6 /* main.m */; };
+		7843D804CC796F8455533485 /* libPods-EKKeyboardAvoidingExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2442D9B9FEB218EA03F6D2 /* libPods-EKKeyboardAvoidingExample.a */; };
+		C0282AC8CABEFB1D05608A2E /* libPods-CocoaPodsExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFC6B83E4F5D86C8F0783A7C /* libPods-CocoaPodsExample.a */; };
 		D96C117916709DE3005FEE63 /* SingleScrollViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D96C117816709DE3005FEE63 /* SingleScrollViewController~ipad.xib */; };
 		D9AF3152171BDB9800FAB741 /* libEKKeyboardAvoiding.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9AF3151171BDB9800FAB741 /* libEKKeyboardAvoiding.a */; };
 		D9B00DDC183E622C008D4864 /* MultipleScrollsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B00DD9183E622C008D4864 /* MultipleScrollsViewController.m */; };
@@ -26,14 +34,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D920A526171BDBC600F04CCC /* PBXContainerItemProxy */ = {
+		49468E682060CEA80087F9B6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D9F3BB72166F4E4C00F0DEAE /* EKKeyboardAvoiding.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = D9F3BB31166F4B8A00F0DEAE;
 			remoteInfo = EKKeyboardAvoiding;
 		};
-		D9BC46BC17F57B6800BD6AC2 /* PBXContainerItemProxy */ = {
+		49468E6A2060CEA80087F9B6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D9F3BB72166F4E4C00F0DEAE /* EKKeyboardAvoiding.xcodeproj */;
 			proxyType = 2;
@@ -44,6 +52,20 @@
 
 /* Begin PBXFileReference section */
 		11A735D05168431AB87498E5 /* libPods-EKKeyboardAvoidingScrollViewExample-unit_tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EKKeyboardAvoidingScrollViewExample-unit_tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		49468E422060C7FD0087F9B6 /* CocoaPodsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaPodsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49468E442060C7FD0087F9B6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		49468E452060C7FD0087F9B6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		49468E472060C7FD0087F9B6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		49468E482060C7FD0087F9B6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		49468E4B2060C7FD0087F9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		49468E4D2060C7FF0087F9B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		49468E502060C7FF0087F9B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		49468E522060C7FF0087F9B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49468E532060C7FF0087F9B6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		83220C1363B5B64CC2B65580 /* Pods-EKKeyboardAvoidingExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EKKeyboardAvoidingExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EKKeyboardAvoidingExample/Pods-EKKeyboardAvoidingExample.debug.xcconfig"; sourceTree = "<group>"; };
+		9FA37260752C69F542AF36D2 /* Pods-CocoaPodsExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaPodsExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-CocoaPodsExample/Pods-CocoaPodsExample.release.xcconfig"; sourceTree = "<group>"; };
+		CB2442D9B9FEB218EA03F6D2 /* libPods-EKKeyboardAvoidingExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EKKeyboardAvoidingExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF1143FDF54CFF86A574547C /* Pods-EKKeyboardAvoidingExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EKKeyboardAvoidingExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-EKKeyboardAvoidingExample/Pods-EKKeyboardAvoidingExample.release.xcconfig"; sourceTree = "<group>"; };
 		D96C117816709DE3005FEE63 /* SingleScrollViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "SingleScrollViewController~ipad.xib"; sourceTree = "<group>"; };
 		D9AF3151171BDB9800FAB741 /* libEKKeyboardAvoiding.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libEKKeyboardAvoiding.a; path = "../build/Release-iphoneos/libEKKeyboardAvoiding.a"; sourceTree = "<group>"; };
 		D9B00DD8183E622C008D4864 /* MultipleScrollsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipleScrollsViewController.h; sourceTree = "<group>"; };
@@ -63,14 +85,24 @@
 		D9F3BB63166F4E2F00F0DEAE /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		D9F3BB65166F4E2F00F0DEAE /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		D9F3BB67166F4E2F00F0DEAE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		D9F3BB72166F4E4C00F0DEAE /* EKKeyboardAvoiding.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EKKeyboardAvoiding.xcodeproj; path = ../EKKeyboardAvoiding.xcodeproj; sourceTree = "<group>"; };
+		D9F3BB72166F4E4C00F0DEAE /* EKKeyboardAvoiding.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EKKeyboardAvoiding.xcodeproj; path = ../../EKKeyboardAvoiding.xcodeproj; sourceTree = "<group>"; };
 		D9F3BB85166F522700F0DEAE /* SingleScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleScrollViewController.h; sourceTree = "<group>"; };
 		D9F3BB86166F522700F0DEAE /* SingleScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleScrollViewController.m; sourceTree = "<group>"; };
 		D9F3BB87166F522700F0DEAE /* SingleScrollViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "SingleScrollViewController~iphone.xib"; sourceTree = "<group>"; };
+		E591CF68777D2508F69CCB5B /* Pods-CocoaPodsExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaPodsExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CocoaPodsExample/Pods-CocoaPodsExample.debug.xcconfig"; sourceTree = "<group>"; };
 		FD9C8928A25648D9BA1A661B /* libPods-EKKeyboardAvoidingScrollViewExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EKKeyboardAvoidingScrollViewExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFC6B83E4F5D86C8F0783A7C /* libPods-CocoaPodsExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CocoaPodsExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		49468E3F2060C7FD0087F9B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0282AC8CABEFB1D05608A2E /* libPods-CocoaPodsExample.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D9F3BB4A166F4E2F00F0DEAE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -79,17 +111,45 @@
 				D9F3BB54166F4E2F00F0DEAE /* Foundation.framework in Frameworks */,
 				D9F3BB56166F4E2F00F0DEAE /* CoreGraphics.framework in Frameworks */,
 				D9AF3152171BDB9800FAB741 /* libEKKeyboardAvoiding.a in Frameworks */,
+				7843D804CC796F8455533485 /* libPods-EKKeyboardAvoidingExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D920A523171BDBC600F04CCC /* Products */ = {
+		1F47667F09E2C7044E9C0057 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D920A527171BDBC600F04CCC /* libEKKeyboardAvoiding.a */,
-				D9BC46BD17F57B6800BD6AC2 /* EKKeyboardAvoiding-UnitTests.xctest */,
+				E591CF68777D2508F69CCB5B /* Pods-CocoaPodsExample.debug.xcconfig */,
+				9FA37260752C69F542AF36D2 /* Pods-CocoaPodsExample.release.xcconfig */,
+				83220C1363B5B64CC2B65580 /* Pods-EKKeyboardAvoidingExample.debug.xcconfig */,
+				CF1143FDF54CFF86A574547C /* Pods-EKKeyboardAvoidingExample.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		49468E432060C7FD0087F9B6 /* CocoaPodsExample */ = {
+			isa = PBXGroup;
+			children = (
+				49468E442060C7FD0087F9B6 /* AppDelegate.h */,
+				49468E452060C7FD0087F9B6 /* AppDelegate.m */,
+				49468E472060C7FD0087F9B6 /* ViewController.h */,
+				49468E482060C7FD0087F9B6 /* ViewController.m */,
+				49468E4A2060C7FD0087F9B6 /* Main.storyboard */,
+				49468E4D2060C7FF0087F9B6 /* Assets.xcassets */,
+				49468E4F2060C7FF0087F9B6 /* LaunchScreen.storyboard */,
+				49468E522060C7FF0087F9B6 /* Info.plist */,
+				49468E532060C7FF0087F9B6 /* main.m */,
+			);
+			path = CocoaPodsExample;
+			sourceTree = "<group>";
+		};
+		49468E642060CEA80087F9B6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49468E692060CEA80087F9B6 /* libEKKeyboardAvoiding.a */,
+				49468E6B2060CEA80087F9B6 /* EKKeyboardAvoiding-UnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,10 +179,11 @@
 		D9F3BB42166F4E2F00F0DEAE = {
 			isa = PBXGroup;
 			children = (
-				D9F3BB72166F4E4C00F0DEAE /* EKKeyboardAvoiding.xcodeproj */,
 				D9F3BB57166F4E2F00F0DEAE /* EKKeyboardAvoidingExample */,
+				49468E432060C7FD0087F9B6 /* CocoaPodsExample */,
 				D9F3BB50166F4E2F00F0DEAE /* Frameworks */,
 				D9F3BB4E166F4E2F00F0DEAE /* Products */,
+				1F47667F09E2C7044E9C0057 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				D9F3BB4D166F4E2F00F0DEAE /* EKKeyboardAvoidingExample.app */,
+				49468E422060C7FD0087F9B6 /* CocoaPodsExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -143,6 +205,8 @@
 				D9F3BB55166F4E2F00F0DEAE /* CoreGraphics.framework */,
 				FD9C8928A25648D9BA1A661B /* libPods-EKKeyboardAvoidingScrollViewExample.a */,
 				11A735D05168431AB87498E5 /* libPods-EKKeyboardAvoidingScrollViewExample-unit_tests.a */,
+				FFC6B83E4F5D86C8F0783A7C /* libPods-CocoaPodsExample.a */,
+				CB2442D9B9FEB218EA03F6D2 /* libPods-EKKeyboardAvoidingExample.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -150,6 +214,7 @@
 		D9F3BB57166F4E2F00F0DEAE /* EKKeyboardAvoidingExample */ = {
 			isa = PBXGroup;
 			children = (
+				D9F3BB72166F4E4C00F0DEAE /* EKKeyboardAvoiding.xcodeproj */,
 				D9F3BB7C166F4E9300F0DEAE /* Application */,
 				D9F3BB7D166F4EA400F0DEAE /* Controllers */,
 				D9F3BB58166F4E2F00F0DEAE /* Supporting Files */,
@@ -193,13 +258,36 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		49468E412060C7FD0087F9B6 /* CocoaPodsExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49468E592060C7FF0087F9B6 /* Build configuration list for PBXNativeTarget "CocoaPodsExample" */;
+			buildPhases = (
+				29997960991390BD3C590CA5 /* [CP] Check Pods Manifest.lock */,
+				49468E3E2060C7FD0087F9B6 /* Sources */,
+				49468E3F2060C7FD0087F9B6 /* Frameworks */,
+				49468E402060C7FD0087F9B6 /* Resources */,
+				C61D40E342F9AC16B4BEADF2 /* [CP] Embed Pods Frameworks */,
+				540F5CD9CEFCDB6A8EF1914F /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CocoaPodsExample;
+			productName = CocoaPodsExample;
+			productReference = 49468E422060C7FD0087F9B6 /* CocoaPodsExample.app */;
+			productType = "com.apple.product-type.application";
+		};
 		D9F3BB4C166F4E2F00F0DEAE /* EKKeyboardAvoidingExample */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D9F3BB6B166F4E2F00F0DEAE /* Build configuration list for PBXNativeTarget "EKKeyboardAvoidingExample" */;
 			buildPhases = (
+				E64CBBCFE2B8C69030F852A9 /* [CP] Check Pods Manifest.lock */,
 				D9F3BB49166F4E2F00F0DEAE /* Sources */,
 				D9F3BB4A166F4E2F00F0DEAE /* Frameworks */,
 				D9F3BB4B166F4E2F00F0DEAE /* Resources */,
+				F030E2E1EC43641FEBEC178A /* [CP] Embed Pods Frameworks */,
+				2182ECBCEDB68E9154D9E6E3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -218,6 +306,12 @@
 			attributes = {
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Evgeniy Kirpichenko";
+				TargetAttributes = {
+					49468E412060C7FD0087F9B6 = {
+						CreatedOnToolsVersion = 9.3;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = D9F3BB47166F4E2F00F0DEAE /* Build configuration list for PBXProject "EKKeyboardAvoidingExample" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -225,41 +319,53 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = D9F3BB42166F4E2F00F0DEAE;
 			productRefGroup = D9F3BB4E166F4E2F00F0DEAE /* Products */;
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = D920A523171BDBC600F04CCC /* Products */;
+					ProductGroup = 49468E642060CEA80087F9B6 /* Products */;
 					ProjectRef = D9F3BB72166F4E4C00F0DEAE /* EKKeyboardAvoiding.xcodeproj */;
 				},
 			);
 			projectRoot = "";
 			targets = (
 				D9F3BB4C166F4E2F00F0DEAE /* EKKeyboardAvoidingExample */,
+				49468E412060C7FD0087F9B6 /* CocoaPodsExample */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		D920A527171BDBC600F04CCC /* libEKKeyboardAvoiding.a */ = {
+		49468E692060CEA80087F9B6 /* libEKKeyboardAvoiding.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libEKKeyboardAvoiding.a;
-			remoteRef = D920A526171BDBC600F04CCC /* PBXContainerItemProxy */;
+			remoteRef = 49468E682060CEA80087F9B6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		D9BC46BD17F57B6800BD6AC2 /* EKKeyboardAvoiding-UnitTests.xctest */ = {
+		49468E6B2060CEA80087F9B6 /* EKKeyboardAvoiding-UnitTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "EKKeyboardAvoiding-UnitTests.xctest";
-			remoteRef = D9BC46BC17F57B6800BD6AC2 /* PBXContainerItemProxy */;
+			remoteRef = 49468E6A2060CEA80087F9B6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		49468E402060C7FD0087F9B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49468E512060C7FF0087F9B6 /* LaunchScreen.storyboard in Resources */,
+				49468E4E2060C7FF0087F9B6 /* Assets.xcassets in Resources */,
+				49468E4C2060C7FD0087F9B6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D9F3BB4B166F4E2F00F0DEAE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -277,7 +383,116 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2182ECBCEDB68E9154D9E6E3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EKKeyboardAvoidingExample/Pods-EKKeyboardAvoidingExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		29997960991390BD3C590CA5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CocoaPodsExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		540F5CD9CEFCDB6A8EF1914F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CocoaPodsExample/Pods-CocoaPodsExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C61D40E342F9AC16B4BEADF2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CocoaPodsExample/Pods-CocoaPodsExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E64CBBCFE2B8C69030F852A9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EKKeyboardAvoidingExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F030E2E1EC43641FEBEC178A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EKKeyboardAvoidingExample/Pods-EKKeyboardAvoidingExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		49468E3E2060C7FD0087F9B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49468E492060C7FD0087F9B6 /* ViewController.m in Sources */,
+				49468E542060C7FF0087F9B6 /* main.m in Sources */,
+				49468E462060C7FD0087F9B6 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D9F3BB49166F4E2F00F0DEAE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -292,6 +507,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		49468E4A2060C7FD0087F9B6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49468E4B2060C7FD0087F9B6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		49468E4F2060C7FF0087F9B6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49468E502060C7FF0087F9B6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		D9F3BB5A166F4E2F00F0DEAE /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -303,6 +534,70 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		49468E552060C7FF0087F9B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E591CF68777D2508F69CCB5B /* Pods-CocoaPodsExample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = CocoaPodsExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = rav.org.CocoaPodsExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		49468E562060C7FF0087F9B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9FA37260752C69F542AF36D2 /* Pods-CocoaPodsExample.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = CocoaPodsExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = rav.org.CocoaPodsExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		D9F3BB69166F4E2F00F0DEAE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -398,6 +693,7 @@
 		};
 		D9F3BB6C166F4E2F00F0DEAE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83220C1363B5B64CC2B65580 /* Pods-EKKeyboardAvoidingExample.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -406,7 +702,10 @@
 				GCC_PREFIX_HEADER = "EKKeyboardAvoidingScrollViewExample/EKKeyboardAvoidingExample-Prefix.pch";
 				INFOPLIST_FILE = "EKKeyboardAvoidingScrollViewExample/EKKeyboardAvoidingExample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				OTHER_LDFLAGS = "-all_load";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = EKKeyboardAvoidingExample;
 				PROVISIONING_PROFILE = "";
@@ -417,13 +716,17 @@
 		};
 		D9F3BB6D166F4E2F00F0DEAE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF1143FDF54CFF86A574547C /* Pods-EKKeyboardAvoidingExample.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EKKeyboardAvoidingScrollViewExample/EKKeyboardAvoidingExample-Prefix.pch";
 				INFOPLIST_FILE = "EKKeyboardAvoidingScrollViewExample/EKKeyboardAvoidingExample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				OTHER_LDFLAGS = "-all_load";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = EKKeyboardAvoidingExample;
 				WRAPPER_EXTENSION = app;
@@ -433,6 +736,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		49468E592060C7FF0087F9B6 /* Build configuration list for PBXNativeTarget "CocoaPodsExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49468E552060C7FF0087F9B6 /* Debug */,
+				49468E562060C7FF0087F9B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D9F3BB47166F4E2F00F0DEAE /* Build configuration list for PBXProject "EKKeyboardAvoidingExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

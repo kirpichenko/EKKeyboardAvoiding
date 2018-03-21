@@ -45,6 +45,20 @@
 	[self _stopObservingNotifications];
 }
 
+
+- (UIViewAnimationCurve)animatonCurve
+{
+	NSNumber* curve = [self.keyboardInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey];
+	return [curve unsignedIntegerValue];
+}
+
+
+- (NSTimeInterval)animationDuration
+{
+	NSNumber* duration = [self.keyboardInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
+	return [duration doubleValue];
+}
+
 #pragma mark - public methods
 
 - (CGRect)convertedKeyboardFrameForView:(UIView *)view
@@ -76,22 +90,30 @@
 
 - (void)_keyboardDidChangeFrame:(NSNotification *)notification
 {
-	self.keyboardInfo = [notification userInfo];
-	
-	NSValue *frameValue = [self.keyboardInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
-	if (!CGRectEqualToRect(self.keyboardFrame, [frameValue CGRectValue]))
+	if (self.keyboardAnimationAppearingCompletedBlock)
 	{
-		self.keyboardFrame = [frameValue CGRectValue];
-		if (self.keyboadFrameUpdatedBlock)
-		{
-			self.keyboadFrameUpdatedBlock(self);
-		}
+		self.keyboardAnimationAppearingCompletedBlock(self);
 	}
 }
 
 
 - (void)_keyboardWillChangeFrameNotification:(NSNotification*)notification
 {
+	[self willChangeValueForKey:@"animatonCurve"];
+	[self willChangeValueForKey:@"animationDuration"];
+	self.keyboardInfo = [notification userInfo];
+	[self didChangeValueForKey:@"animatonCurve"];
+	[self didChangeValueForKey:@"animationDuration"];
 	
+	NSValue* frameValue = [self.keyboardInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
+	if (!CGRectEqualToRect(self.keyboardFrame, [frameValue CGRectValue]))
+	{
+		self.keyboardFrame = [frameValue CGRectValue];
+		
+		if (self.keyboadFrameUpdatedBlock)
+		{
+			self.keyboadFrameUpdatedBlock(self);
+		}
+	}
 }
 @end

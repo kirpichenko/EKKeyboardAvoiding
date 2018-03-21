@@ -94,7 +94,15 @@ static NSString *const kKeyboardFrameKey = @"keyboardFrame";
 		
 		UIEdgeInsets newInset = [self _calculateExtraContentInset];
 		[self _addExtraContentInset:newInset];
-		[self setExtraContentInset:newInset];
+		[UIView animateWithDuration:[self keyboardListener].animationDuration
+													delay:0.0
+												options:([self keyboardListener].animatonCurve << 16)
+										 animations:^{
+											 [self.scrollView layoutIfNeeded];
+										 }
+										 completion:^(BOOL finished) {
+										 }];
+		self.extraContentInset = newInset;
 	}
 }
 
@@ -130,6 +138,15 @@ static NSString *const kKeyboardFrameKey = @"keyboardFrame";
 - (UIEdgeInsets)_calculateExtraContentInset
 {
 	CGRect keyboardFrame = [self.keyboardListener convertedKeyboardFrameForView:self.scrollView];
+	
+	if (@available(iOS 11.0, *))
+	{
+		_calculator.contentAdjustmentBehavior = self.scrollView.contentInsetAdjustmentBehavior;
+		_calculator.safeAreaInsets = self.scrollView.safeAreaInsets;
+		_calculator.alwaysBounceVertical = self.scrollView.alwaysBounceVertical;
+		_calculator.alwaysBounceHorizontal = self.scrollView.alwaysBounceHorizontal;
+	}
+	
 	[_calculator setKeyboardFrame:keyboardFrame];
 	[_calculator setScrollViewFrame:[self.scrollView frame]];
 	[_calculator setScrollViewInset:[self _getCurrentInsets]];

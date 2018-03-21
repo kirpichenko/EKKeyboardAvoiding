@@ -36,7 +36,8 @@
     NSDictionary *userInfo = @{UIKeyboardFrameEndUserInfoKey : keyboardFrameValue};
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
     
-    [notificationCenter postNotificationName:UIKeyboardDidChangeFrameNotification object:nil
+    [notificationCenter postNotificationName:UIKeyboardWillChangeFrameNotification
+																			object:nil
                                     userInfo:userInfo];
 }
 

@@ -12,6 +12,7 @@
 @interface EKKeyboardFrameListener : NSObject
 
 @property (nonatomic, copy) void(^keyboadFrameUpdatedBlock)(EKKeyboardFrameListener* sender);
+@property (nonatomic, copy) void(^keyboardAnimationAppearingCompletedBlock)(EKKeyboardFrameListener* sender);
 
 /*! Returns keyboard frame in coordinate system ov view's superview
  \param view View which superview to be used for keyboard frame converting
@@ -19,7 +20,9 @@
  */
 - (CGRect)convertedKeyboardFrameForView:(UIView *)view;
 
-/// Last observed keyboard frame
+/// Last observed keyboard appearing/disappearing  properties
 @property (nonatomic,readonly) CGRect keyboardFrame;
+@property (nonatomic, readonly) UIViewAnimationCurve animatonCurve;
+@property (nonatomic, readonly) NSTimeInterval animationDuration;
 
 @end

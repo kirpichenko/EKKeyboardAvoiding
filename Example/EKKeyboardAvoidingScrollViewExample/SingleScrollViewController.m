@@ -22,7 +22,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];    
-   
+	
+	if (@available(iOS 11.0, *))
+	{
+		self.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentScrollableAxes;
+	}
+	
     [self.scrollView setContentSize:[self.scrollView frame].size];
     [self.scrollView ek_setKeyboardAvoidingEnabled:YES];
     

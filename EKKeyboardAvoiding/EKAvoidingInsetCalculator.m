@@ -68,9 +68,9 @@
 			CGFloat coverage = CGRectGetMaxY(_scrollViewFrame) - CGRectGetMinY(_keyboardFrame);
 			contentInset.bottom = MAX(coverage - _scrollViewInset.bottom, 0);
 		}
+		contentInset = [self _adjustResultInsets:contentInset];
 	}
-	UIEdgeInsets result = [self _adjustResultInsets:contentInset];
-	return result;
+	return contentInset;
 }
 
 #pragma mark - find intersection
